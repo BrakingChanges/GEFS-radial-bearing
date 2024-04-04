@@ -17,13 +17,15 @@
                 method: 'POST',
                 body: JSON.stringify({
                     "lat": geofs.aircraft.instance.llaLocation[0],
-                    "lon": geofs.aircraft.instance.llaLocation[1]
+                    "lon": geofs.aircraft.instance.llaLocation[1],
+                    "heading": geofs.aircraft.instance.htr[0],
+                    "altitude": geofs.aircraft.instance.llaLocation[2]
                 }),
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 mode: 'no-cors'
-            }, 100)
+            }, 5000)
             clearInterval()
         })
         
