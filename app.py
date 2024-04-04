@@ -1,8 +1,10 @@
 from flask import Flask, request
 from flask_cors import CORS
 from json import load
+from requests import get
 from os import walk
 from os import system
+
 
 master_approach = {}
 files = []
@@ -17,18 +19,29 @@ for file_ in filenamees:
         master_approach[file_] = approaches
 
 
-with open('route.json','r') as f:
-    data = load(f)
+res  = get('https://www.simbrief.com/api/xml.fetcher.php?userid=519024&json=1')
+data = res.json()
 
 
+origin_data = data["origin"]
+main_data = data["navlog"]["fix"]
+destination_data = data["destination"]
 
-route_data = data["navlog"]
-
-
+route_data = []
+route_data.append(origin_data)
+route_data.extend(main_data)
+route_data.append(destination_data)
 
 route = []
 app = Flask(__name__)
 CORS(app)
+
+data = {
+    "lat": None,
+    "lon": None,
+    "heading": None,
+    "altitude": None
+}
 
 @app.route("/data", methods=['POST'])
 def recieve_loc_data():
@@ -42,7 +55,6 @@ def recieve_loc_data():
 
 @app.route("/data-get")
 def send_loc_data():
-    print(data)
     return data
 
 
@@ -63,4 +75,4 @@ def recieve_approaches():
     return master_approach[airport_name]
 
 if __name__ == "__main__":
-    app.run(debug=True, host='0.0.0.0')
+    app.run(debug=True, port=5000)

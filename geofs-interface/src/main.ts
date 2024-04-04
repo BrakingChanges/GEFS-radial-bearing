@@ -6,16 +6,13 @@ import 'leaflet/dist/leaflet'
 import 'leaflet.geodesic/dist/leaflet.geodesic'
 import 'leaflet-rotatedmarker/leaflet.rotatedMarker'
 import  L, { Marker } from 'leaflet'
-import { Aircraft } from '@geps/geofs-types/typings/geofs/aircraft'
+import { CircleListEl, DataClass } from './types'
+import { GeodesicLine } from 'leaflet.geodesic/dist/leaflet.geodesic'
+import { reRenderCircle, reRenderLine } from './utils'
+import {computeDestinationPoint} from 'geolib'
 
 const map = L.map('map').setView([0, 0], 2);
 
-type DataClass = {
-  "lat": Aircraft["llaLocation"][0],
-  "lon": Aircraft["llaLocation"][1],
-  "heading": Aircraft["htr"][0],
-  "altitude": Aircraft["llaLocation"][2]
-}
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -24,43 +21,67 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 let planeMarker: Marker;
 const planePath = L.geodesic([], {weight: 2, opacity: 0.5, color: 'blue'}).addTo(map)
 
-const res = await fetch('http://192.168.100.20:5000/route-data')
+let dataR = localStorage.getItem('data')
 
-const data = await res.json()
+let data: any[]  = dataR !== null ? JSON.parse(dataR) : []
 
-const lines = []
-for(let k of data) {
-  let mark = L.marker([k.pos_lat, k.pos_long]).addTo(map)
-  
-  let pop = L.popup({
-    content: `<p class="waypoint-font">${k.name} - ${k.ident}<p>`
-  })
-  mark.bindPopup(pop).openPopup()
-  lines.push(L.latLng(k.pos_lat, k.pos_long))
+
+const newWorker = new Worker("./src/worker.ts")
+
+newWorker.postMessage('fetch')
+
+
+newWorker.onmessage = e => {
+  if(data != e.data) {
+    data = e.data
+  }
 }
 
 
-L.geodesic(lines, {color: 'magenta', weight: 4, opacity: 0.5}).addTo(map)
+const lines: GeodesicLine[] = [];
+
+// Loop through data to create markers and LineStrings
+for (let i = 0; i < data?.length - 1; i++) {
+    let startPoint: [number, number, number]  = [Number(data[i].pos_lat), Number(data[i].pos_long), 0];
+    let endPoint: [number, number, number] = [Number(data[i + 1].pos_lat), Number(data[i + 1].pos_long), 0];
+
+
+
+    let line = L.geodesic([L.latLng(startPoint), L.latLng(endPoint)]).addTo(map)
+    lines.push(line)
+    // Create marker for each waypoint
+    let marker = L.marker(startPoint).addTo(map);
+
+    let pop = L.popup({
+        content: `<p class="waypoint-font">${data[i].name} - ${data[i].ident}<p>`
+    });
+    marker.bindPopup(pop).openPopup();
+}
+
+lines[0].options.color = 'red'
+reRenderLine(lines[0],map)
+
 
 const updatePlaneMarker = async () => {
-  const res = await fetch('http://192.168.100.20:5000/data-get')
+  const res = await fetch('http://localhost:5000/data-get')
   
   if(!res) return
 
-  /**
-   * 
-   */
+
   const data: DataClass = await res.json()
   
   if(!data) return
 
   if(planeMarker) map.removeLayer(planeMarker)
 
+  for(let val of Object.values(data)) {
+    if(val === null) return
+  }
 
 
   const emojiIcon = L.icon({
-    iconUrl: './public/plane.png',
-    shadowUrl: './public/plane shadow.png',
+    iconUrl: '/plane.png',
+    shadowUrl: '/plane shadow.png',
     iconSize: [512/16,512/16],
     shadowSize: [240/16,260/16],
     iconAnchor: [256/16,256/16],
@@ -73,7 +94,10 @@ const updatePlaneMarker = async () => {
 
 
   let planePop = L.popup({
-    content: `<p class="waypoint-font">${data.altitude * 3.28084} ft</p>`
+    content: `
+      <p>${data.altitude * 3.28084} ft</p>
+      <p></p>
+    `
   })
   planeMarker = L.marker([data.lat, data.lon], {rotationAngle: data.heading, icon: emojiIcon}).addTo(map)
   
@@ -83,6 +107,106 @@ const updatePlaneMarker = async () => {
 
 
 setInterval(updatePlaneMarker, 4 * 1000)
+
+const waypointInput = <HTMLInputElement>document.getElementById('waypoint-input');
+const distInput = <HTMLInputElement>document.getElementById('dist-input');
+const wpColor =  <HTMLInputElement>document.getElementById('wp-color')
+const wpCrs = <HTMLInputElement>document.getElementById('wp-crs')
+const circles: CircleListEl[] = []
+let circle: CircleListEl = {
+  marker: undefined,
+  circle: undefined,
+  name: undefined,
+  connectingLine: undefined
+}
+
+
+
+
+const processInput = () => {
+  const wpTrimmed = waypointInput.value.trim();
+  const distTrimmed = distInput.value.trim();
+  const crsTrimmed = wpCrs.value.trim()
+
+  if(circle.circle != undefined) circle.circle.remove()
+  if(circle.marker != undefined) circle.marker.remove()
+  if(circle.connectingLine != undefined) circle.connectingLine.remove()
+  // Ensure distTrimmed is a valid number
+  if (isNaN(Number(distTrimmed))) return;
+  if(distTrimmed === '') return;
+
+  const noCrs = isNaN(Number(crsTrimmed)) || crsTrimmed === ''
+
+  // Ensure wpTrimmed is not empty
+  if (wpTrimmed === '') return;  
+  console.log(wpTrimmed)
+
+ 
+  for (let wp of data) {
+    if (wp.ident != wpTrimmed && wp.name != wpTrimmed) continue;
+    L.GeodesicCircle.prototype.options.color = wpColor.value
+    L.GeodesicCircle.prototype.options.fillOpacity = 0
+    console.log(wp.pos_lat, wp.pos_long)
+    const destination = noCrs ? {latitude: 0, longitude: 0} : computeDestinationPoint([wp.pos_long,wp.pos_lat],Number(distTrimmed)*1852,Number(crsTrimmed))
+    console.log(destination)
+    circle = {
+      name: wp.ident,
+      circle: L.geodesiccircle(L.latLng(wp.pos_lat, wp.pos_long), {
+        radius: Number(distTrimmed) * 1852,
+    }).addTo(map),
+      marker: noCrs ? undefined : L.marker([destination.latitude, destination.longitude]).addTo(map),
+      connectingLine: L.geodesic([L.latLng([destination.latitude, destination.longitude]), L.latLng([wp.pos_lat, wp.pos_long])]).addTo(map)
+    };
+    reRenderCircle(circle?.circle, map)
+  }
+}
+
+waypointInput.addEventListener('input', processInput);  
+distInput.addEventListener('input', processInput);
+wpColor.addEventListener('input', processInput);
+wpCrs.addEventListener('input', processInput);
+
+
+
+const circlesList = <HTMLDivElement>document.getElementById('circles-list');
+const wpForm = <HTMLFormElement>document.getElementById('wp-form')
+
+wpForm.addEventListener('submit', (ev) => {
+  ev.preventDefault()
+  circles.push(circle)
+  updateCircles()
+
+})
+
+const updateCircles = () => {
+  circlesList.innerHTML = ''; // Clear previous HTML
+  circles.forEach((circle, index) => {
+    const radius = circle.circle?.radius;
+    let circleHTML = `
+      <div>
+        <p class="waypoint-font">
+          ${circle.name}/${radius}
+        </p>
+        <div style="width:100px;height:100px;background-color:${circle.circle?.options.color};"></div>
+        <button id="circle-${index}-button" class="waypoint-font">Remove</button>
+      </div>
+    `;
+
+    circlesList.innerHTML += circleHTML;
+
+    const button: HTMLButtonElement = <HTMLButtonElement>document.getElementById(`circle-${index}-button`);
+
+    button.addEventListener('click', (ev) => {
+      ev.preventDefault();
+      circle.circle?.remove();
+      circles.splice(index, 1);
+      updateCircles(); // Update the circles list after removing the circle
+    });
+  });
+}
+
+
+
 
 
 

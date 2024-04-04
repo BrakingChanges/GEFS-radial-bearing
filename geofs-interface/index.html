@@ -9,16 +9,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
   </head>
-  <body>
-    <div id="map"></div>
-    <div class="flight-panel">
-      <h1>
-        Flight data
-      </h1>
-      <p>Altitude: ---</p>
-      <p>Speed: --- </p>
-      <p>Heading: --- </p>
-    </div>
-    <script type="module" src="./src/main.ts" defer></script>
+  <body class="waypoint-font">
+    <main id="map"></main>
+    <footer>
+      <h1>FLIGHT STATS</h1>
+      <section class="flight-panel">
+        <p>Altitude: --- </p>
+        <p>Speed: --- </p>
+        <p>Heading: --- </p>
+      </section>
+      <section id="circles-list">
+  
+      </section>
+      <form autocomplete="off" id="wp-form">
+        <section>
+          <label for="waypoint-input" class="">Waypoint</label>
+          <input placeholder="Please enter a WAYPOINT en-route" class="" id="waypoint-input" />
+        </section>
+        <section>
+          <label for="dist-input" class="">Distance NM</label>
+          <input type="number" placeholder="Enter distance in NM" class="" id="dist-input" />
+        </section>
+        <section>
+          <label for="wp-color">Waypoint Color</label>
+          <input type="color" id="wp-color" value="#00ff00" />
+        </section>
+        <section>
+          <label for="wp-crs">Course</label>
+          <label></label>
+          <input type="range" id="wp-crs" min="0" max="360" value="0" />
+        </section>
+        <button type="submit">Submit</button>
+      </form>
+    </footer>
+    <script type="module" src="./src/main.ts" async></script>
   </body>
 </html>
