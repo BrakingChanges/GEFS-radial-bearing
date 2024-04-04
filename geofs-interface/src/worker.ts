@@ -14,7 +14,7 @@ const fetchOperation = async () => {
     proposedData = proposedData.concat(mainData)
     proposedData.push(destinationData)
 
-    postMessage(proposedData)
+    postMessage([preData, proposedData])
 }
 
 onmessage = async e => {

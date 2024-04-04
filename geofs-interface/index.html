@@ -12,7 +12,7 @@
   <body class="waypoint-font">
     <main id="map"></main>
     <footer>
-      <h1>FLIGHT STATS</h1>
+      <h1 id="flight-stat-title">FLIGHT STATS</h1>
       <section class="flight-panel">
         <p>Altitude: --- </p>
         <p>Speed: --- </p>
@@ -37,7 +37,8 @@
         <section>
           <label for="wp-crs">Course</label>
           <label></label>
-          <input type="range" id="wp-crs" min="0" max="360" value="0" />
+          <input type="number" id="wp-crs"/>
+          <input type="range" id="wp-slider" min="0" max="360" value="0"/>
         </section>
         <button type="submit">Submit</button>
       </form>

@@ -15,7 +15,7 @@ const map = L.map('map').setView([0, 0], 2);
 
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 }).addTo(map);
 
 let planeMarker: Marker;
@@ -25,17 +25,22 @@ let dataR = localStorage.getItem('data')
 
 let data: any[]  = dataR !== null ? JSON.parse(dataR) : []
 
-
 const newWorker = new Worker("./src/worker.ts")
 
 newWorker.postMessage('fetch')
 
+const flightStat = <HTMLHeadingElement>document.getElementById('flight-stat-title')
+
+flightStat.innerText = `FLIGHT STATS: ######`
 
 newWorker.onmessage = e => {
-  if(data != e.data) {
-    data = e.data
+  if(data != e.data[1]) {
+    data = e.data[1]
   }
+  flightStat.innerText = `FLIGHT STATS: ${e.data[0].general.flight_number}`
 }
+
+
 
 
 const lines: GeodesicLine[] = [];
@@ -50,7 +55,18 @@ for (let i = 0; i < data?.length - 1; i++) {
     let line = L.geodesic([L.latLng(startPoint), L.latLng(endPoint)]).addTo(map)
     lines.push(line)
     // Create marker for each waypoint
-    let marker = L.marker(startPoint).addTo(map);
+    let icon = L.icon({
+      iconUrl: '/waypoint.png',
+      shadowUrl: '/waypoint shadow.png',
+      iconSize: [32,32],
+      shadowSize: [32,32],
+      shadowAnchor: [16,16],
+      iconAnchor: [16,16]
+    })
+    
+    let marker = L.marker(startPoint, {
+      icon: icon
+    }).addTo(map);
 
     let pop = L.popup({
         content: `<p class="waypoint-font">${data[i].name} - ${data[i].ident}<p>`
@@ -112,6 +128,8 @@ const waypointInput = <HTMLInputElement>document.getElementById('waypoint-input'
 const distInput = <HTMLInputElement>document.getElementById('dist-input');
 const wpColor =  <HTMLInputElement>document.getElementById('wp-color')
 const wpCrs = <HTMLInputElement>document.getElementById('wp-crs')
+const wpSlider = <HTMLInputElement>document.getElementById('wp-slider')
+
 const circles: CircleListEl[] = []
 let circle: CircleListEl = {
   marker: undefined,
@@ -127,6 +145,9 @@ const processInput = () => {
   const wpTrimmed = waypointInput.value.trim();
   const distTrimmed = distInput.value.trim();
   const crsTrimmed = wpCrs.value.trim()
+
+  wpSlider.value = crsTrimmed
+
 
   if(circle.circle != undefined) circle.circle.remove()
   if(circle.marker != undefined) circle.marker.remove()
@@ -165,6 +186,11 @@ waypointInput.addEventListener('input', processInput);
 distInput.addEventListener('input', processInput);
 wpColor.addEventListener('input', processInput);
 wpCrs.addEventListener('input', processInput);
+wpSlider.addEventListener('input', (e) => {
+  e.preventDefault()
+  wpCrs.value = wpSlider.value
+  processInput()
+});
 
 
 
