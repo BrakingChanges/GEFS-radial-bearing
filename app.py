@@ -2,12 +2,22 @@
 """ Module allowing traversal of airport files"""
 from os import walk
 
-from json import load
+from json import load, dump
 from flask import Flask, request
 from flask_cors import CORS
 from requests import get
 
 
+
+def save_data(file_data: dict):
+    """ Saves data into the database """
+    with open('data.json', 'w', encoding='utf-8') as data_file:
+        dump(file_data, data_file)
+
+def load_data() -> dict:
+    """ Load data into the database"""
+    with open('data.json', 'r', encoding='utf-8') as data_file_load:
+        return load(data_file_load)
 
 master_approach = {}
 files = []
@@ -38,7 +48,6 @@ route_data.append(destination_data)
 
 route = []
 app = Flask(__name__)
-app.secret_key = 'wow64'
 CORS(app)
 
 data = {
@@ -48,13 +57,13 @@ data = {
     "lon": None
 }
 
+save_data(data)
 
 @app.route("/data", methods=['POST'])
 def recieve_loc_data():
     """ Save data from GEOFS Client"""
-    global data # [global-statement]
     data_ = request.get_json(force=True)
-    data = data_
+    save_data(data_)
 
     return {
         'message': 'Success'
@@ -63,7 +72,7 @@ def recieve_loc_data():
 @app.route("/data-get")
 def send_loc_data():
     """ Send all the location data to the viewer interface"""
-    return data
+    return load_data()
 
 
 @app.route("/route-data")
