@@ -3,7 +3,7 @@
 from os import walk
 
 from json import load
-from flask import Flask, request, g, session
+from flask import Flask, request
 from flask_cors import CORS
 from requests import get
 
@@ -52,7 +52,7 @@ data = {
 @app.route("/data", methods=['POST'])
 def recieve_loc_data():
     """ Save data from GEOFS Client"""
-    global data
+    global data # [global-statement]
     data_ = request.get_json(force=True)
     data = data_
 
