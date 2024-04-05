@@ -3,9 +3,10 @@
 from os import walk
 
 from json import load
-from flask import Flask, request, g
+from flask import Flask, request, g, session
 from flask_cors import CORS
 from requests import get
+
 
 
 master_approach = {}
@@ -37,18 +38,23 @@ route_data.append(destination_data)
 
 route = []
 app = Flask(__name__)
+app.secret_key = 'wow64'
 CORS(app)
 
 data = {
-
+    "heading": None,
+    "altitude": None,
+    "lat": None,
+    "lon": None
 }
+
 
 @app.route("/data", methods=['POST'])
 def recieve_loc_data():
     """ Save data from GEOFS Client"""
-
+    global data
     data_ = request.get_json(force=True)
-    g.data = data_
+    data = data_
 
     return {
         'message': 'Success'
@@ -57,17 +63,7 @@ def recieve_loc_data():
 @app.route("/data-get")
 def send_loc_data():
     """ Send all the location data to the viewer interface"""
-    if 'data' in g:
-        data_ = g.data
-    else:
-        data_ = {
-            "lat": None,
-            "lon": None,
-            "heading": None,
-            "altitude": None
-        }
-
-    return data_
+    return data
 
 
 @app.route("/route-data")

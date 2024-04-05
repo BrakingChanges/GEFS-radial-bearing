@@ -8,11 +8,11 @@ import 'leaflet-rotatedmarker/leaflet.rotatedMarker'
 import  L, { Marker } from 'leaflet'
 import { CircleListEl } from './types'
 import { GeodesicLine } from 'leaflet.geodesic/dist/leaflet.geodesic'
-import { deepCloneCircleEl, reRenderCircle, reRenderLine } from './utils'
-import {computeDestinationPoint} from 'geolib'
-import { field } from 'geomag'
+import { reRenderCircle } from './utils'
 import { updatePlaneMarker } from './updatePlaneMarker'
 import { loadNavData } from './loadNavData'
+import { updateCircles } from './updateCircles'
+import { processInput } from './processInput'
 
 const map = L.map('map').setView([0, 0], 2);
 
@@ -26,7 +26,9 @@ const planePath = L.geodesic([], {weight: 2, opacity: 0.5, color: 'blue'}).addTo
 
 let dataR = localStorage.getItem('data')
 
-let data: any[]  = dataR !== null ? JSON.parse(dataR) : []
+console.log(dataR)
+let data: any = dataR !== null ? JSON.parse(dataR)[1] : []
+let preData: any = dataR !== null ? JSON.parse(dataR)[0] : []
 
 const newWorker = new Worker("./src/worker.ts")
 
@@ -35,17 +37,33 @@ newWorker.postMessage('fetch')
 const flightStat = <HTMLHeadingElement>document.getElementById('flight-stat-title')
 
 
-flightStat.innerText = `FLIGHT STATS: ${data[0].general?.flight_number} ${data[0].general?.flight_number}`
+flightStat.innerText = `FLIGHT STATS: ${preData.general?.icao_airline} ${preData.general?.flight_number}`
+
+const genRoute = <HTMLParagraphElement>document.getElementById('gen-route')
+console.log(data)
+let geofsTailoredRoutes = data.map((wp: any) => [wp.ident, wp.pos_lat, wp.pos_long, wp.altitude_feet, false, wp.via_airway])
+
+let geo = preData.length != 0 ? [preData.origin.icao_code, preData.destination.icao_code, preData.general?.flight_number].concat(geofsTailoredRoutes) : undefined
+let geoData = ''
+genRoute.innerText = geo == undefined ? '' : JSON.stringify(geo)
 
 newWorker.onmessage = e => {
   if(data != e.data[1]) {
     data = e.data[1]
-    localStorage.setItem('data', JSON.stringify(data))
+    preData = e.data[0]
+    localStorage.setItem('data', JSON.stringify(e.data))
     lines.forEach((line) => line.remove())
     loadNavData(data, lines, map)
+    let geofsTailoredRoutes = data.map((wp: any) => [wp.ident, Number(wp.pos_lat), Number(wp.pos_long), Number(wp.altitude_feet), false, null])
+
+    let geo = preData.length != 0 ? [preData.origin.icao_code, preData.destination.icao_code, preData.general?.flight_number].concat([geofsTailoredRoutes.slice(1,-1)]) : undefined
+
+    genRoute.innerText = geo == undefined ? '' : JSON.stringify(geo)
+    geoData = geo == undefined ? '' : JSON.stringify(geo)
+
 
   }
-  flightStat.innerText = `FLIGHT STATS: ${e.data[0].general.flight_number}`
+  flightStat.innerText = `FLIGHT STATS: ${preData.general?.icao_airline} ${preData.general?.flight_number}`
 
 }
 
@@ -54,13 +72,17 @@ const lines: GeodesicLine[] = [];
 loadNavData(data, lines, map)
 
 
-updatePlaneMarker(planeMarker, map, planePath)
+planeMarker = await updatePlaneMarker(planeMarker, map, planePath)
+planeMarker?.addTo(map)
 
 
 
 
 
-setInterval(updatePlaneMarker, 4 * 1000)
+setInterval(async () => {
+  planeMarker =  await updatePlaneMarker(planeMarker, map, planePath)
+  planeMarker?.addTo(map)
+}, 4 * 1000)
 
 const waypointInput = <HTMLInputElement>document.getElementById('waypoint-input');
 const distInput = <HTMLInputElement>document.getElementById('dist-input');
@@ -78,58 +100,31 @@ let circle: CircleListEl = {
 
 
 
-
-const processInput = () => {
-  updateCircles()
-
-  const wpTrimmed = waypointInput.value.trim();
-  const distTrimmed = distInput.value.trim();
-  const crsTrimmed = wpCrs.value.trim()
-
-  wpSlider.value = crsTrimmed
-
-
-  if(circle.circle != undefined) circle.circle.remove()
-  if(circle.marker != undefined) circle.marker.remove()
-  if(circle.connectingLine != undefined) circle.connectingLine.remove()
-  // Ensure distTrimmed is a valid number
-  if (isNaN(Number(distTrimmed))) return;
-  if(distTrimmed === '') return;
-
-  const noCrs = isNaN(Number(crsTrimmed)) || crsTrimmed === ''
-
-  // Ensure wpTrimmed is not empty
-  if (wpTrimmed === '') return;
-  console.log(wpTrimmed)
-
-
-  for (let wp of data) {
-    if (wp.ident != wpTrimmed && wp.name != wpTrimmed) continue;
-    L.GeodesicCircle.prototype.options.color = wpColor.value
-    L.GeodesicCircle.prototype.options.fillOpacity = 0
-    const adjustedCrs = field(wp.pos_lat, wp.pos_long).declination + Number(crsTrimmed)
-    const destination = noCrs ? {latitude: 0, longitude: 0} : computeDestinationPoint([wp.pos_long,wp.pos_lat],Number(distTrimmed)*1852,adjustedCrs)
-    console.log(destination)
-    circle = {
-      name: wp.ident,
-      circle: L.geodesiccircle(L.latLng(wp.pos_lat, wp.pos_long), {
-        radius: Number(distTrimmed) * 1852,
-    }).addTo(map),
-      marker: noCrs ? undefined : L.marker([destination.latitude, destination.longitude]).addTo(map),
-      connectingLine: noCrs ? undefined: L.geodesic([L.latLng([destination.latitude, destination.longitude]), L.latLng([wp.pos_lat, wp.pos_long])]).addTo(map)
-    };
-    reRenderCircle(circle?.circle, map)
+const processorWrapper = () => {
+  circle.circle?.remove()
+  circle.marker?.remove()
+  circle.connectingLine?.remove()
+  console.log('b')
+  let circ2 = processInput(waypointInput, distInput, wpCrs, wpSlider, data, circles, circlesList, map, wpColor)
+  console.log(circ2)
+  circle = circ2 !== undefined ? circ2 : {
+    name: 'N/A',
+    circle: undefined,
+    marker: undefined,
+    connectingLine: undefined
   }
+  reRenderCircle(circle?.circle, map)
 }
 
-waypointInput.addEventListener('input', processInput);
-distInput.addEventListener('input', processInput);
-wpColor.addEventListener('input', processInput);
-wpCrs.addEventListener('input', processInput);
+
+waypointInput.addEventListener('input', processorWrapper);
+distInput.addEventListener('input', processorWrapper);
+wpColor.addEventListener('input', processorWrapper);
+wpCrs.addEventListener('input',processorWrapper);
 wpSlider.addEventListener('input', (e) => {
   e.preventDefault()
   wpCrs.value = wpSlider.value
-  processInput()
+  processorWrapper()
 });
 
 
@@ -141,67 +136,30 @@ const wpForm = <HTMLFormElement>document.getElementById('wp-form')
 wpForm.addEventListener('submit', (ev) => {
   ev.preventDefault();
 
-  circle.circle?.remove()
-  circle.marker?.remove()
-  circle.connectingLine?.remove()
-
-  const circle_ = deepCloneCircleEl(circle)
+  circle?.circle?.remove()
+  circle?.marker?.remove()
+  circle?.connectingLine?.remove()
 
 
-  circles.push(circle_);
-  updateCircles();
+
+  circles.push(circle);
+  updateCircles(circles, circlesList, map);
   wpForm.reset()
 });
 
+const copyButton = <HTMLButtonElement>document.getElementById('copy-route-button')
 
-const updateCircles = () => {
-  console.log(circles)
-  circlesList.innerHTML = ''; // Clear previous HTML
+copyButton.addEventListener('click', async (e) => {
+  try {
+    e.preventDefault()
 
-  if (circles.length === 1) {
-    circles[0].circle?.removeFrom(map)
-    circles[0].marker?.removeFrom(map)
-    circles[0].connectingLine?.removeFrom(map)
-    circles[0].circle?.addTo(map)
-    circles[0].marker?.addTo(map)
-    circles[0].connectingLine?.addTo(map)
+    await navigator.clipboard.writeText(geoData)
+    console.log('done!')
+  } catch (err) {
+    console.log(err);
   }
 
-
-  circles.forEach((circleEl, index) => {
-    circleEl.circle?.removeFrom(map)
-    circleEl.marker?.removeFrom(map)
-    circleEl.connectingLine?.removeFrom(map)
-    circleEl.circle?.addTo(map)
-    circleEl.marker?.addTo(map)
-    circleEl.connectingLine?.addTo(map)
-    const radius = circleEl.circle?.radius;
-    const markerPosition = circleEl.marker?.getLatLng()
-    let circleHTML = `
-      <div>
-        <p class="waypoint-font">
-          ${circleEl.name}/${radius !== undefined ? radius/1852: radius}
-          ${markerPosition?.lat}, ${markerPosition?.lng}
-        </p>
-        <div style="width:10px;height:10px;background-color:${circleEl.circle?.options.color};"></div>
-        <button id="circle-${index}-button" class="waypoint-font">Remove</button>
-      </div>
-    `;
-
-    circlesList.innerHTML += circleHTML;
-
-    const button: HTMLButtonElement = <HTMLButtonElement>document.getElementById(`circle-${index}-button`);
-
-    button.addEventListener('click', (ev) => {
-      ev.preventDefault();
-      circle.circle?.remove();
-      circles.splice(index, 1);
-      updateCircles(); // Update the circles list after removing the circle
-    });
-  });
-}
-
-
+})
 
 
 

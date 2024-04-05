@@ -8,17 +8,20 @@ import { DataClass } from './types'
 
 
 
-export const updatePlaneMarker = async (planeMarker: L.Marker<any> | undefined, map: L.Map, planePath: L.Geodesic) => {
+export const updatePlaneMarker = async (planeMarker: L.Marker<any> | undefined, map: L.Map, planePath: L.Geodesic): Promise<any> => {
     const res = await fetch('http://localhost:5000/data-get')
 
     if(!res) return
-
 
     const data: DataClass = await res.json()
 
     if(!data) return
 
-    if(planeMarker) map.removeLayer(planeMarker)
+    if(planeMarker) {
+        planeMarker.setLatLng([data.lat, data.lon])
+        planePath.addLatLng([data.lat, data.lon])
+        return planeMarker
+    }
 
     for(let val of Object.values(data)) {
       if(val === null) return
@@ -45,8 +48,10 @@ export const updatePlaneMarker = async (planeMarker: L.Marker<any> | undefined, 
         <p></p>
       `
     })
-    planeMarker = L.marker([data.lat, data.lon], {rotationAngle: data.heading, icon: emojiIcon}).addTo(map)
-
+    planeMarker = L.marker([data.lat, data.lon], {rotationAngle: data.heading, icon: emojiIcon})
     planeMarker.bindPopup(planePop)
     planePath.addLatLng([data.lat, data.lon])
+    return planeMarker
+
+
   }

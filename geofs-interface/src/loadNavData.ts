@@ -25,7 +25,7 @@ export const loadNavData = (data: any, lines: Geodesic[], map: L.Map) => {
       }).addTo(map);
 
       let pop = L.popup({
-          content: `<p class="waypoint-font">${data[i].name} - ${data[i].ident}<p>`
+          content: `<p class="waypoint-font">${data[i].name} - ${data[i].icao_code ? data[i].icao_code : data[i].ident}<p>`
       });
       marker.bindPopup(pop).openPopup();
     }

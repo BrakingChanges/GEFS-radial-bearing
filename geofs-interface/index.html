@@ -11,37 +11,46 @@
   </head>
   <body class="waypoint-font">
     <main id="map"></main>
-    <footer id="flight-stats-container">
-      <h1 id="flight-stat-title">FLIGHT STATS</h1>
-      <section class="flight-panel">
-        <p>Altitude: --- </p>
-        <p>Speed: --- </p>
-        <p>Heading: --- </p>
-      </section>
-      <section id="circles-list">
 
-      </section>
-      <form autocomplete="off" id="wp-form">
-        <section>
-          <label for="waypoint-input" class="">Waypoint</label>
-          <input placeholder="Please enter a WAYPOINT en-route" class="" id="waypoint-input" />
+    <footer id="flight-stats-container">
+      <details>
+        <h1 id="flight-stat-title">FLIGHT STATS</h1>
+        <section class="flight-panel">
+          <p>Altitude: --- </p>
+          <p>Speed: --- </p>
+          <p>Heading: --- </p>
         </section>
-        <section>
-          <label for="dist-input" class="">Distance NM</label>
-          <input type="number" placeholder="Enter distance in NM" class="" id="dist-input" />
+        <section id="circles-list">
+
         </section>
-        <section>
-          <label for="wp-color">Waypoint Color</label>
-          <input type="color" id="wp-color" value="#00ff00" />
-        </section>
-        <section>
-          <label for="wp-crs">Course</label>
-          <label></label>
-          <input type="number" id="wp-crs"/>
-          <input type="range" id="wp-slider" min="0" max="360" value="0"/>
-        </section>
-        <button type="submit">Submit</button>
-      </form>
+        <form autocomplete="off" id="wp-form">
+          <section>
+            <label for="waypoint-input" class="">Waypoint</label>
+            <input placeholder="Please enter a WAYPOINT en-route" class="" id="waypoint-input" />
+          </section>
+          <section>
+            <label for="dist-input" class="">Distance NM</label>
+            <input placeholder="Enter distance in NM" class="" id="dist-input" />
+          </section>
+          <section>
+            <label for="wp-color">Waypoint Color</label>
+            <input type="color" id="wp-color" value="#00ff00" />
+          </section>
+          <section>
+            <label for="wp-crs">Course</label>
+            <label></label>
+            <input id="wp-crs"/>
+            <input type="range" id="wp-slider" min="0" max="360" value="0"/>
+          </section>
+          <button type="submit">Submit</button>
+        </form>
+        <details>
+          <summary>Route</summary>
+          <p id="gen-route"></p>
+        </details>
+        <button id="copy-route-button">Copy Route</button>
+      </details>
+
     </footer>
     <script type="module" src="./src/main.ts" async></script>
   </body>
