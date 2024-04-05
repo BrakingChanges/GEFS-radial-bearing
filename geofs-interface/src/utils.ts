@@ -1,12 +1,22 @@
-import { GeodesicCircle, Map } from "leaflet";
+import { GeodesicCircle, Map, Marker } from "leaflet";
 import { GeodesicLine } from "leaflet.geodesic";
+import { CircleListEl } from "./types";
 
-export function reRenderLine(line: GeodesicLine, map: Map) {
-    line.remove()
-    line.addTo(map)
+export const reRenderLine = (line: GeodesicLine | undefined, map: Map) => {
+    line?.remove()
+    line?.addTo(map)
 }
 
-export function reRenderCircle(circle: GeodesicCircle | undefined, map: Map) {
+export const  reRenderCircle = (circle: GeodesicCircle | undefined, map: Map) => {
     circle?.remove()
     circle?.addTo(map)
 }
+
+export const reRenderMarker = (marker: Marker |  undefined, map: Map) => {
+    marker?.remove()
+    marker?.addTo(map)
+}
+
+
+export const  deepCloneCircleEl = (circle: CircleListEl): CircleListEl => circle
+

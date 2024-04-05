@@ -83,3 +83,14 @@ body {
 .waypoint-font {
   font-family: monospace;
 }
+
+#flight-stats-container {
+  position: absolute;
+  top: 20px; /* Adjust top position */
+  right: 20px; /* Adjust right position */
+  background-color: rgba(33, 33, 33, 0.8); /* Semi-transparent background */
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for better visibility */
+  z-index: 10000;
+}
