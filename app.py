@@ -65,7 +65,7 @@ def send_loc_data():
             "lon": None,
             "heading": None,
             "altitude": None
-        }   
+        }
 
     return data_
 
