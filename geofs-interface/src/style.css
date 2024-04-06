@@ -95,3 +95,14 @@ body {
   z-index: 10000;
   max-width: fit-content;
 }
+
+#wp-dep-arr-form {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: baseline;
+}
+
+.input-container {
+  padding: 10px;
+}

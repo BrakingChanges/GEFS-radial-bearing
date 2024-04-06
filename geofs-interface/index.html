@@ -20,9 +20,9 @@
           <p>Speed: --- </p>
           <p>Heading: --- </p>
         </section>
-        <section id="circles-list">
+        <menu id="circles-list">
 
-        </section>
+        </menu>
         <form autocomplete="off" id="wp-form">
           <section>
             <label for="waypoint-input" class="">Waypoint</label>
@@ -49,8 +49,23 @@
           <p id="gen-route"></p>
         </details>
         <button id="copy-route-button">Copy Route</button>
-      </details>
 
+        <form id="wp-dep-arr-form">
+          <div class="input-container">
+            <h2>Departure Runway Coordinates</h2>
+            <input placeholder="latitude" required id="dep-runway-lon"/>
+            <input placeholder="longitude" required id="dep-runway-lat"/>
+            <h2>Approach Runway Coordinates</h2>
+            <input placeholder="latitude" required id="arr-runway-lon">
+            <input placeholder="longitude" required id="arr-runway-lat">
+          </div>
+          <button type="submit">Submit</button>
+          <p>Note: The Coordinates you are entering correspond to your takeoff and landing runway thresholds</p>
+        </form>
+
+
+
+      </details>
     </footer>
     <script type="module" src="./src/main.ts" async></script>
   </body>

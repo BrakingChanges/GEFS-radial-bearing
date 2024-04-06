@@ -13,6 +13,7 @@ import { updatePlaneMarker } from './updatePlaneMarker'
 import { loadNavData } from './loadNavData'
 import { updateCircles } from './updateCircles'
 import { processInput } from './processInput'
+import { checkData } from './checkData'
 
 const map = L.map('map').setView([0, 0], 2);
 
@@ -48,28 +49,12 @@ let geoData = ''
 genRoute.innerText = geo == undefined ? '' : JSON.stringify(geo)
 
 newWorker.onmessage = e => {
-  if(data != e.data[1]) {
-    data = e.data[1]
-    preData = e.data[0]
-    localStorage.setItem('data', JSON.stringify(e.data))
-    lines.forEach((line) => line.remove())
-    loadNavData(data, lines, map)
-    let geofsTailoredRoutes = data.map((wp: any) => [wp.ident, Number(wp.pos_lat), Number(wp.pos_long), Number(wp.altitude_feet), false, null])
-
-    let geo = preData.length != 0 ? [preData.origin.icao_code, preData.destination.icao_code, preData.general?.flight_number].concat([geofsTailoredRoutes.slice(1,-1)]) : undefined
-
-    genRoute.innerText = geo == undefined ? '' : JSON.stringify(geo)
-    geoData = geo == undefined ? '' : JSON.stringify(geo)
-
-
-  }
-  flightStat.innerText = `FLIGHT STATS: ${preData.general?.icao_airline} ${preData.general?.flight_number}`
-
+  checkData(e, data, lines, preData, map, genRoute, geoData, flightStat, markers)
 }
+let markers: L.Marker[] = []
+let lines: GeodesicLine[] = [];
 
-const lines: GeodesicLine[] = [];
-
-loadNavData(data, lines, map)
+loadNavData(data, lines, markers, map)
 
 
 planeMarker = await updatePlaneMarker(planeMarker, map, planePath)
@@ -149,6 +134,7 @@ wpForm.addEventListener('submit', (ev) => {
 
 const copyButton = <HTMLButtonElement>document.getElementById('copy-route-button')
 
+
 copyButton.addEventListener('click', async (e) => {
   try {
     e.preventDefault()
@@ -158,10 +144,62 @@ copyButton.addEventListener('click', async (e) => {
   } catch (err) {
     console.log(err);
   }
-
 })
 
 
+const wpDepArrForm = <HTMLFormElement>document.getElementById('wp-dep-arr-form')
+const depRunwayLat = <HTMLInputElement>document.getElementById('dep-runway-lat')
+const depRunwayLon = <HTMLInputElement>document.getElementById('dep-runway-lon')
+const arrRunwayLat = <HTMLInputElement>document.getElementById('arr-runway-lat')
+const arrRunwayLon = <HTMLInputElement>document.getElementById('arr-runway-lon')
 
+
+
+wpDepArrForm.addEventListener('submit', e => {
+  e.preventDefault()
+  const depRunwayLat_ = Number(depRunwayLat.value)
+  const depRunwayLon_ = Number(depRunwayLon.value)
+  const arrRunwayLat_ = Number(arrRunwayLat.value)
+  const arrRunwayLon_ = Number(arrRunwayLon.value)
+
+  if(isNaN(depRunwayLat_)) return
+  if(isNaN(depRunwayLon_)) return
+  if(isNaN(arrRunwayLat_)) return
+  if(isNaN(arrRunwayLon_)) return
+
+  if(
+    arrRunwayLat.value === '' ||
+    arrRunwayLon.value === '' ||
+    depRunwayLat.value === '' ||
+    depRunwayLon.value === ''
+  ) return
+
+  data.splice(1, 0, {
+    name: 'DEP_RWY',
+    ident: 'DEP_RWY',
+    pos_lat: depRunwayLat_,
+    pos_long: depRunwayLon_,
+    altitude_feet: 0
+  })
+  console.log(depRunwayLat_, depRunwayLon_)
+
+  data.splice(data.length - 2 , 0, {
+    name: 'ARR_RWY',
+    ident: 'ARR_RWY',
+    pos_lat: arrRunwayLat_,
+    pos_long: arrRunwayLon_,
+    altitude_feet: 0
+  })
+
+  loadNavData(data, lines, markers, map)
+  let geofsTailoredRoutes = data.map((wp: any) => [wp.ident, Number(wp.pos_lat), Number(wp.pos_long), Number(wp.altitude_feet), false, null])
+
+  let geo = preData.length != 0 ? [preData.origin.icao_code, preData.destination.icao_code, preData.general?.flight_number].concat([geofsTailoredRoutes.slice(1,-1)]) : undefined
+
+  genRoute.innerText = geo == undefined ? '' : JSON.stringify(geo)
+  geoData = geo == undefined ? '' : JSON.stringify(geo)
+
+
+})
 
 export {}

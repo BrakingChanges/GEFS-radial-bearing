@@ -14,14 +14,14 @@ export const updateCircles = (circles: CircleListEl[], circlesList: HTMLDivEleme
       const radius = circle.circle?.radius;
       const markerPosition = circle.marker?.getLatLng()
       let circleHTML = `
-        <div>
+        <li>
           <p class="waypoint-font">
             ${circle.name}/${radius !== undefined ? radius/1852: radius}
             ${markerPosition?.lat}, ${markerPosition?.lng}
           </p>
           <div style="width:10px;height:10px;background-color:${circle.circle?.options.color};"></div>
           <button id="circle-${index}-button" class="waypoint-font">Remove</button>
-        </div>
+        </li>
       `;
 
       circlesList.innerHTML += circleHTML;
@@ -31,6 +31,8 @@ export const updateCircles = (circles: CircleListEl[], circlesList: HTMLDivEleme
       button.addEventListener('click', (ev) => {
         ev.preventDefault();
         circle.circle?.remove();
+        circle.marker?.remove()
+        circle.connectingLine?.remove()
         circles.splice(index, 1);
         updateCircles(circles, circlesList, map); // Update the circles list after removing the circle
       });
