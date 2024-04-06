@@ -33,13 +33,25 @@ export const processInput = (waypointInput: HTMLInputElement, distInput: HTMLInp
       L.GeodesicCircle.prototype.options.fillOpacity = 0
       const adjustedCrs = field(wp.pos_lat, wp.pos_long).declination + Number(crsTrimmed)
       const destination = noCrs ? {latitude: 0, longitude: 0} : computeDestinationPoint([wp.pos_long,wp.pos_lat],Number(distTrimmed)*1852,adjustedCrs)
+      const markerPopup = L.popup({
+        content: `
+          <button>Add To</button>
+          <select name="wp-types" id="wp-select">
+            <option value="">--Please select an option--</option>
+            <option value="dep">Departure</option>
+            <option value="arr">Approach</option>
+            <option value="fltPlan">Flight Plan</option>
+          </select>
+        `
+      })
+
       console.log(destination)
       return {
         name: name,
         circle: L.geodesiccircle(L.latLng(wp.pos_lat, wp.pos_long), {
           radius: Number(distTrimmed) * 1852,
       }).addTo(map),
-        marker: noCrs ? undefined : L.marker([destination.latitude, destination.longitude]).addTo(map),
+        marker: noCrs ? undefined : L.marker([destination.latitude, destination.longitude]).addTo(map).bindPopup(markerPopup),
         connectingLine: noCrs ? undefined: L.geodesic([L.latLng([destination.latitude, destination.longitude]), L.latLng([wp.pos_lat, wp.pos_long])]).addTo(map)
       };
     }

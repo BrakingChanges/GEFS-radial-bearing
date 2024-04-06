@@ -82,7 +82,7 @@ planeMarker?.addTo(map)
 setInterval(async () => {
   planeMarker =  await updatePlaneMarker(planeMarker, map, planePath)
   planeMarker?.addTo(map)
-}, 4 * 1000)
+}, 1000/20)
 
 const waypointInput = <HTMLInputElement>document.getElementById('waypoint-input');
 const distInput = <HTMLInputElement>document.getElementById('dist-input');
