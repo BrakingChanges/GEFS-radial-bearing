@@ -1,6 +1,6 @@
 import 'leaflet-rotatedmarker'
 import L from 'leaflet'
-import { DataClass } from './types'
+import { DataClass } from './types/types'
 
 
 
@@ -8,8 +8,9 @@ import { DataClass } from './types'
 
 
 
-export const updatePlaneMarker = async (planeMarker: L.Marker<any> | undefined, map: L.Map, planePath: L.Geodesic): Promise<any> => {
+export const updatePlaneMarker = async (planeMarker: L.Marker<any> | undefined, planePath: L.Geodesic): Promise<any> => {
     const res = await fetch('http://localhost:5000/data-get')
+
 
     if(!res) return
 

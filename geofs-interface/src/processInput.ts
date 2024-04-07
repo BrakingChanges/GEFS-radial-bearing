@@ -1,4 +1,4 @@
-import { CircleListEl } from "./types";
+import { CircleListEl } from "./types/types";
 import { field } from 'geomag'
 import { computeDestinationPoint } from 'geolib'
 

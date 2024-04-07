@@ -6,7 +6,7 @@ import 'leaflet/dist/leaflet'
 import 'leaflet.geodesic/dist/leaflet.geodesic'
 import 'leaflet-rotatedmarker/leaflet.rotatedMarker'
 import  L, { Marker } from 'leaflet'
-import { CircleListEl } from './types'
+import { CircleListEl } from './types/types'
 import { GeodesicLine } from 'leaflet.geodesic/dist/leaflet.geodesic'
 import { reRenderCircle } from './utils'
 import { updatePlaneMarker } from './updatePlaneMarker'
@@ -14,6 +14,14 @@ import { loadNavData } from './loadNavData'
 import { updateCircles } from './updateCircles'
 import { processInput } from './processInput'
 import { checkData } from './checkData'
+import { Navlog, SImbriefData } from './types/SimbriefData'
+
+const newWorker = new Worker("./src/worker.ts", {
+  type: 'module'
+})
+
+newWorker.postMessage('fetch')
+
 
 const map = L.map('map').setView([0, 0], 2);
 
@@ -28,12 +36,11 @@ const planePath = L.geodesic([], {weight: 2, opacity: 0.5, color: 'blue'}).addTo
 let dataR = localStorage.getItem('data')
 
 console.log(dataR)
-let data: any = dataR !== null ? JSON.parse(dataR)[1] : []
-let preData: any = dataR !== null ? JSON.parse(dataR)[0] : []
+let data: Navlog[] = dataR !== null ? JSON.parse(dataR)[1] : []
+let preData: SImbriefData = dataR !== null ? JSON.parse(dataR)[0] : []
 
-const newWorker = new Worker("./src/worker.ts")
 
-newWorker.postMessage('fetch')
+
 
 const flightStat = <HTMLHeadingElement>document.getElementById('flight-stat-title')
 
@@ -42,9 +49,9 @@ flightStat.innerText = `FLIGHT STATS: ${preData.general?.icao_airline} ${preData
 
 const genRoute = <HTMLParagraphElement>document.getElementById('gen-route')
 console.log(data)
-let geofsTailoredRoutes = data.map((wp: any) => [wp.ident, wp.pos_lat, wp.pos_long, wp.altitude_feet, false, wp.via_airway])
+let geofsTailoredRoutes: GefsWaypoint[] = data.map((wp) => [wp.ident.toString(), Number(wp.pos_lat), Number(wp.pos_long), Number(wp.altitude_feet), false,null])
 
-let geo = preData.length != 0 ? [preData.origin.icao_code, preData.destination.icao_code, preData.general?.flight_number].concat(geofsTailoredRoutes) : undefined
+let geo: GefsData = preData.length != 0 ? [preData.origin.icao_code, preData.destination.icao_code, preData.general?.flight_number, [geofsTailoredRoutes]] : []
 let geoData = ''
 genRoute.innerText = geo == undefined ? '' : JSON.stringify(geo)
 
@@ -57,15 +64,11 @@ let lines: GeodesicLine[] = [];
 loadNavData(data, lines, markers, map)
 
 
-planeMarker = await updatePlaneMarker(planeMarker, map, planePath)
+planeMarker = await updatePlaneMarker(planeMarker, planePath)
 planeMarker?.addTo(map)
 
-
-
-
-
 setInterval(async () => {
-  planeMarker =  await updatePlaneMarker(planeMarker, map, planePath)
+  planeMarker =  await updatePlaneMarker(planeMarker, planePath)
   planeMarker?.addTo(map)
 }, 1000/20)
 
@@ -174,27 +177,101 @@ wpDepArrForm.addEventListener('submit', e => {
     depRunwayLon.value === ''
   ) return
 
-  data.splice(1, 0, {
+  console.log(depRunwayLat_, depRunwayLon_)
+  data.splice(0, 0, {
     name: 'DEP_RWY',
     ident: 'DEP_RWY',
-    pos_lat: depRunwayLat_,
-    pos_long: depRunwayLon_,
-    altitude_feet: 0
+    pos_lat: depRunwayLat.value,
+    pos_long: depRunwayLon.value,
+    altitude_feet: "0",
+    type: '',
+    icao_region: '',
+    frequency: '',
+    stage: '',
+    via_airway: '',
+    is_sid_star: '',
+    distance: '',
+    track_true: '',
+    track_mag: '',
+    heading_true: '',
+    heading_mag: '',
+    ind_airspeed: '',
+    true_airspeed: '',
+    mach: '',
+    mach_thousandths: '',
+    wind_component: '',
+    groundspeed: '',
+    time_leg: '',
+    time_total: '',
+    fuel_flow: '',
+    fuel_leg: '',
+    fuel_totalused: '',
+    fuel_min_onboard: '',
+    fuel_plan_onboard: '',
+    oat: '',
+    oat_isa_dev: '',
+    wind_dir: '',
+    wind_spd: '',
+    shear: '',
+    tropopause_feet: '',
+    ground_height: '',
+    mora: '',
+    fir: '',
+    fir_units: '',
+    fir_valid_levels: '',
+    wind_data: [],
+    fir_crossing: []
   })
-  console.log(depRunwayLat_, depRunwayLon_)
 
-  data.splice(data.length - 2 , 0, {
+  data.splice(data.length - 1 , 0, {
     name: 'ARR_RWY',
     ident: 'ARR_RWY',
-    pos_lat: arrRunwayLat_,
-    pos_long: arrRunwayLon_,
-    altitude_feet: 0
+    pos_lat: arrRunwayLat.value,
+    pos_long: arrRunwayLon.value,
+    altitude_feet: "0",
+    type: '',
+    icao_region: '',
+    frequency: '',
+    stage: '',
+    via_airway: '',
+    is_sid_star: '',
+    distance: '',
+    track_true: '',
+    track_mag: '',
+    heading_true: '',
+    heading_mag: '',
+    ind_airspeed: '',
+    true_airspeed: '',
+    mach: '',
+    mach_thousandths: '',
+    wind_component: '',
+    groundspeed: '',
+    time_leg: '',
+    time_total: '',
+    fuel_flow: '',
+    fuel_leg: '',
+    fuel_totalused: '',
+    fuel_min_onboard: '',
+    fuel_plan_onboard: '',
+    oat: '',
+    oat_isa_dev: '',
+    wind_dir: '',
+    wind_spd: '',
+    shear: '',
+    tropopause_feet: '',
+    ground_height: '',
+    mora: '',
+    fir: '',
+    fir_units: '',
+    fir_valid_levels: '',
+    wind_data: [],
+    fir_crossing: []
   })
 
   loadNavData(data, lines, markers, map)
   let geofsTailoredRoutes = data.map((wp: any) => [wp.ident, Number(wp.pos_lat), Number(wp.pos_long), Number(wp.altitude_feet), false, null])
 
-  let geo = preData.length != 0 ? [preData.origin.icao_code, preData.destination.icao_code, preData.general?.flight_number].concat([geofsTailoredRoutes.slice(1,-1)]) : undefined
+  let geo = preData.length != 0 ? [preData.origin.icao_code, preData.destination.icao_code, preData.general?.flight_number, geofsTailoredRoutes] : undefined
 
   genRoute.innerText = geo == undefined ? '' : JSON.stringify(geo)
   geoData = geo == undefined ? '' : JSON.stringify(geo)

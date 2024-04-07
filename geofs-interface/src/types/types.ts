@@ -16,4 +16,6 @@ export type CircleListEl = {
     connectingLine: Geodesic | undefined
 }
 
+
+
 export type Coordinate = [number, number]

@@ -1,6 +1,8 @@
 import L, { Geodesic } from 'leaflet'
+import { icon } from './icons'
+import { Navlog } from './types/SimbriefData'
 
-export const loadNavData = (data: any, lines: Geodesic[], markers: L.Marker[], map: L.Map) => {
+export const loadNavData = (data: Navlog[], lines: Geodesic[], markers: L.Marker[], map: L.Map) => {
     // Loop through data to create markers and LineStrings
     lines.forEach(line => {
       line.remove()
@@ -16,14 +18,6 @@ export const loadNavData = (data: any, lines: Geodesic[], markers: L.Marker[], m
       let endPoint: [number, number, number] = [Number(data[i + 1].pos_lat), Number(data[i + 1].pos_long), 0];
 
       // Create marker for each waypoint
-      let icon = L.icon({
-        iconUrl: '/waypoint.png',
-        shadowUrl: '/waypoint shadow.png',
-        iconSize: [32,32],
-        shadowSize: [32,32],
-        shadowAnchor: [16,16],
-        iconAnchor: [16,16]
-      })
 
       let marker = L.marker(startPoint, {
         icon: icon
@@ -31,15 +25,15 @@ export const loadNavData = (data: any, lines: Geodesic[], markers: L.Marker[], m
       markers.push()
 
       let pop = L.popup({
-          content: `<p class="waypoint-font">${data[i].name} - ${data[i].icao_code ? data[i].icao_code : data[i].ident}<p>`
+          content: `<p class="waypoint-font">${data[i].name} - ${data[i].ident}<p>`
       });
-      marker.bindPopup(pop).openPopup();
+      marker.bindPopup(pop)
 
-      if(i == 0) continue
-      if(i == data.length - 1) continue
+      if(i !== data.length - 2) {
+        let line =  L.geodesic([L.latLng(startPoint), L.latLng(endPoint)]).addTo(map)
+        lines.push(line)
+      }
 
-      let line = L.geodesic([L.latLng(startPoint), L.latLng(endPoint)]).addTo(map)
-      lines.push(line)
 
 
     }

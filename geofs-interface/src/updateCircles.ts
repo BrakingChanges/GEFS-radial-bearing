@@ -1,4 +1,4 @@
-import { CircleListEl } from "./types";
+import { CircleListEl } from "./types/types";
 import L from 'leaflet'
 
 export const updateCircles = (circles: CircleListEl[], circlesList: HTMLDivElement, map: L.Map) => {
