@@ -20,6 +20,7 @@ export const checkData  =  (e: MessageEvent, data: any, lines: Geodesic[], preDa
         let geo = preData.length != 0 ? [preData.origin.icao_code, preData.destination.icao_code, preData.general?.flight_number].concat([geofsTailoredRoutes.slice(1,-1)]) : undefined
 
         genRoute.innerText = geo == undefined ? '' : JSON.stringify(geo)
+        if(!geoData) return
         geoData = geo == undefined ? '' : JSON.stringify(geo)
 
 

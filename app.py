@@ -7,7 +7,6 @@ from flask import Flask, request
 from flask_cors import CORS
 from requests import get
 
-#AABUJUJUJUJJUUUJUJUJUJUJUJAAAABUJUJUJUJUJUJU
 master_approach = {}
 files = []
 filenamees = []
