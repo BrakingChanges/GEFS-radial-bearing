@@ -9,16 +9,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
   </head>
-  <body>
-    <div id="map"></div>
-    <div class="flight-panel">
-      <h1>
-        Flight data
-      </h1>
-      <p>Altitude: ---</p>
-      <p>Speed: --- </p>
-      <p>Heading: --- </p>
-    </div>
-    <script type="module" src="./src/main.ts" defer></script>
+  <body class="waypoint-font">
+    <main id="map"></main>
+
+    <footer id="flight-stats-container">
+      <details>
+        <h1 id="flight-stat-title">FLIGHT STATS</h1>
+        <section class="flight-panel">
+          <p>Altitude: --- </p>
+          <p>Speed: --- </p>
+          <p>Heading: --- </p>
+        </section>
+        <menu id="circles-list">
+
+        </menu>
+        <form autocomplete="off" id="wp-form">
+          <section>
+            <label for="waypoint-input" class="">Waypoint</label>
+            <input placeholder="Please enter a WAYPOINT en-route" class="" id="waypoint-input" />
+          </section>
+          <section>
+            <label for="dist-input" class="">Distance NM</label>
+            <input placeholder="Enter distance in NM" class="" id="dist-input" />
+          </section>
+          <section>
+            <label for="wp-color">Waypoint Color</label>
+            <input type="color" id="wp-color" value="#00ff00" />
+          </section>
+          <section>
+            <label for="wp-crs">Course</label>
+            <label></label>
+            <input id="wp-crs"/>
+            <input type="range" id="wp-slider" min="0" max="360" value="0"/>
+          </section>
+          <button type="submit">Submit</button>
+        </form>
+        <details>
+          <summary>Route</summary>
+          <p id="gen-route"></p>
+        </details>
+        <button id="copy-route-button">Copy Route</button>
+
+        <form id="wp-dep-arr-form">
+          <div class="input-container">
+            <h2>Departure Runway Coordinates</h2>
+            <input placeholder="latitude" required id="dep-runway-lat"/>
+            <input placeholder="longitude" required id="dep-runway-lon"/>
+            <h2>Approach Runway Coordinates</h2>
+            <input placeholder="latitude" required id="arr-runway-lat">
+            <input placeholder="longitude" required id="arr-runway-lon">
+          </div>
+          <button type="submit">Submit</button>
+          <p>Note: The Coordinates you are entering correspond to your takeoff and landing runway thresholds</p>
+        </form>
+
+
+
+      </details>
+    </footer>
+    <script type="module" src="./src/main.ts" async></script>
   </body>
 </html>

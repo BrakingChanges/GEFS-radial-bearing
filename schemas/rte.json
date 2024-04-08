@@ -1,0 +1,2212 @@
+{
+    "fetch": {
+      "userid": "519024",
+      "static_id": "",
+      "status": "Success",
+      "time": "0.0201"
+    },
+    "params": {
+      "request_id": "97021006",
+      "user_id": "519024",
+      "time_generated": "2024-04-05T09:05:08Z",
+      "static_id": "",
+      "xml_file": "https://www.simbrief.com/ofp/flightplans/xml/HKJKHKMO_XML_1712307908.xml",
+      "ofp_layout": "LIDO",
+      "airac": "2203",
+      "units": "kgs"
+    },
+    "general": {
+      "release": "2",
+      "icao_airline": "KQA",
+      "flight_number": "631",
+      "is_etops": "0",
+      "dx_rmk": [
+        "NONE"
+      ],
+      "sys_rmk": [],
+      "is_detailed_profile": "1",
+      "cruise_profile": "CI 23",
+      "climb_profile": "250/280/78",
+      "descent_profile": "78/280/250",
+      "alternate_profile": "CI0",
+      "reserve_profile": "RES",
+      "costindex": "23",
+      "cont_rule": "15 MIN",
+      "initial_altitude": "31000",
+      "stepclimb_string": "HKJK/0310",
+      "avg_temp_dev": "16",
+      "avg_tropopause": "56573",
+      "avg_wind_comp": "-15",
+      "avg_wind_dir": "091",
+      "avg_wind_spd": "019",
+      "gc_distance": "228",
+      "route_distance": "253",
+      "air_distance": "266",
+      "total_burn": "2246",
+      "cruise_tas": "462",
+      "cruise_mach": ".76",
+      "passengers": "184",
+      "route": "DCT UVOVA UQ135 NEREV DCT EGVOM DCT ETUSU DCT EPLEB DCT 040047S0393622E DCT",
+      "route_ifps": "DCT UVOVA UQ135 NEREV DCT EGVOM DCT ETUSU DCT EPLEB DCT 040047S0393622E DCT",
+      "route_navigraph": "DCT UVOVA UQ135 NEREV DCT EGVOM DCT ETUSU DCT EPLEB DCT 040047S0393622E DCT"
+    },
+    "origin": {
+      "icao_code": "HKJK",
+      "iata_code": "NBO",
+      "faa_code": "",
+      "icao_region": "HK",
+      "elevation": "5330",
+      "pos_lat": "-1.319242",
+      "pos_long": "36.927775",
+      "name": "JOMO KENYATTA INTL",
+      "timezone": "3",
+      "plan_rwy": "06",
+      "trans_alt": "09000",
+      "trans_level": "10000",
+      "metar": "HKJK 042200Z 34003KT 9999 BKN018 19/18 Q1021 NOSIG",
+      "metar_time": false,
+      "metar_category": false,
+      "metar_visibility": false,
+      "metar_ceiling": false,
+      "taf": "HKJK 050500Z 0506/0612 05003KT 9999 BKN018\nBECMG 0508/0511 08010KT BKN024\nPROB30 TEMPO 0513/0517 08010KT -SHRA FEW024CB SCT025 BKN080\nBECMG 0520/0523 24005KT NSW BKN018\nBECMG 0608/0611 08010KT BKN024",
+      "taf_time": "2024-04-05T05:00:00Z",
+      "atis": [],
+      "notam": [
+        {
+          "source_id": "I",
+          "account_id": "HKJKYNYX",
+          "notam_id": "A0066/24",
+          "location_id": "HKJK",
+          "location_icao": "HKJK",
+          "location_name": "JOMO KENYATTA INTL",
+          "location_type": "Airport",
+          "date_created": "2024-02-28T12:52:00Z",
+          "date_effective": "2024-02-28T12:40:00Z",
+          "date_expire": "2024-04-28T23:59:00Z",
+          "date_expire_is_estimated": true,
+          "date_modified": "2024-02-28T12:53:00Z",
+          "notam_schedule": "",
+          "notam_html": "LOOSE CHIPPINGS AT BAY J1 DUE TO A DEVELOPING POTHOLE. ALL ACFT\u003Cbr\u003EPARKING AT J1 TO SHUT DOWN ENGINES AND TOW. ALL ACFT PUSHING BACK\u003Cbr\u003EFROM J1 TO PUSH CLEAR OF THE POTHOLE BFR ENGINE START UP.",
+          "notam_text": "LOOSE CHIPPINGS AT BAY J1 DUE TO A DEVELOPING POTHOLE. ALL ACFT\nPARKING AT J1 TO SHUT DOWN ENGINES AND TOW. ALL ACFT PUSHING BACK\nFROM J1 TO PUSH CLEAR OF THE POTHOLE BFR ENGINE START UP.",
+          "notam_raw": "A0066/24 NOTAMR A0033/24\nQ) HKNA/QMKXX/IV/BO/A/000/999/0119S03656E005\nA) HKJK\nB) 2402281240 C) 2404282359 EST\nE) LOOSE CHIPPINGS AT BAY J1 DUE TO A DEVELOPING POTHOLE. ALL ACFT\nPARKING AT J1 TO SHUT DOWN ENGINES AND TOW. ALL ACFT PUSHING BACK\nFROM J1 TO PUSH CLEAR OF THE POTHOLE BFR ENGINE START UP.",
+          "notam_nrc": "NOTAMR",
+          "notam_qcode": "QMKXX",
+          "notam_qcode_category": "Airport",
+          "notam_qcode_subject": "Parking area",
+          "notam_qcode_status": "Other",
+          "notam_is_obstacle": false
+        }
+      ]
+    },
+    "destination": {
+      "icao_code": "HKMO",
+      "iata_code": "MBA",
+      "faa_code": "",
+      "icao_region": "HK",
+      "elevation": "200",
+      "pos_lat": "-4.026278",
+      "pos_long": "39.599064",
+      "name": "MOI INTL",
+      "timezone": "3",
+      "plan_rwy": "21",
+      "trans_alt": "02000",
+      "trans_level": "03000",
+      "metar": "HKMO 050830Z 19008KT 9999 SCT026 32/24 Q1012 NOSIG",
+      "metar_time": "2024-04-05T08:30:00Z",
+      "metar_category": "vfr",
+      "metar_visibility": "9650",
+      "metar_ceiling": "9999",
+      "taf": "HKMO 050500Z 0506/0612 18010KT 9999 SCT025\nBECMG 0518/0521 VRB03KT FEW022\nTEMPO 0602/0606 22005KT -SHRA FEW020CB BKN080\nBECMG 0609/0612 NSW SCT024",
+      "taf_time": "2024-04-05T05:00:00Z",
+      "atis": [],
+      "notam": []
+    },
+    "alternate": [
+      {
+        "icao_code": "HKJK",
+        "iata_code": "NBO",
+        "faa_code": "",
+        "icao_region": "HK",
+        "elevation": "5330",
+        "pos_lat": "-1.319242",
+        "pos_long": "36.927775",
+        "name": "JOMO KENYATTA INTL",
+        "timezone": "3",
+        "plan_rwy": "06",
+        "trans_alt": "09000",
+        "trans_level": "10000",
+        "cruise_altitude": "32000",
+        "distance": "265",
+        "gc_distance": "228",
+        "air_distance": "252",
+        "track_true": "315",
+        "track_mag": "315",
+        "tas": "420",
+        "gs": "436",
+        "avg_wind_comp": "P016",
+        "avg_wind_dir": "094",
+        "avg_wind_spd": "021",
+        "avg_tropopause": "56500",
+        "avg_tdv": "P16",
+        "ete": "00:47:29",
+        "burn": "2233",
+        "route": "GEVA1A UTIKU UQ315 UTEPI DCT APNOM DCT IMDIS DCT JOMOK DCT ANTUK DCT",
+        "route_ifps": "GEVAG1A UTIKU UQ315 UTEPI DCT APNOM DCT IMDIS DCT JOMOK DCT ANTUK DCT",
+        "metar": "HKJK 042200Z 34003KT 9999 BKN018 19/18 Q1021 NOSIG",
+        "metar_time": false,
+        "metar_category": false,
+        "metar_visibility": false,
+        "metar_ceiling": false,
+        "taf": "HKJK 050500Z 0506/0612 05003KT 9999 BKN018\nBECMG 0508/0511 08010KT BKN024\nPROB30 TEMPO 0513/0517 08010KT -SHRA FEW024CB SCT025 BKN080\nBECMG 0520/0523 24005KT NSW BKN018\nBECMG 0608/0611 08010KT BKN024",
+        "taf_time": "2024-04-05T05:00:00Z",
+        "atis": [],
+        "notam": [
+          {
+            "source_id": "I",
+            "account_id": "HKJKYNYX",
+            "notam_id": "A0066/24",
+            "location_id": "HKJK",
+            "location_icao": "HKJK",
+            "location_name": "JOMO KENYATTA INTL",
+            "location_type": "Airport",
+            "date_created": "2024-02-28T12:52:00Z",
+            "date_effective": "2024-02-28T12:40:00Z",
+            "date_expire": "2024-04-28T23:59:00Z",
+            "date_expire_is_estimated": true,
+            "date_modified": "2024-02-28T12:53:00Z",
+            "notam_schedule": "",
+            "notam_html": "LOOSE CHIPPINGS AT BAY J1 DUE TO A DEVELOPING POTHOLE. ALL ACFT\u003Cbr\u003EPARKING AT J1 TO SHUT DOWN ENGINES AND TOW. ALL ACFT PUSHING BACK\u003Cbr\u003EFROM J1 TO PUSH CLEAR OF THE POTHOLE BFR ENGINE START UP.",
+            "notam_text": "LOOSE CHIPPINGS AT BAY J1 DUE TO A DEVELOPING POTHOLE. ALL ACFT\nPARKING AT J1 TO SHUT DOWN ENGINES AND TOW. ALL ACFT PUSHING BACK\nFROM J1 TO PUSH CLEAR OF THE POTHOLE BFR ENGINE START UP.",
+            "notam_raw": "A0066/24 NOTAMR A0033/24\nQ) HKNA/QMKXX/IV/BO/A/000/999/0119S03656E005\nA) HKJK\nB) 2402281240 C) 2404282359 EST\nE) LOOSE CHIPPINGS AT BAY J1 DUE TO A DEVELOPING POTHOLE. ALL ACFT\nPARKING AT J1 TO SHUT DOWN ENGINES AND TOW. ALL ACFT PUSHING BACK\nFROM J1 TO PUSH CLEAR OF THE POTHOLE BFR ENGINE START UP.",
+            "notam_nrc": "NOTAMR",
+            "notam_qcode": "QMKXX",
+            "notam_qcode_category": "Airport",
+            "notam_qcode_subject": "Parking area",
+            "notam_qcode_status": "Other",
+            "notam_is_obstacle": false
+          }
+        ]
+      }
+    ],
+    "takeoff_altn": [],
+    "enroute_altn": [],
+    "navlog": [
+      {
+        "ident": "UVOVA",
+        "name": "UVOVA",
+        "type": "wpt",
+        "icao_region": "HK",
+        "frequency": "",
+        "pos_lat": "-1.773839",
+        "pos_long": "37.642133",
+        "stage": "CLB",
+        "via_airway": "DCT",
+        "is_sid_star": "0",
+        "distance": "57",
+        "track_true": "122",
+        "track_mag": "121",
+        "heading_true": "120",
+        "heading_mag": "119",
+        "altitude_feet": "27400",
+        "ind_airspeed": "280",
+        "true_airspeed": "452",
+        "mach": "0.73",
+        "mach_thousandths": "0.73",
+        "wind_component": "-19",
+        "groundspeed": "433",
+        "time_leg": "00:12:25",
+        "time_total": "00:12:25",
+        "fuel_flow": "7479",
+        "fuel_leg": "1189",
+        "fuel_totalused": "1189",
+        "fuel_min_onboard": "4395",
+        "fuel_plan_onboard": "5058",
+        "oat": "-23",
+        "oat_isa_dev": "17",
+        "wind_dir": "082",
+        "wind_spd": "25",
+        "shear": "0",
+        "tropopause_feet": "56200",
+        "ground_height": "2772",
+        "mora": "9500",
+        "fir": "HKNA",
+        "fir_units": "N,F",
+        "fir_valid_levels": "1000,3000,5000,7000,9000,11000,13000,15000,17000,19000,21000,23000,25000,27000,29000,31000,33000,35000,37000,39000,41000,45000,49000,53000,57000,61000,65000,69000",
+        "wind_data": [
+          {
+            "altitude": "0",
+            "wind_dir": "82",
+            "wind_spd": "4",
+            "oat": "31"
+          },
+          {
+            "altitude": "5000",
+            "wind_dir": "90",
+            "wind_spd": "6",
+            "oat": "20"
+          },
+          {
+            "altitude": "10000",
+            "wind_dir": "84",
+            "wind_spd": "9",
+            "oat": "11"
+          },
+          {
+            "altitude": "14000",
+            "wind_dir": "85",
+            "wind_spd": "14",
+            "oat": "4"
+          },
+          {
+            "altitude": "18000",
+            "wind_dir": "79",
+            "wind_spd": "19",
+            "oat": "-3"
+          },
+          {
+            "altitude": "24000",
+            "wind_dir": "74",
+            "wind_spd": "28",
+            "oat": "-15"
+          },
+          {
+            "altitude": "30000",
+            "wind_dir": "96",
+            "wind_spd": "24",
+            "oat": "-29"
+          },
+          {
+            "altitude": "34000",
+            "wind_dir": "106",
+            "wind_spd": "30",
+            "oat": "-39"
+          },
+          {
+            "altitude": "39000",
+            "wind_dir": "119",
+            "wind_spd": "27",
+            "oat": "-53"
+          },
+          {
+            "altitude": "45000",
+            "wind_dir": "318",
+            "wind_spd": "20",
+            "oat": "-67"
+          }
+        ],
+        "fir_crossing": []
+      },
+      {
+        "ident": "TOC",
+        "name": "TOP OF CLIMB",
+        "type": "ltlg",
+        "icao_region": "",
+        "frequency": "",
+        "pos_lat": "-2.033363",
+        "pos_long": "37.900946",
+        "stage": "CLB",
+        "via_airway": "UQ135",
+        "is_sid_star": "0",
+        "distance": "22",
+        "track_true": "135",
+        "track_mag": "135",
+        "heading_true": "133",
+        "heading_mag": "133",
+        "altitude_feet": "31000",
+        "ind_airspeed": "289",
+        "true_airspeed": "472",
+        "mach": "0.78",
+        "mach_thousandths": "0.78",
+        "wind_component": "-20",
+        "groundspeed": "452",
+        "time_leg": "00:04:13",
+        "time_total": "00:15:30",
+        "fuel_flow": "7084",
+        "fuel_leg": "415",
+        "fuel_totalused": "1381",
+        "fuel_min_onboard": "4203",
+        "fuel_plan_onboard": "4866",
+        "oat": "-32",
+        "oat_isa_dev": "15",
+        "wind_dir": "099",
+        "wind_spd": "25",
+        "shear": "2",
+        "tropopause_feet": "56300",
+        "ground_height": "2772",
+        "mora": "6300",
+        "fir": "HKNA",
+        "fir_units": "N,F",
+        "fir_valid_levels": "1000,3000,5000,7000,9000,11000,13000,15000,17000,19000,21000,23000,25000,27000,29000,31000,33000,35000,37000,39000,41000,45000,49000,53000,57000,61000,65000,69000",
+        "wind_data": [
+          {
+            "altitude": "0",
+            "wind_dir": "82",
+            "wind_spd": "4",
+            "oat": "31"
+          },
+          {
+            "altitude": "5000",
+            "wind_dir": "90",
+            "wind_spd": "6",
+            "oat": "20"
+          },
+          {
+            "altitude": "10000",
+            "wind_dir": "83",
+            "wind_spd": "9",
+            "oat": "11"
+          },
+          {
+            "altitude": "14000",
+            "wind_dir": "85",
+            "wind_spd": "14",
+            "oat": "4"
+          },
+          {
+            "altitude": "18000",
+            "wind_dir": "79",
+            "wind_spd": "19",
+            "oat": "-3"
+          },
+          {
+            "altitude": "24000",
+            "wind_dir": "74",
+            "wind_spd": "28",
+            "oat": "-15"
+          },
+          {
+            "altitude": "30000",
+            "wind_dir": "96",
+            "wind_spd": "24",
+            "oat": "-29"
+          },
+          {
+            "altitude": "34000",
+            "wind_dir": "106",
+            "wind_spd": "30",
+            "oat": "-39"
+          },
+          {
+            "altitude": "39000",
+            "wind_dir": "119",
+            "wind_spd": "27",
+            "oat": "-53"
+          },
+          {
+            "altitude": "45000",
+            "wind_dir": "318",
+            "wind_spd": "20",
+            "oat": "-67"
+          }
+        ],
+        "fir_crossing": []
+      },
+      {
+        "ident": "TOD",
+        "name": "TOP OF DESCENT",
+        "type": "ltlg",
+        "icao_region": "",
+        "frequency": "",
+        "pos_lat": "-2.870609",
+        "pos_long": "38.736827",
+        "stage": "CRZ",
+        "via_airway": "UQ135",
+        "is_sid_star": "0",
+        "distance": "71",
+        "track_true": "135",
+        "track_mag": "135",
+        "heading_true": "133",
+        "heading_mag": "133",
+        "altitude_feet": "31000",
+        "ind_airspeed": "282",
+        "true_airspeed": "462",
+        "mach": "0.76",
+        "mach_thousandths": "0.763",
+        "wind_component": "-22",
+        "groundspeed": "440",
+        "time_leg": "00:09:41",
+        "time_total": "00:25:11",
+        "fuel_flow": "2641",
+        "fuel_leg": "426",
+        "fuel_totalused": "1807",
+        "fuel_min_onboard": "3777",
+        "fuel_plan_onboard": "4440",
+        "oat": "-32",
+        "oat_isa_dev": "15",
+        "wind_dir": "100",
+        "wind_spd": "26",
+        "shear": "1",
+        "tropopause_feet": "56700",
+        "ground_height": "894",
+        "mora": "5600",
+        "fir": "HKNA",
+        "fir_units": "N,F",
+        "fir_valid_levels": "1000,3000,5000,7000,9000,11000,13000,15000,17000,19000,21000,23000,25000,27000,29000,31000,33000,35000,37000,39000,41000,45000,49000,53000,57000,61000,65000,69000",
+        "wind_data": [
+          {
+            "altitude": "0",
+            "wind_dir": "155",
+            "wind_spd": "7",
+            "oat": "31"
+          },
+          {
+            "altitude": "5000",
+            "wind_dir": "159",
+            "wind_spd": "5",
+            "oat": "20"
+          },
+          {
+            "altitude": "10000",
+            "wind_dir": "95",
+            "wind_spd": "8",
+            "oat": "11"
+          },
+          {
+            "altitude": "14000",
+            "wind_dir": "89",
+            "wind_spd": "15",
+            "oat": "4"
+          },
+          {
+            "altitude": "18000",
+            "wind_dir": "74",
+            "wind_spd": "18",
+            "oat": "-3"
+          },
+          {
+            "altitude": "24000",
+            "wind_dir": "71",
+            "wind_spd": "21",
+            "oat": "-15"
+          },
+          {
+            "altitude": "30000",
+            "wind_dir": "99",
+            "wind_spd": "25",
+            "oat": "-29"
+          },
+          {
+            "altitude": "34000",
+            "wind_dir": "103",
+            "wind_spd": "28",
+            "oat": "-39"
+          },
+          {
+            "altitude": "39000",
+            "wind_dir": "118",
+            "wind_spd": "27",
+            "oat": "-52"
+          },
+          {
+            "altitude": "45000",
+            "wind_dir": "302",
+            "wind_spd": "11",
+            "oat": "-67"
+          }
+        ],
+        "fir_crossing": []
+      },
+      {
+        "ident": "NEREV",
+        "name": "NEREV",
+        "type": "wpt",
+        "icao_region": "HK",
+        "frequency": "",
+        "pos_lat": "-3.244928",
+        "pos_long": "39.111097",
+        "stage": "DSC",
+        "via_airway": "UQ135",
+        "is_sid_star": "0",
+        "distance": "32",
+        "track_true": "135",
+        "track_mag": "135",
+        "heading_true": "132",
+        "heading_mag": "132",
+        "altitude_feet": "20700",
+        "ind_airspeed": "280",
+        "true_airspeed": "402",
+        "mach": "0.63",
+        "mach_thousandths": "0.63",
+        "wind_component": "-10",
+        "groundspeed": "392",
+        "time_leg": "00:07:00",
+        "time_total": "00:32:11",
+        "fuel_flow": "1658",
+        "fuel_leg": "95",
+        "fuel_totalused": "1902",
+        "fuel_min_onboard": "3682",
+        "fuel_plan_onboard": "4345",
+        "oat": "-8",
+        "oat_isa_dev": "18",
+        "wind_dir": "070",
+        "wind_spd": "22",
+        "shear": "0",
+        "tropopause_feet": "56700",
+        "ground_height": "894",
+        "mora": "3600",
+        "fir": "HKNA",
+        "fir_units": "N,F",
+        "fir_valid_levels": "1000,3000,5000,7000,9000,11000,13000,15000,17000,19000,21000,23000,25000,27000,29000,31000,33000,35000,37000,39000,41000,45000,49000,53000,57000,61000,65000,69000",
+        "wind_data": [
+          {
+            "altitude": "0",
+            "wind_dir": "154",
+            "wind_spd": "7",
+            "oat": "32"
+          },
+          {
+            "altitude": "5000",
+            "wind_dir": "159",
+            "wind_spd": "5",
+            "oat": "20"
+          },
+          {
+            "altitude": "10000",
+            "wind_dir": "95",
+            "wind_spd": "8",
+            "oat": "11"
+          },
+          {
+            "altitude": "14000",
+            "wind_dir": "89",
+            "wind_spd": "15",
+            "oat": "4"
+          },
+          {
+            "altitude": "18000",
+            "wind_dir": "74",
+            "wind_spd": "18",
+            "oat": "-3"
+          },
+          {
+            "altitude": "24000",
+            "wind_dir": "71",
+            "wind_spd": "21",
+            "oat": "-15"
+          },
+          {
+            "altitude": "30000",
+            "wind_dir": "99",
+            "wind_spd": "25",
+            "oat": "-29"
+          },
+          {
+            "altitude": "34000",
+            "wind_dir": "103",
+            "wind_spd": "28",
+            "oat": "-39"
+          },
+          {
+            "altitude": "39000",
+            "wind_dir": "118",
+            "wind_spd": "27",
+            "oat": "-52"
+          },
+          {
+            "altitude": "45000",
+            "wind_dir": "301",
+            "wind_spd": "11",
+            "oat": "-67"
+          }
+        ],
+        "fir_crossing": []
+      },
+      {
+        "ident": "EGVOM",
+        "name": "EGVOM",
+        "type": "wpt",
+        "icao_region": "HK",
+        "frequency": "",
+        "pos_lat": "-3.778892",
+        "pos_long": "39.622922",
+        "stage": "DSC",
+        "via_airway": "DCT",
+        "is_sid_star": "0",
+        "distance": "44",
+        "track_true": "136",
+        "track_mag": "137",
+        "heading_true": "135",
+        "heading_mag": "136",
+        "altitude_feet": "6500",
+        "ind_airspeed": "250",
+        "true_airspeed": "283",
+        "mach": "0.42",
+        "mach_thousandths": "0.42",
+        "wind_component": "-3",
+        "groundspeed": "280",
+        "time_leg": "00:09:38",
+        "time_total": "00:41:48",
+        "fuel_flow": "1674",
+        "fuel_leg": "131",
+        "fuel_totalused": "2033",
+        "fuel_min_onboard": "3551",
+        "fuel_plan_onboard": "4214",
+        "oat": "17",
+        "oat_isa_dev": "15",
+        "wind_dir": "090",
+        "wind_spd": "04",
+        "shear": "0",
+        "tropopause_feet": "56800",
+        "ground_height": "0",
+        "mora": "3500",
+        "fir": "HKNA",
+        "fir_units": "N,F",
+        "fir_valid_levels": "1000,3000,5000,7000,9000,11000,13000,15000,17000,19000,21000,23000,25000,27000,29000,31000,33000,35000,37000,39000,41000,45000,49000,53000,57000,61000,65000,69000",
+        "wind_data": [
+          {
+            "altitude": "0",
+            "wind_dir": "201",
+            "wind_spd": "15",
+            "oat": "28"
+          },
+          {
+            "altitude": "5000",
+            "wind_dir": "145",
+            "wind_spd": "4",
+            "oat": "19"
+          },
+          {
+            "altitude": "10000",
+            "wind_dir": "84",
+            "wind_spd": "9",
+            "oat": "11"
+          },
+          {
+            "altitude": "14000",
+            "wind_dir": "96",
+            "wind_spd": "16",
+            "oat": "4"
+          },
+          {
+            "altitude": "18000",
+            "wind_dir": "76",
+            "wind_spd": "18",
+            "oat": "-3"
+          },
+          {
+            "altitude": "24000",
+            "wind_dir": "73",
+            "wind_spd": "18",
+            "oat": "-15"
+          },
+          {
+            "altitude": "30000",
+            "wind_dir": "105",
+            "wind_spd": "28",
+            "oat": "-29"
+          },
+          {
+            "altitude": "34000",
+            "wind_dir": "102",
+            "wind_spd": "27",
+            "oat": "-39"
+          },
+          {
+            "altitude": "39000",
+            "wind_dir": "130",
+            "wind_spd": "26",
+            "oat": "-52"
+          },
+          {
+            "altitude": "45000",
+            "wind_dir": "16",
+            "wind_spd": "3",
+            "oat": "-67"
+          }
+        ],
+        "fir_crossing": []
+      },
+      {
+        "ident": "ETUSU",
+        "name": "ETUSU",
+        "type": "wpt",
+        "icao_region": "HK",
+        "frequency": "",
+        "pos_lat": "-3.828078",
+        "pos_long": "39.709964",
+        "stage": "DSC",
+        "via_airway": "DCT",
+        "is_sid_star": "0",
+        "distance": "6",
+        "track_true": "119",
+        "track_mag": "121",
+        "heading_true": "120",
+        "heading_mag": "121",
+        "altitude_feet": "4500",
+        "ind_airspeed": "250",
+        "true_airspeed": "274",
+        "mach": "0.41",
+        "mach_thousandths": "0.41",
+        "wind_component": "-3",
+        "groundspeed": "271",
+        "time_leg": "00:01:19",
+        "time_total": "00:43:07",
+        "fuel_flow": "1670",
+        "fuel_leg": "18",
+        "fuel_totalused": "2051",
+        "fuel_min_onboard": "3533",
+        "fuel_plan_onboard": "4196",
+        "oat": "20",
+        "oat_isa_dev": "14",
+        "wind_dir": "166",
+        "wind_spd": "05",
+        "shear": "0",
+        "tropopause_feet": "56800",
+        "ground_height": "0",
+        "mora": "3200",
+        "fir": "HKNA",
+        "fir_units": "N,F",
+        "fir_valid_levels": "1000,3000,5000,7000,9000,11000,13000,15000,17000,19000,21000,23000,25000,27000,29000,31000,33000,35000,37000,39000,41000,45000,49000,53000,57000,61000,65000,69000",
+        "wind_data": [
+          {
+            "altitude": "0",
+            "wind_dir": "201",
+            "wind_spd": "15",
+            "oat": "28"
+          },
+          {
+            "altitude": "5000",
+            "wind_dir": "145",
+            "wind_spd": "4",
+            "oat": "19"
+          },
+          {
+            "altitude": "10000",
+            "wind_dir": "84",
+            "wind_spd": "9",
+            "oat": "11"
+          },
+          {
+            "altitude": "14000",
+            "wind_dir": "96",
+            "wind_spd": "16",
+            "oat": "4"
+          },
+          {
+            "altitude": "18000",
+            "wind_dir": "76",
+            "wind_spd": "18",
+            "oat": "-3"
+          },
+          {
+            "altitude": "24000",
+            "wind_dir": "73",
+            "wind_spd": "18",
+            "oat": "-15"
+          },
+          {
+            "altitude": "30000",
+            "wind_dir": "105",
+            "wind_spd": "28",
+            "oat": "-29"
+          },
+          {
+            "altitude": "34000",
+            "wind_dir": "102",
+            "wind_spd": "27",
+            "oat": "-39"
+          },
+          {
+            "altitude": "39000",
+            "wind_dir": "130",
+            "wind_spd": "26",
+            "oat": "-52"
+          },
+          {
+            "altitude": "45000",
+            "wind_dir": "16",
+            "wind_spd": "3",
+            "oat": "-67"
+          }
+        ],
+        "fir_crossing": []
+      },
+      {
+        "ident": "EPLEB",
+        "name": "EPLEB",
+        "type": "wpt",
+        "icao_region": "HK",
+        "frequency": "",
+        "pos_lat": "-3.915611",
+        "pos_long": "39.660978",
+        "stage": "DSC",
+        "via_airway": "DCT",
+        "is_sid_star": "0",
+        "distance": "6",
+        "track_true": "209",
+        "track_mag": "210",
+        "heading_true": "208",
+        "heading_mag": "209",
+        "altitude_feet": "2700",
+        "ind_airspeed": "250",
+        "true_airspeed": "266",
+        "mach": "0.39",
+        "mach_thousandths": "0.39",
+        "wind_component": "-11",
+        "groundspeed": "255",
+        "time_leg": "00:01:19",
+        "time_total": "00:44:26",
+        "fuel_flow": "1662",
+        "fuel_leg": "18",
+        "fuel_totalused": "2069",
+        "fuel_min_onboard": "3515",
+        "fuel_plan_onboard": "4178",
+        "oat": "22",
+        "oat_isa_dev": "12",
+        "wind_dir": "192",
+        "wind_spd": "11",
+        "shear": "0",
+        "tropopause_feet": "56800",
+        "ground_height": "0",
+        "mora": "3000",
+        "fir": "HKNA",
+        "fir_units": "N,F",
+        "fir_valid_levels": "2000,4000,6000,8000,10000,12000,14000,16000,18000,20000,22000,24000,26000,28000,30000,32000,34000,36000,38000,40000,43000,47000,51000,55000,59000,63000,67000",
+        "wind_data": [
+          {
+            "altitude": "0",
+            "wind_dir": "201",
+            "wind_spd": "15",
+            "oat": "28"
+          },
+          {
+            "altitude": "5000",
+            "wind_dir": "145",
+            "wind_spd": "4",
+            "oat": "19"
+          },
+          {
+            "altitude": "10000",
+            "wind_dir": "84",
+            "wind_spd": "9",
+            "oat": "11"
+          },
+          {
+            "altitude": "14000",
+            "wind_dir": "96",
+            "wind_spd": "16",
+            "oat": "4"
+          },
+          {
+            "altitude": "18000",
+            "wind_dir": "76",
+            "wind_spd": "18",
+            "oat": "-3"
+          },
+          {
+            "altitude": "24000",
+            "wind_dir": "73",
+            "wind_spd": "18",
+            "oat": "-15"
+          },
+          {
+            "altitude": "30000",
+            "wind_dir": "105",
+            "wind_spd": "28",
+            "oat": "-29"
+          },
+          {
+            "altitude": "34000",
+            "wind_dir": "102",
+            "wind_spd": "27",
+            "oat": "-39"
+          },
+          {
+            "altitude": "39000",
+            "wind_dir": "130",
+            "wind_spd": "26",
+            "oat": "-52"
+          },
+          {
+            "altitude": "45000",
+            "wind_dir": "16",
+            "wind_spd": "3",
+            "oat": "-67"
+          }
+        ],
+        "fir_crossing": []
+      },
+      {
+        "ident": "0400S03936E",
+        "name": "040047S0393622E",
+        "type": "ltlg",
+        "icao_region": "",
+        "frequency": "",
+        "pos_lat": "-4.013056",
+        "pos_long": "39.606111",
+        "stage": "DSC",
+        "via_airway": "DCT",
+        "is_sid_star": "0",
+        "distance": "7",
+        "track_true": "209",
+        "track_mag": "210",
+        "heading_true": "208",
+        "heading_mag": "209",
+        "altitude_feet": "2700",
+        "ind_airspeed": "250",
+        "true_airspeed": "266",
+        "mach": "0.39",
+        "mach_thousandths": "0.39",
+        "wind_component": "-11",
+        "groundspeed": "255",
+        "time_leg": "00:01:32",
+        "time_total": "00:45:58",
+        "fuel_flow": "1662",
+        "fuel_leg": "21",
+        "fuel_totalused": "2090",
+        "fuel_min_onboard": "3494",
+        "fuel_plan_onboard": "4157",
+        "oat": "22",
+        "oat_isa_dev": "12",
+        "wind_dir": "192",
+        "wind_spd": "11",
+        "shear": "0",
+        "tropopause_feet": "56800",
+        "ground_height": "0",
+        "mora": "3000",
+        "fir": "HKNA",
+        "fir_units": "N,F",
+        "fir_valid_levels": "2000,4000,6000,8000,10000,12000,14000,16000,18000,20000,22000,24000,26000,28000,30000,32000,34000,36000,38000,40000,43000,47000,51000,55000,59000,63000,67000",
+        "wind_data": [
+          {
+            "altitude": "0",
+            "wind_dir": "201",
+            "wind_spd": "15",
+            "oat": "28"
+          },
+          {
+            "altitude": "5000",
+            "wind_dir": "145",
+            "wind_spd": "4",
+            "oat": "19"
+          },
+          {
+            "altitude": "10000",
+            "wind_dir": "84",
+            "wind_spd": "9",
+            "oat": "11"
+          },
+          {
+            "altitude": "14000",
+            "wind_dir": "96",
+            "wind_spd": "16",
+            "oat": "4"
+          },
+          {
+            "altitude": "18000",
+            "wind_dir": "76",
+            "wind_spd": "18",
+            "oat": "-3"
+          },
+          {
+            "altitude": "24000",
+            "wind_dir": "73",
+            "wind_spd": "18",
+            "oat": "-15"
+          },
+          {
+            "altitude": "30000",
+            "wind_dir": "105",
+            "wind_spd": "28",
+            "oat": "-29"
+          },
+          {
+            "altitude": "34000",
+            "wind_dir": "102",
+            "wind_spd": "27",
+            "oat": "-39"
+          },
+          {
+            "altitude": "39000",
+            "wind_dir": "130",
+            "wind_spd": "26",
+            "oat": "-52"
+          },
+          {
+            "altitude": "45000",
+            "wind_dir": "15",
+            "wind_spd": "3",
+            "oat": "-67"
+          }
+        ],
+        "fir_crossing": []
+      },
+      {
+        "ident": "HKMO",
+        "name": "MOI INTL",
+        "type": "apt",
+        "icao_region": "HK",
+        "frequency": "",
+        "pos_lat": "-4.026278",
+        "pos_long": "39.599064",
+        "stage": "DSC",
+        "via_airway": "040047S0393622E",
+        "is_sid_star": "1",
+        "distance": "8",
+        "track_true": "207",
+        "track_mag": "209",
+        "heading_true": "206",
+        "heading_mag": "207",
+        "altitude_feet": "2700",
+        "ind_airspeed": "250",
+        "true_airspeed": "266",
+        "mach": "0.39",
+        "mach_thousandths": "0.39",
+        "wind_component": "-11",
+        "groundspeed": "255",
+        "time_leg": "00:04:52",
+        "time_total": "00:50:50",
+        "fuel_flow": "1660",
+        "fuel_leg": "156",
+        "fuel_totalused": "2246",
+        "fuel_min_onboard": "3338",
+        "fuel_plan_onboard": "4001",
+        "oat": "22",
+        "oat_isa_dev": "12",
+        "wind_dir": "192",
+        "wind_spd": "11",
+        "shear": "1",
+        "tropopause_feet": "56800",
+        "ground_height": "0",
+        "mora": "2700",
+        "fir": "HKNA",
+        "fir_units": "N,F",
+        "fir_valid_levels": "2000,4000,6000,8000,10000,12000,14000,16000,18000,20000,22000,24000,26000,28000,30000,32000,34000,36000,38000,40000,43000,47000,51000,55000,59000,63000,67000",
+        "wind_data": [
+          {
+            "altitude": "0",
+            "wind_dir": "201",
+            "wind_spd": "15",
+            "oat": "28"
+          },
+          {
+            "altitude": "5000",
+            "wind_dir": "145",
+            "wind_spd": "4",
+            "oat": "19"
+          },
+          {
+            "altitude": "10000",
+            "wind_dir": "83",
+            "wind_spd": "9",
+            "oat": "11"
+          },
+          {
+            "altitude": "14000",
+            "wind_dir": "96",
+            "wind_spd": "16",
+            "oat": "4"
+          },
+          {
+            "altitude": "18000",
+            "wind_dir": "76",
+            "wind_spd": "18",
+            "oat": "-3"
+          },
+          {
+            "altitude": "24000",
+            "wind_dir": "73",
+            "wind_spd": "18",
+            "oat": "-15"
+          },
+          {
+            "altitude": "30000",
+            "wind_dir": "105",
+            "wind_spd": "28",
+            "oat": "-29"
+          },
+          {
+            "altitude": "34000",
+            "wind_dir": "102",
+            "wind_spd": "27",
+            "oat": "-39"
+          },
+          {
+            "altitude": "39000",
+            "wind_dir": "130",
+            "wind_spd": "26",
+            "oat": "-52"
+          },
+          {
+            "altitude": "45000",
+            "wind_dir": "14",
+            "wind_spd": "3",
+            "oat": "-67"
+          }
+        ],
+        "fir_crossing": []
+      }
+    ],
+    "etops": [],
+    "atc": {
+      "flightplan_text": "(FPL-KQA631-IS\n-B738/M-SDE2E3FGHIRWXY/LB1\n-HKJK0900\n-N0462F310 DCT UVOVA UQ135 NEREV DCT EGVOM DCT ETUSU DCT EPLEB DCT\n 040047S0393622E DCT\n-HKMO0050 HKJK\n-PBN/A1B1C1D1S1S2 DOF/240405 REG/N806SB OPR/KQA PER/C RMK/TCAS)",
+      "route": "N0462F310 DCT UVOVA UQ135 NEREV DCT EGVOM DCT ETUSU DCT EPLEB DCT 040047S0393622E DCT",
+      "route_ifps": "N0462F310 DCT UVOVA UQ135 NEREV DCT EGVOM DCT ETUSU DCT EPLEB DCT 040047S0393622E DCT",
+      "callsign": "KQA631",
+      "initial_spd": "0462",
+      "initial_spd_unit": "N",
+      "initial_alt": "310",
+      "initial_alt_unit": "F",
+      "section18": "PBN/A1B1C1D1S1S2 DOF/240405 REG/N806SB OPR/KQA PER/C RMK/TCAS",
+      "fir_orig": "HKNA",
+      "fir_dest": "HKNA",
+      "fir_altn": [
+        "HKNA"
+      ],
+      "fir_etops": [],
+      "fir_enroute": []
+    },
+    "aircraft": {
+      "icaocode": "B738",
+      "iatacode": "738",
+      "base_type": "B738",
+      "icao_code": "B738",
+      "iata_code": "738",
+      "name": "B737-800",
+      "reg": "N806SB",
+      "fin": "806",
+      "selcal": "",
+      "equip": "M-SDE2E3FGHIRWXY/LB1",
+      "fuelfact": "1",
+      "fuelfactor": "1",
+      "max_passengers": "184",
+      "internal_id": "B738",
+      "is_custom": "0"
+    },
+    "fuel": {
+      "taxi": "227",
+      "enroute_burn": "2246",
+      "contingency": "663",
+      "alternate_burn": "2233",
+      "reserve": "1105",
+      "etops": "0",
+      "extra": "0",
+      "extra_required": "0",
+      "extra_optional": "0",
+      "min_takeoff": "6247",
+      "plan_takeoff": "6247",
+      "plan_ramp": "6474",
+      "plan_landing": "4001",
+      "avg_fuel_flow": "2651",
+      "max_tanks": "20911"
+    },
+    "fuel_extra": {
+      "bucket": [
+        {
+          "label": "MEL",
+          "fuel": "0",
+          "time": "0",
+          "required": true
+        },
+        {
+          "label": "ATC",
+          "fuel": "0",
+          "time": "0",
+          "required": false
+        },
+        {
+          "label": "WXX",
+          "fuel": "0",
+          "time": "0",
+          "required": false
+        },
+        {
+          "label": "EXTRA",
+          "fuel": "0",
+          "time": "0",
+          "required": false
+        },
+        {
+          "label": "TANKERING",
+          "fuel": "0",
+          "time": "0",
+          "required": false
+        },
+        {
+          "label": "FOB ADD",
+          "fuel": "0",
+          "time": "0",
+          "required": false
+        },
+        {
+          "label": "FOD ADD",
+          "fuel": "0",
+          "time": "0",
+          "required": false
+        }
+      ]
+    },
+    "times": {
+      "est_time_enroute": "00:50:50",
+      "sched_time_enroute": "00:52:00",
+      "sched_out": "2024-04-05T09:00:00Z",
+      "sched_off": "2024-04-05T09:20:00Z",
+      "sched_on": "2024-04-05T10:12:00Z",
+      "sched_in": "2024-04-05T10:20:00Z",
+      "sched_block": "01:20:00",
+      "est_out": "2024-04-05T09:00:00Z",
+      "est_off": "2024-04-05T09:20:00Z",
+      "est_on": "2024-04-05T10:10:50Z",
+      "est_in": "2024-04-05T10:18:50Z",
+      "est_block": "01:18:50",
+      "orig_timezone": "+03:00:00",
+      "dest_timezone": "+03:00:00",
+      "taxi_out": "00:20:00",
+      "taxi_in": "00:08:00",
+      "reserve_time": "00:30:00",
+      "endurance": "02:23:19",
+      "contfuel_time": "00:15:00",
+      "etopsfuel_time": "00:00:00",
+      "extrafuel_time": "00:00:00"
+    },
+    "weights": {
+      "oew": "41682",
+      "pax_count": "184",
+      "bag_count": "184",
+      "pax_count_actual": "184",
+      "bag_count_actual": "183",
+      "pax_weight": "79.379",
+      "bag_weight": "24.948",
+      "freight_added": "-0",
+      "cargo": "4590",
+      "payload": "19196",
+      "est_zfw": "60878",
+      "max_zfw": "62732",
+      "est_tow": "67125",
+      "max_tow": "68607",
+      "max_tow_struct": "79016",
+      "tow_limit_code": "L",
+      "est_ldw": "64879",
+      "max_ldw": "66361",
+      "est_ramp": "67352"
+    },
+    "impacts": {
+      "minus_6000ft": {
+        "time_enroute": "00:51:21",
+        "time_difference": "+00:00:31",
+        "enroute_burn": "2310",
+        "burn_difference": "+64",
+        "ramp_fuel": "6550",
+        "initial_fl": "250",
+        "initial_tas": "419",
+        "initial_mach": "0.67",
+        "cost_index": "23"
+      },
+      "minus_4000ft": {
+        "time_enroute": "00:50:39",
+        "time_difference": "-00:00:10",
+        "enroute_burn": "2289",
+        "burn_difference": "+43",
+        "ramp_fuel": "6532",
+        "initial_fl": "270",
+        "initial_tas": "432",
+        "initial_mach": "0.70",
+        "cost_index": "23"
+      },
+      "minus_2000ft": {
+        "time_enroute": "00:50:40",
+        "time_difference": "-00:00:10",
+        "enroute_burn": "2260",
+        "burn_difference": "+14",
+        "ramp_fuel": "6494",
+        "initial_fl": "290",
+        "initial_tas": "454",
+        "initial_mach": "0.74",
+        "cost_index": "23"
+      },
+      "plus_2000ft": [],
+      "plus_4000ft": [],
+      "plus_6000ft": [],
+      "higher_ci": {
+        "time_enroute": "00:50:19",
+        "time_difference": "-00:00:31",
+        "enroute_burn": "2272",
+        "burn_difference": "+26",
+        "ramp_fuel": "6514",
+        "initial_fl": "310",
+        "initial_tas": "487",
+        "initial_mach": "0.80",
+        "cost_index": "100"
+      },
+      "lower_ci": {
+        "time_enroute": "00:51:34",
+        "time_difference": "+00:00:44",
+        "enroute_burn": "2205",
+        "burn_difference": "-41",
+        "ramp_fuel": "6411",
+        "initial_fl": "310",
+        "initial_tas": "431",
+        "initial_mach": "0.71",
+        "cost_index": "0"
+      },
+      "zfw_plus_1000": {
+        "time_enroute": "00:50:32",
+        "time_difference": "-00:00:18",
+        "enroute_burn": "2274",
+        "burn_difference": "+28",
+        "ramp_fuel": "6514",
+        "initial_fl": "310",
+        "initial_tas": "463",
+        "initial_mach": "0.76",
+        "cost_index": "23"
+      },
+      "zfw_minus_1000": {
+        "time_enroute": "00:50:08",
+        "time_difference": "-00:00:42",
+        "enroute_burn": "2221",
+        "burn_difference": "-25",
+        "ramp_fuel": "6451",
+        "initial_fl": "310",
+        "initial_tas": "461",
+        "initial_mach": "0.76",
+        "cost_index": "23"
+      }
+    },
+    "crew": {
+      "pilot_id": "519024",
+      "cpt": "Aiden Omondi",
+      "fo": "IRENE NIXON",
+      "dx": "NICOLAS SNYDER",
+      "pu": "SHANNON WADE",
+      "fa": [
+        "BLANCA CARDENAS",
+        "TOMAS ODONNELL",
+        "SHELLY WILLIAMSON",
+        "CONSTANCE CHANG"
+      ]
+    },
+    "notams": [
+      {
+        "source_id": "M",
+        "account_id": "ETOQ",
+        "notam_id": "V0139/24",
+        "notam_part": "1",
+        "cns_location_id": "HKJK",
+        "icao_id": "HKJK",
+        "icao_name": "NAIROBI JOMO KENYATTA INTL",
+        "total_parts": "1",
+        "notam_created_dtg": "202403181157",
+        "notam_effective_dtg": "202403181157",
+        "notam_expire_dtg": "202407110001",
+        "notam_lastmod_dtg": "202403181157",
+        "notam_inserted_dtg": "202404050604",
+        "notam_text": "V0139/24 NOTAMN \nQ) HKNA/QPICH/I/BO/A/000/999/0118S03655E005 \nA) HKJK \nB) 2403181157 \nC) 2407110001 \nE) [US DOD PROCEDURAL NOTAM] INSTRUMENT APPROACH PROCEDURE AMENDMENT DVOR DME RWY 24 S-24 CAT AB VISIBILITY MINS DECREASED FROM 2100 TO 1500 WITH NOTE CHANGE FROM \"*WHEN ALS INOP, INCREASE CAT AB VIS TO 2300M, CAT C VIS TO 3600M, CAT D VIS TO 4000M.\" TO \"* WHEN CDFA NOT FLOWN INCREASE CAT AB VIS TO 2100M. WHEN ALS INOP, INCREASE CAT C VIS TO 3600, CAT D VIS TO 4000M.Â",
+        "notam_report": "[US DOD PROCEDURAL NOTAM] INSTRUMENT APPROACH PROCEDURE AMENDMENT DVOR DME RWY 24 S-24 CAT AB VISIBILITY MINS DECREASED FROM 2100 TO 1500 WITH NOTE CHANGE FROM \"*WHEN ALS INOP, INCREASE CAT AB VIS TO 2300M, CAT C VIS TO 3600M, CAT D VIS TO 4000M.\" TO \"* WHEN CDFA NOT FLOWN INCREASE CAT AB VIS TO 2100M. WHEN ALS INOP, INCREASE CAT C VIS TO 3600, CAT D VIS TO 4000M.Â. 18 MAR 11:57 2024 UNTIL 11 JUL 00:01 2024. CREATED: 18 MAR 11:57 2024",
+        "notam_nrc": "NOTAMN",
+        "notam_qcode": "QPICH"
+      },
+      {
+        "source_id": "M",
+        "account_id": "ETOQ",
+        "notam_id": "V0138/24",
+        "notam_part": "1",
+        "cns_location_id": "HKJK",
+        "icao_id": "HKJK",
+        "icao_name": "NAIROBI JOMO KENYATTA INTL",
+        "total_parts": "1",
+        "notam_created_dtg": "202403181154",
+        "notam_effective_dtg": "202403181154",
+        "notam_expire_dtg": "202407110001",
+        "notam_lastmod_dtg": "202403181154",
+        "notam_inserted_dtg": "202404050604",
+        "notam_text": "V0138/24 NOTAMN \nQ) HKNA/QPICH/I/BO/A/000/999/0118S03655E005 \nA) HKJK \nB) 2403181154 \nC) 2407110001 \nE) [US DOD PROCEDURAL NOTAM] INSTRUMENT APPROACH PROCEDURE AMENDMENT DVOR DME RWY 06 S-06 NOTE CHANGED FROM \"*WHEN ALS INOP, INCREASE VIS TO 2300M.\" TO \"*WHEN ALS INOP, INCREASE CAT CD VIS TO 2300M.\" PROCEDURE TURN COMPLETION ALTITUDE 8500, FAF ALT 8300/2970.",
+        "notam_report": "[US DOD PROCEDURAL NOTAM] INSTRUMENT APPROACH PROCEDURE AMENDMENT DVOR DME RWY 06 S-06 NOTE CHANGED FROM \"*WHEN ALS INOP, INCREASE VIS TO 2300M.\" TO \"*WHEN ALS INOP, INCREASE CAT CD VIS TO 2300M.\" PROCEDURE TURN COMPLETION ALTITUDE 8500, FAF ALT 8300/2970. 18 MAR 11:54 2024 UNTIL 11 JUL 00:01 2024. CREATED: 18 MAR 11:54 2024",
+        "notam_nrc": "NOTAMN",
+        "notam_qcode": "QPICH"
+      },
+      {
+        "source_id": "M",
+        "account_id": "ETOQ",
+        "notam_id": "V0137/24",
+        "notam_part": "1",
+        "cns_location_id": "HKJK",
+        "icao_id": "HKJK",
+        "icao_name": "NAIROBI JOMO KENYATTA INTL",
+        "total_parts": "1",
+        "notam_created_dtg": "202403181144",
+        "notam_effective_dtg": "202403181144",
+        "notam_expire_dtg": "202407110001",
+        "notam_lastmod_dtg": "202403181144",
+        "notam_inserted_dtg": "202404050604",
+        "notam_text": "V0137/24 NOTAMN \nQ) HKNA/QPICH/I/BO/A/000/999/0118S03655E005 \nA) HKJK \nB) 2403181144 \nC) 2407110001 \nE) [US DOD PROCEDURAL NOTAM] INSTRUMENT APPROACH PROCEDURE AMENDMENT ILS Z RWY 06 S-LOC VISIBILITY MINS DECREASED FROM 1200 TO 1100. CAT A CIRCLING MINIMA CHANGED TO 5820-2300M 490 (500-2300). S-LOC NOTE CHANGED FROM \"**WHEN ALS INOP, INCREASE VIS TO 1800M.\" TO \"** WHEN CDFA NOT FLOWN INCREASE CATS CD VIS TO 1200M. WHEN ALS INOP, INCREASE CAT AB VIS TO 1500M; CAT CD VIS TO 1800M.\"",
+        "notam_report": "[US DOD PROCEDURAL NOTAM] INSTRUMENT APPROACH PROCEDURE AMENDMENT ILS Z RWY 06 S-LOC VISIBILITY MINS DECREASED FROM 1200 TO 1100. CAT A CIRCLING MINIMA CHANGED TO 5820-2300M 490 (500-2300). S-LOC NOTE CHANGED FROM \"**WHEN ALS INOP, INCREASE VIS TO 1800M.\" TO \"** WHEN CDFA NOT FLOWN INCREASE CATS CD VIS TO 1200M. WHEN ALS INOP, INCREASE CAT AB VIS TO 1500M; CAT CD VIS TO 1800M.\". 18 MAR 11:44 2024 UNTIL 11 JUL 00:01 2024. CREATED: 18 MAR 11:44 2024",
+        "notam_nrc": "NOTAMN",
+        "notam_qcode": "QPICH"
+      },
+      {
+        "source_id": "M",
+        "account_id": "ETOQ",
+        "notam_id": "V0136/24",
+        "notam_part": "1",
+        "cns_location_id": "HKJK",
+        "icao_id": "HKJK",
+        "icao_name": "NAIROBI JOMO KENYATTA INTL",
+        "total_parts": "1",
+        "notam_created_dtg": "202403181137",
+        "notam_effective_dtg": "202403181137",
+        "notam_expire_dtg": "202407110001",
+        "notam_lastmod_dtg": "202403181137",
+        "notam_inserted_dtg": "202404050604",
+        "notam_text": "V0136/24 NOTAMN \nQ) HKNA/QPICH/I/BO/A/000/999/0118S03655E005 \nA) HKJK \nB) 2403181137 \nC) 2407110001 \nE) [US DOD PROCEDURAL NOTAM] INSTRUMENT APPROACH PROCEDURE AMENDMENT ILS W RWY 06 CAT CD S-LOC VISIBILITY MINS DECREASED FROM 1200 TO 11OO. NOTE CHANGED FROM \"**WHEN ALS INOP, INCREASE VIS TO 1800M.\" TO \"** WHEN CDFA NOT FLOWN INCREASE CATS CD VIS TO 1200M. WHEN ALS INOP, INCREASE CAT AB VIS TO 1500M; CAT CD VIS TO 1800M.\"",
+        "notam_report": "[US DOD PROCEDURAL NOTAM] INSTRUMENT APPROACH PROCEDURE AMENDMENT ILS W RWY 06 CAT CD S-LOC VISIBILITY MINS DECREASED FROM 1200 TO 11OO. NOTE CHANGED FROM \"**WHEN ALS INOP, INCREASE VIS TO 1800M.\" TO \"** WHEN CDFA NOT FLOWN INCREASE CATS CD VIS TO 1200M. WHEN ALS INOP, INCREASE CAT AB VIS TO 1500M; CAT CD VIS TO 1800M.\". 18 MAR 11:37 2024 UNTIL 11 JUL 00:01 2024. CREATED: 18 MAR 11:37 2024",
+        "notam_nrc": "NOTAMN",
+        "notam_qcode": "QPICH"
+      },
+      {
+        "source_id": "M",
+        "account_id": "ETOQ",
+        "notam_id": "V0135/24",
+        "notam_part": "1",
+        "cns_location_id": "HKJK",
+        "icao_id": "HKJK",
+        "icao_name": "NAIROBI JOMO KENYATTA INTL",
+        "total_parts": "1",
+        "notam_created_dtg": "202403181122",
+        "notam_effective_dtg": "202403181122",
+        "notam_expire_dtg": "202407110001",
+        "notam_lastmod_dtg": "202403181122",
+        "notam_inserted_dtg": "202404050604",
+        "notam_text": "V0135/24 NOTAMN \nQ) HKNA/QPICH/I/BO/A/000/999/0118S03655E005 \nA) HKJK \nB) 2403181122 \nC) 2407110001 \nE) [US DOD PROCEDURAL NOTAM] STANDARD INSTRUMENT DEPARTURE (SID) CHANGED GABSO MSA SECTOR 271 CW 001 FROM 8000FT TO 8200FT",
+        "notam_report": "[US DOD PROCEDURAL NOTAM] STANDARD INSTRUMENT DEPARTURE (SID) CHANGED GABSO MSA SECTOR 271 CW 001 FROM 8000FT TO 8200FT. 18 MAR 11:22 2024 UNTIL 11 JUL 00:01 2024. CREATED: 18 MAR 11:22 2024",
+        "notam_nrc": "NOTAMN",
+        "notam_qcode": "QPICH"
+      },
+      {
+        "source_id": "M",
+        "account_id": "ETOQ",
+        "notam_id": "V0134/24",
+        "notam_part": "1",
+        "cns_location_id": "HKJK",
+        "icao_id": "HKJK",
+        "icao_name": "NAIROBI JOMO KENYATTA INTL",
+        "total_parts": "1",
+        "notam_created_dtg": "202403181119",
+        "notam_effective_dtg": "202403181119",
+        "notam_expire_dtg": "202407110001",
+        "notam_lastmod_dtg": "202403181119",
+        "notam_inserted_dtg": "202404050604",
+        "notam_text": "V0134/24 NOTAMN \nQ) HKNA/QPICH/I/BO/A/000/999/0118S03655E005 \nA) HKJK \nB) 2403181119 \nC) 2407110001 \nE) [US DOD PROCEDURAL NOTAM] INSTRUMENT APPROACH PROCEDURE CHANGED ALL PROCEDURES MSA SECTOR 271 CW 001 FROM 8000FT TO 8200FT.",
+        "notam_report": "[US DOD PROCEDURAL NOTAM] INSTRUMENT APPROACH PROCEDURE CHANGED ALL PROCEDURES MSA SECTOR 271 CW 001 FROM 8000FT TO 8200FT. 18 MAR 11:19 2024 UNTIL 11 JUL 00:01 2024. CREATED: 18 MAR 11:19 2024",
+        "notam_nrc": "NOTAMN",
+        "notam_qcode": "QPICH"
+      },
+      {
+        "source_id": "I",
+        "account_id": "HKJKYNYX",
+        "notam_id": "A0066/24",
+        "notam_part": "1",
+        "cns_location_id": "HKJK",
+        "icao_id": "HKJK",
+        "icao_name": "NAIROBI JOMO KENYATTA INTL",
+        "total_parts": "1",
+        "notam_created_dtg": "202402281252",
+        "notam_effective_dtg": "202402281240",
+        "notam_expire_dtg_estimated": "202404282359",
+        "notam_lastmod_dtg": "202402281253",
+        "notam_inserted_dtg": "202404050604",
+        "notam_text": "A0066/24 NOTAMR A0033/24\nQ) HKNA/QMKXX/IV/BO/A/000/999/0119S03656E005\nA) HKJK\nB) 2402281240 C) 2404282359 EST\nE) LOOSE CHIPPINGS AT BAY J1 DUE TO A DEVELOPING POTHOLE. ALL ACFT\nPARKING AT J1 TO SHUT DOWN ENGINES AND TOW. ALL ACFT PUSHING BACK\nFROM J1 TO PUSH CLEAR OF THE POTHOLE BFR ENGINE START UP.",
+        "notam_report": "LOOSE CHIPPINGS AT BAY J1 DUE TO A DEVELOPING POTHOLE. ALL ACFT PARKING AT J1 TO SHUT DOWN ENGINES AND TOW. ALL ACFT PUSHING BACK FROM J1 TO PUSH CLEAR OF THE POTHOLE BFR ENGINE START UP. 28 FEB 12:40 2024 UNTIL 28 APR 23:59 2024 ESTIMATED. CREATED: 28 FEB 12:52 2024",
+        "notam_nrc": "NOTAMR",
+        "notam_qcode": "QMKXX"
+      },
+      {
+        "source_id": "I",
+        "account_id": "HKJKYNYX",
+        "notam_id": "A0073/24",
+        "notam_part": "1",
+        "cns_location_id": "HKNA",
+        "icao_id": "HKNA",
+        "icao_name": "NAIROBI ACC/FIC/RCC/MET/COM/",
+        "total_parts": "1",
+        "notam_created_dtg": "202404040841",
+        "notam_effective_dtg": "202404040800",
+        "notam_expire_dtg_estimated": "202404110800",
+        "notam_lastmod_dtg": "202404040841",
+        "notam_inserted_dtg": "202404050604",
+        "notam_text": "A0073/24 NOTAMN\nQ) HKNA/QNMAS/IV/BO/AE/000/999/0216S03901E025\nA) HKNA\nB) 2404040800 C) 2404110800 EST\nE) MOV VOR UNSERVICEABLE",
+        "notam_report": "MOV VOR UNSERVICEABLE. 04 APR 08:00 2024 UNTIL 11 APR 08:00 2024 ESTIMATED. CREATED: 04 APR 08:41 2024",
+        "notam_nrc": "NOTAMN",
+        "notam_qcode": "QNMAS"
+      }
+    ],
+    "weather": {
+      "orig_metar": "HKJK 042200Z 34003KT 9999 BKN018 19/18 Q1021 NOSIG",
+      "orig_taf": "HKJK 050500Z 0506/0612 05003KT 9999 BKN018\nBECMG 0508/0511 08010KT BKN024\nPROB30 TEMPO 0513/0517 08010KT -SHRA FEW024CB SCT025 BKN080\nBECMG 0520/0523 24005KT NSW BKN018\nBECMG 0608/0611 08010KT BKN024",
+      "dest_metar": "HKMO 050830Z 19008KT 9999 SCT026 32/24 Q1012 NOSIG",
+      "dest_taf": "HKMO 050500Z 0506/0612 18010KT 9999 SCT025\nBECMG 0518/0521 VRB03KT FEW022\nTEMPO 0602/0606 22005KT -SHRA FEW020CB BKN080\nBECMG 0609/0612 NSW SCT024",
+      "altn_metar": [
+        "HKJK 042200Z 34003KT 9999 BKN018 19/18 Q1021 NOSIG"
+      ],
+      "altn_taf": [
+        "HKJK 050500Z 0506/0612 05003KT 9999 BKN018\nBECMG 0508/0511 08010KT BKN024\nPROB30 TEMPO 0513/0517 08010KT -SHRA FEW024CB SCT025 BKN080\nBECMG 0520/0523 24005KT NSW BKN018\nBECMG 0608/0611 08010KT BKN024"
+      ],
+      "toaltn_metar": "",
+      "toaltn_taf": "",
+      "eualtn_metar": "",
+      "eualtn_taf": "",
+      "etops_metar": [],
+      "etops_taf": []
+    },
+    "sigmets": [],
+    "text": {
+      "nat_tracks": "",
+      "plan_html": "\u003Cdiv style=\"line-height:14px;font-size:13px\"\u003E\u003Cpre\u003E\u003C!--BKMK///OFP///0--\u003E\u003C!--BKMK///Summary and Fuel///1--\u003E\u003Cb\u003E[ OFP ]\n--------------------------------------------------------------------\u003C/b\u003E\nKQA0631   05APR2024    HKJK-HKMO   B738 N806SB  RELEASE 0905 05APR24\nOFP 2    JOMO KENYATTA INTL-MOI INTL\n                                   WX PROG 0509 0512   OBS 0500 0500\n\t\n  ATC C/S   KQA631       HKJK/NBO   HKMO/MBA      CRZ SYS      CI 23\n05APR2024   N806SB       0900/0920  1010/1018     GND DIST       253\nB737-800 / CFM56-7B26               STA  1020     AIR DIST       266\n                         CTOT:....                G/C DIST       228\n                                                  AVG WIND   091/019\nMAXIMUM    TOW  79016  LAW  66361  ZFW  62732     AVG W/C       M015\nESTIMATED  TOW  67125  LAW  64879  ZFW  60878     AVG ISA       P016\n                                                  AVG FF KGS/HR 2651\n                                                  FUEL BIAS    P00.0\nALTN HKJK                                         TKOF ALTN  .......\nFL STEPS HKJK/0310/\n--------------------------------------------------------------------\nDISP RMKS   NIL\n\n--------------------------------------------------------------------\n         PLANNED FUEL\n---------------------------------\nFUEL           ARPT   FUEL   TIME\n---------------------------------\nTRIP            MBA   2246   0050\nCONT 15 MIN            663   0015\nALTN            NBO   2233   0047\nFINRES                1105   0030\n---------------------------------\nMINIMUM T/OFF FUEL    6247   0223\n---------------------------------\nEXTRA                    0   0000\n---------------------------------\nT/OFF FUEL            6247   0223\nTAXI            NBO    227   0020\n---------------------------------\nBLOCK FUEL      NBO   6474\nPIC EXTRA            .....\nTOTAL FUEL           .....\nREASON FOR PIC EXTRA ............\n--------------------------------------------------------------------\nFMC INFO:\nFINRES+ALTN           3338\nTRIP+TAXI             2473\n--------------------------------------------------------------------\nNO TANKERING RECOMMENDED (P)\n--------------------------------------------------------------------\nI HEREWITH CONFIRM THAT I HAVE PERFORMED A THOROUGH SELF BRIEFING\nABOUT THE DESTINATION AND ALTERNATE AIRPORTS OF THIS FLIGHT \nINCLUDING THE APPLICABLE INSTRUMENT APPROACH PROCEDURES, AIRPORT \nFACILITIES, NOTAMS AND ALL OTHER RELEVANT PARTICULAR INFORMATION.\n\nDISPATCHER: NICOLAS SNYDER              PIC NAME: OMONDI, AIDEN\n\nTEL: +1 800 555 0199               PIC SIGNATURE: ...............\u003Ch2 style=\"page-break-after: always;\"\u003E \u003C/h2\u003E\u003C!--BKMK///Routing and Impacts///1--\u003E\nALTERNATE ROUTE TO:                                    FINRES   1105\nAPT      TRK DST              VIA                 FL  WC  TIME  FUEL\n--------------------------------------------------------------------\nHKJK/06  315 265  GEVAG1A UTIKU UQ315 UTEPI DCT  320 P016 0047  2233\n                  APNOM DCT IMDIS DCT JOMOK DCT                     \n                  ANTUK DCT                                         \n--------------------------------------------------------------------\n\nMEL/CDL ITEMS DESCRIPTION\n------------- -----------\n\n--------------------------------------------------------------------\n\nROUTING:\n\nROUTE ID: DEFRTE\nHKJK/06 DCT UVOVA UQ135 NEREV DCT EGVOM DCT ETUSU DCT EPLEB DCT\n040047S0393622E DCT HKMO/21\n\n--------------------------------------------------------------------\nDEPARTURE ATC CLEARANCE:\n.\n.\n.\n--------------------------------------------------------------------\n                         OPERATIONAL IMPACTS\n                         -------------------\nWEIGHT CHANGE UP 1.0          TRIP  P 0028 KGS   TIME M 0000\nWEIGHT CHANGE DN 1.0          TRIP  M 0025 KGS   TIME M 0000\nFL CHANGE     UP FL1                 NOT AVAILABLE\nFL CHANGE     DN FL1          TRIP  P 0014 KGS   TIME M 0000\nFL CHANGE     DN FL2          TRIP  P 0043 KGS   TIME M 0000\nSPD CHANGE    CI 0            TRIP  M 0041 KGS   TIME P 0000\nSPD CHANGE    CI 100          TRIP  P 0026 KGS   TIME M 0000\n--------------------------------------------------------------------\u003Ch2 style=\"page-break-after: always;\"\u003E \u003C/h2\u003E\u003C!--BKMK///Times and Weights///1--\u003E--------------------------------------------------------------------\nATIS:\n.\n.\n--------- --------- --------- --------- --------- --------- --------\nRVSM: ALT SYS  LEFT:             STBY:             RIGHT:\n\n--------- --------- --------- --------- --------- --------- --------\n--------------------------------------------------------------------\n                                TIMES\n                                -----\n\t\t\t\t    \n               ESTIMATED        SKED              ACTUAL\n\nOUT            0900Z/1200L      0900Z/1200L       ......Z\n\nOFF            0920Z/1220L      0920Z/1220L       ......Z\n\nON             1010Z/1310L      1012Z/1312L       ......Z\n\nIN             1018Z/1318L      1020Z/1320L       ......Z\n\nBLOCK TIME     0118             0120              ......\n\n--------------------------------------------------------------------\n                               WEIGHTS\n                               -------\n\n                EST      MAX     ACTUAL\n\nPAX             184              ......\n\nCARGO           4.6              ......\n\nPAYLOAD        19.2              ......\n\nZFW            60.9     62.7     ......\n\nFUEL            6.5      8.0     ......  POSS EXTRA 1.5\n\nTOW            67.1     68.6  LDG......\n\nSTAB TRIM                        ......\n\nLAW            64.9     66.4     ......\n\n--------------------------------------------------------------------\n                       TERRAIN CLEARANCE CHECK\n                       -----------------------\nDD CHECK - TERRAIN CLEARANCE CHECK DISABLED\n\nDP CHECK - TERRAIN CLEARANCE CHECK DISABLED\n--------------------------------------------------------------------\u003Ch2 style=\"page-break-after: always;\"\u003E \u003C/h2\u003E\u003C!--BKMK///Flight Log///1--\u003E                             FLIGHT LOG                             \n                             ----------                             \n\nMOST CRITICAL MORA 09500 FEET AT HKJK///MXSHR 02 AT TOC\n--------------------------------------------------------------------\nAWY                           FL   IMT   MN    WIND  OAT  EFOB  PBRN\nPOSITION    LAT      EET ETO MORA  ITT  TAS    COMP  TDV\nIDENT       LONG    TTLT ATO DIS  RDIS   GS     SHR  TRP  AFOB  ABRN\nFREQ\n--------------------------------------------------------------------\n                                   121                     6.2   0.2\nJOMO KENYAT S0119.2      ...  95   122         M019     \nHKJK       E03655.7 0000 ...       253  433               ....  ....\n\nDCT                          274   135  .73 082/025  M23   5.1   1.4\nUVOVA       S0146.4 0012 ...  63   135         M019  P17\nUVOVA      E03738.5 0012 ...  57   196  433          562  ....  ....\n\nUQ135                        310   135  .78 099/025  M32   4.9   1.6\nT O C       S0202.0 0003 ...  56   135  472    M020  P15\n           E03754.1 0015 ...  22   174  452       2  563  ....  ....\n\nUQ135                        310   135  .76 100/026  M32   4.4   2.0\nT O D       S0252.2 0010 ...  36   135  462    M022  P15\n           E03844.2 0025 ...  71   103  440       1  567  ....  ....\n\nUQ135                        207   137  .63 070/022  M08   4.3   2.1\nNEREV       S0314.7 0007 ...  35   136         M010  P18\nNEREV      E03906.7 0032 ...  32    71  392          567  ....  ....\n\nDCT                          065   121  .42 090/004   17   4.2   2.3\nEGVOM       S0346.7 0009 ...  32   119         M003  P15\nEGVOM      E03937.4 0041 ...  44    27  280          568  ....  ....\n\nDCT                          045   210  .41 166/005   20   4.2   2.3\nETUSU       S0349.7 0002 ...  30   209         M003  P14\nETUSU      E03942.6 0043 ...   6    21  271          568  ....  ....\n\nDCT                          027   210  .39 192/011   22   4.2   2.3\nEPLEB       S0354.9 0001 ...  30   209         M011  P12\nEPLEB      E03939.7 0044 ...   6    15  255          568  ....  ....\n\nDCT                          027   209  .39 192/011   22   4.2   2.3\n040047S0393 S0400.8 0001 ...  27   207         M011  P12\nS0400E03936E03936.4 0045 ...   7     8  255          568  ....  ....\n\nDCT                                                        4.0   2.5\nMOI INTL    S0401.6 0005 ...                            \nHKMO       E03935.9 0050 ...   8                          ....  ....\n\n\n\n\u003Ch2 style=\"page-break-after: always;\"\u003E \u003C/h2\u003E\u003C!--BKMK///Wind Information///1--\u003E--------------------------------------------------------------------\n                          WIND INFORMATION                          \n                          ----------------                          \n\nCLIMB            T O C            T O D            DESCENT\n350 109/030 -42  350 109/030 -42  350 106/029 -42  350 106/029 -42\n310 099/025 -32  330 104/028 -37  330 102/027 -37  310 100/026 -31\n200 075/026 -07  310 099/026 -32  310 100/026 -32  200 071/021 -07\n150 076/015 +02  290 091/024 -27  290 095/023 -27  150 086/015 +02\n100 069/014 +10  270 080/025 -22  270 085/020 -22  100 089/010 +11\n\n--------------------------------------------------------------------\u003Ch2 style=\"page-break-after: always;\"\u003E \u003C/h2\u003E\u003C!--BKMK///ATC Flight Plan///0--\u003E\u003Cb\u003E[ ATC Flight Plan ]\n--------------------------------------------------------------------\u003C/b\u003E\n                          ICAO FLIGHT PLAN                           \n                          ----------------                           \n\nFF HKNAZQZX\n050905 CYULSBFP\n(FPL-KQA631-IS\n-B738/M-SDE2E3FGHIRWXY/LB1\n-HKJK0900\n-N0462F310 DCT UVOVA UQ135 NEREV DCT EGVOM DCT ETUSU DCT EPLEB DCT\n 040047S0393622E DCT\n-HKMO0040 HKJK\n-PBN/A1B1C1D1S1S2 DOF/240405 REG/N806SB OPR/KQA PER/C RMK/TCAS)\u003Ch2 style=\"page-break-after: always;\"\u003E \u003C/h2\u003E\u003C!--BKMK///Additional Info///0--\u003E\u003Cb\u003E[ Additional Info ]\n--------------------------------------------------------------------\u003C/b\u003E\nD I S P A T C H  B R I E F I N G  I N F O    KQ0631    HKJK/HKMO\n\n\n\u003Ch2 style=\"page-break-after: always;\"\u003E \u003C/h2\u003E\u003C!--BKMK///Airport WX List///0--\u003E\u003Cb\u003E[ Airport WX List ]\n--------------------------------------------------------------------\u003C/b\u003E\nHKJK --\u003E HKMO    KQ   631 / 05APR2024\nLIDO/WEATHER SERVICE       DATE : 05Apr2024   TIME : 09:05 UTC\n\nAIRMETs:\n  No Wx data available\n\nSIGMETs:\n  No Wx data available\n\nTropical Cyclone SIGMETs:\n  No Wx data available\n\nVolcanic Ash SIGMETs:\n  No Wx data available\n\nDeparture / Destination Alternate:\nHKJK/NBO  JOMO KENYATTA INTL\n  SA  042200  34003KT 9999 BKN018 19/18 Q1021 NOSIG\n  FT  050500  0506/0612 05003KT 9999 BKN018\n              BECMG 0508/0511 08010KT BKN024\n              PROB30 TEMPO 0513/0517 08010KT -SHRA FEW024CB SCT025\n              BKN080\n              BECMG 0520/0523 24005KT NSW BKN018\n              BECMG 0608/0611 08010KT BKN024\n\nDestination:\nHKMO/MBA  MOI INTL\n  SA  050830  19008KT 9999 SCT026 32/24 Q1012 NOSIG\n  FT  050500  0506/0612 18010KT 9999 SCT025\n              BECMG 0518/0521 VRB03KT FEW022\n              TEMPO 0602/0606 22005KT -SHRA FEW020CB BKN080\n              BECMG 0609/0612 NSW SCT024\n\n\n\n  AIRPORTLIST ENDED\u003Ch2 style=\"page-break-after: always;\"\u003E \u003C/h2\u003E\u003C!--BKMK///NOTAM///0--\u003E\u003Cb\u003E[ NOTAM ]\n--------------------------------------------------------------------\u003C/b\u003E\nLIDO-NOTAM-BULLETIN INCLUDES NOTAM, COMP NOTAM AND AIP-REGULATION\n\u003Cb\u003EVALID: 2404050900 - 2404051406\u003C/b\u003E  STD(EOBT)+TRIP+ALTN+3HRS\nKQA 631 /05APR      OFP-NR: 2\nROUTE:    HKJK - HKMO   ALTN: HKJK\nN0462F310 DCT UVOVA UQ135 NEREV DCT EGVOM DCT ETUSU DCT EPLEB DCT\n040047S0393622E DCT\n\n\n\u003Cb\u003E=============================================\nDEPARTURE / ALTERNATE AIRPORT - DETAILED INFO\n=============================================\u003C/b\u003E\n\n\u003Cb\u003EHKJK/NBO     JOMO KENYATTA INTL\n-------------------------------\u003C/b\u003E\n\n+++++++++++++++++++++++++++++ AIRPORT ++++++++++++++++++++++++++++++\n\n\u003Cb\u003EA0066/24   \u003C/b\u003E\n  LOOSE CHIPPINGS AT BAY J1 DUE TO A DEVELOPING POTHOLE. ALL ACFT\n  PARKING AT J1 TO SHUT DOWN ENGINES AND TOW. ALL ACFT PUSHING BACK\n  FROM J1 TO PUSH CLEAR OF THE POTHOLE BFR ENGINE START UP.\n\n\u003Cb\u003E===================================\nDESTINATION AIRPORT - DETAILED INFO\n===================================\u003C/b\u003E\n\n\u003Cb\u003EHKMO/MBA     MOI INTL\n---------------------\u003C/b\u003E\n\nNIL\n\n\u003Cb\u003E==============================\nEXTENDED AREA AROUND DEPARTURE\n==============================\u003C/b\u003E\n\n\u003Cb\u003EHKNA         NAIROBI FIR\n------------------------\u003C/b\u003E\n\n+++++++++++++++++++++++++++++ WAYPOINT +++++++++++++++++++++++++++++\n\n\u003Cb\u003EA0073/24   \u003C/b\u003E\n  MOV \u003Cb\u003EVOR\u003C/b\u003E UNSERVICEABLE\n\n\u003Cb\u003E================================\nEXTENDED AREA AROUND DESTINATION\n================================\u003C/b\u003E\n\n\u003Cb\u003EHKNA         NAIROBI FIR\n------------------------\u003C/b\u003E\n\nPlease see section EXTENDED AREA AROUND DEPARTURE\n\n\u003Cb\u003E=====================================================\nEXTENDED AREA AROUND DESTINATION ALTERNATE AIRPORT(S)\n=====================================================\u003C/b\u003E\n\n\u003Cb\u003EHKNA         NAIROBI FIR\n------------------------\u003C/b\u003E\n\nPlease see section EXTENDED AREA AROUND DEPARTURE\n\u003Ch2 style=\"page-break-after: always;\"\u003E \u003C/h2\u003E\u003C!--BKMK///Company NOTAM///0--\u003E\u003Cb\u003E[ Company NOTAM ]\n--------------------------------------------------------------------\u003C/b\u003E\n\u003Cb\u003E==========\nCREW ALERT\n==========\u003C/b\u003E\n\n\u003Cb\u003ESB007/14   \u003C/b\u003E\n  SUBJECT: AUTO COST INDEXES\n  WHEN PLANNING A COST INDEX, 2 OPTIONS ARE AVAILABLE. PILOTS MAY\n  EITHER SELECT A SPECIFIC COST INDEX NUMBER FROM THE LIST, OR THEY\n  MAY SELECT \"AUTO\". WHEN PLANNING AN \"AUTO\" COST INDEX, THE SYSTEM\n  WILL REFERENCE THE SCHEDULED \"TIME ENROUTE\" OPTION AND ATTEMPT TO\n  CHOOSE A COST INDEX WHICH CLOSELY MATCHES THIS VALUE. NOTE THAT\n  THE \"TIME ENROUTE\" OPTION IS MEANT AS A GATE TO GATE TIME (AS\n  INDICATED ON AN AIRLINE'S FLIGHT SCHEDULE, FOR EXAMPLE). IF A\n  \"TIME ENROUTE\" OF 2:30 IS SELECTED, THE SYSTEM WILL SUBTRACT THE\n  TAXI TIMES FROM THIS VALUE TO DETERMINE THE SCHEDULED AIR TIME. IT\n  WILL THEN DETERMINE AND USE THE COST INDEX WHICH MATCHES THIS AIR\n  TIME.\n\n\u003Cb\u003ESB003/13   \u003C/b\u003E\n  SUBJECT: FLIGHT RELEASE UNITS\n  ALL FLIGHT CREW: PLEASE PAY SPECIAL ATTENTION TO THE UNITS\n  SELECTION WHEN GENERATING A FLIGHT PLAN. FAILURE TO IDENTIFY THE\n  CORRECT UNITS WHEN REFUELING PRIOR TO FLIGHT CAN RESULT IN\n  DEPARTING WITH INSUFFICIENT FUEL AND/OR AN ERRONEOUS PAYLOAD.\n\n\u003Cb\u003E=============\nCREW BULLETIN\n=============\u003C/b\u003E\n\nNIL\n\n\n==================== END OF LIDO-NOTAM-BULLETIN ====================\u003Ch2 style=\"page-break-after: always;\"\u003E \u003C/h2\u003ERoute\n\u003Ca class=\"ofpmaplink\" href=\"https://www.simbrief.com/ofp/uads/HKJKHKMO_1712307907_ROUTE.gif\" target=\"_blank\"\u003E\u003Cimg src=\"https://www.simbrief.com/ofp/uads/HKJKHKMO_1712307907_ROUTE.gif\" alt=\"Image no longer available, please regenerate the flightplan.\" width=\"600px\"\u003E\u003C/a\u003E\u003Ch2 style=\"page-break-after: always;\"\u003E \u003C/h2\u003ESigWx 1 of 1\n\u003Ca class=\"ofpmaplink\" href=\"https://www.simbrief.com/ofp/uads/HKJKHKMO_1712307907_SIGWX12.gif\" target=\"_blank\"\u003E\u003Cimg src=\"https://www.simbrief.com/ofp/uads/HKJKHKMO_1712307907_SIGWX12.gif\" alt=\"Image no longer available, please regenerate the flightplan.\" width=\"600px\"\u003E\u003C/a\u003E\u003Ch2 style=\"page-break-after: always;\"\u003E \u003C/h2\u003EUAD 1 of 3\n\u003Ca class=\"ofpmaplink\" href=\"https://www.simbrief.com/ofp/uads/HKJKHKMO_1712307907_WINDS24000.gif\" target=\"_blank\"\u003E\u003Cimg src=\"https://www.simbrief.com/ofp/uads/HKJKHKMO_1712307907_WINDS24000.gif\" alt=\"Image no longer available, please regenerate the flightplan.\" width=\"600px\"\u003E\u003C/a\u003E\u003Ch2 style=\"page-break-after: always;\"\u003E \u003C/h2\u003EUAD 2 of 3\n\u003Ca class=\"ofpmaplink\" href=\"https://www.simbrief.com/ofp/uads/HKJKHKMO_1712307907_WINDS30000.gif\" target=\"_blank\"\u003E\u003Cimg src=\"https://www.simbrief.com/ofp/uads/HKJKHKMO_1712307907_WINDS30000.gif\" alt=\"Image no longer available, please regenerate the flightplan.\" width=\"600px\"\u003E\u003C/a\u003E\u003Ch2 style=\"page-break-after: always;\"\u003E \u003C/h2\u003EUAD 3 of 3\n\u003Ca class=\"ofpmaplink\" href=\"https://www.simbrief.com/ofp/uads/HKJKHKMO_1712307907_WINDS34000.gif\" target=\"_blank\"\u003E\u003Cimg src=\"https://www.simbrief.com/ofp/uads/HKJKHKMO_1712307907_WINDS34000.gif\" alt=\"Image no longer available, please regenerate the flightplan.\" width=\"600px\"\u003E\u003C/a\u003E\u003Ch2 style=\"page-break-after: always;\"\u003E \u003C/h2\u003EVertical profile\n\u003Ca class=\"ofpmaplink\" href=\"https://www.simbrief.com/ofp/uads/HKJKHKMO_1712307907_PROFILE.gif\" target=\"_blank\"\u003E\u003Cimg src=\"https://www.simbrief.com/ofp/uads/HKJKHKMO_1712307907_PROFILE.gif\" alt=\"Image no longer available, please regenerate the flightplan.\" width=\"600px\"\u003E\u003C/a\u003E\u003C/pre\u003E\u003C/div\u003E"
+    },
+    "tracks": [],
+    "database_updates": {
+      "metar_taf": "2024-04-05T09:00:31Z",
+      "winds": "2024-04-05T00:00:00Z",
+      "sigwx": "2024-04-05T07:32:01Z",
+      "sigmet": "2024-04-05T09:02:03Z",
+      "notams": "2024-04-05T09:01:00Z",
+      "tracks": "2024-04-04T19:21:00Z"
+    },
+    "files": {
+      "directory": "https://www.simbrief.com/ofp/flightplans/",
+      "pdf": {
+        "name": "PDF Document",
+        "link": "HKJKHKMO_PDF_1712307908.pdf"
+      },
+      "file": [
+        {
+          "name": "Aerosoft Airbus",
+          "link": "HKJKHKMO_ABX_1712307908.flp"
+        },
+        {
+          "name": "Aerosoft Airbus EFB",
+          "link": "HKJKHKMO_PDF_1712307908.pdf--A3E"
+        },
+        {
+          "name": "Aerosoft CRJ",
+          "link": "HKJKHKMO_CRX_1712307908.flp"
+        },
+        {
+          "name": "Aerosoft CRJ (Airways)",
+          "link": "HKJKHKMO_CRA_1712307908.flp"
+        },
+        {
+          "name": "Aerowinx PSX 747",
+          "link": "HKJKHKMO_PSX_1712307908.route"
+        },
+        {
+          "name": "AivlaSoft EFB",
+          "link": "HKJKHKMO_EFB_1712307908.efbr"
+        },
+        {
+          "name": "AivlaSoft EFB v2",
+          "link": "HKJKHKMO_EF2_1712307908.efbr"
+        },
+        {
+          "name": "Black Box Airbus",
+          "link": "HKJKHKMO_BBS_1712307908.pln"
+        },
+        {
+          "name": "Captain Sim (PLN)",
+          "link": "HKJKHKMO_CSF_1712307908.pln"
+        },
+        {
+          "name": "FeelThere",
+          "link": "HKJKHKMO_FTR_1712307908.fpl"
+        },
+        {
+          "name": "Flight1 GTN",
+          "link": "HKJKHKMO_GTN_1712307908.gfp"
+        },
+        {
+          "name": "FlightFactor 757 V2",
+          "link": "HKJKHKMO_VMX_1712307908.flp--VM5"
+        },
+        {
+          "name": "FlightFactor 767-777",
+          "link": "HKJKHKMO_VMX_1712307908.flp"
+        },
+        {
+          "name": "FlightFactor A320",
+          "link": "HKJKHKMO_FFA_1712307908.in"
+        },
+        {
+          "name": "FS Commander",
+          "link": "HKJKHKMO_FSC_1712307908.pln"
+        },
+        {
+          "name": "FS2004",
+          "link": "HKJKHKMO_FS9_1712307908.pln"
+        },
+        {
+          "name": "FS2020",
+          "link": "HKJKHKMO_MFS_1712307908.pln"
+        },
+        {
+          "name": "FS2020 (No SID/STAR)",
+          "link": "HKJKHKMO_MFN_1712307908.pln"
+        },
+        {
+          "name": "FSLabs A320",
+          "link": "HKJKHKMO_FSL_1712307908.txt"
+        },
+        {
+          "name": "FSX/P3D",
+          "link": "HKJKHKMO_FSX_1712307908.pln"
+        },
+        {
+          "name": "FSX/P3D (No SID/STAR)",
+          "link": "HKJKHKMO_FSN_1712307908.pln"
+        },
+        {
+          "name": "Google Earth KML",
+          "link": "HKJKHKMO_KML_1712307908.kml"
+        },
+        {
+          "name": "iFly 737NG",
+          "link": "HKJKHKMO_IFY_1712307908.FLTPLAN"
+        },
+        {
+          "name": "iFly 747 V2",
+          "link": "HKJKHKMO_I74_1712307908.route"
+        },
+        {
+          "name": "iFly Jets Advanced Series",
+          "link": "HKJKHKMO_IFA_1712307908.route"
+        },
+        {
+          "name": "iniBuilds Flightplan",
+          "link": "HKJKHKMO_INB_1712307908.fpl"
+        },
+        {
+          "name": "IVAO/IVAP",
+          "link": "HKJKHKMO_IVO_1712307908.fpl"
+        },
+        {
+          "name": "IVAO/IVAP (Default.fpl)",
+          "link": "HKJKHKMO_XVD_1712307908.fpl"
+        },
+        {
+          "name": "IVAO/XIVAP",
+          "link": "HKJKHKMO_XVP_1712307908.fpl"
+        },
+        {
+          "name": "IXEG 737 Classic",
+          "link": "HKJKHKMO_IXG_1712307908.fpl"
+        },
+        {
+          "name": "JARDesign Airbus",
+          "link": "HKJKHKMO_JAR_1712307908.txt"
+        },
+        {
+          "name": "JeeHell A320 FMGS",
+          "link": "HKJKHKMO_JHE_1712307908.xml"
+        },
+        {
+          "name": "Just Flight 146",
+          "link": "HKJKHKMO_QTY_1712307908.RTE--JFB"
+        },
+        {
+          "name": "Leonardo MD80",
+          "link": "HKJKHKMO_MDR_1712307908.mdr"
+        },
+        {
+          "name": "Leonardo MD80 (ACARS)",
+          "link": "HKJKHKMO_MDA_1712307908.txt"
+        },
+        {
+          "name": "Level-D 767",
+          "link": "HKJKHKMO_LVD_1712307908.rte"
+        },
+        {
+          "name": "Majestic Q400 (v1.024)",
+          "link": "HKJKHKMO_MJC_1712307908.fpr"
+        },
+        {
+          "name": "Majestic Q400 (v1.025)",
+          "link": "HKJKHKMO_MJQ_1712307908.fpr"
+        },
+        {
+          "name": "Microsoft ATR 42/72",
+          "link": "HKJKHKMO_ATM_1712307908.flp"
+        },
+        {
+          "name": "Milviz",
+          "link": "HKJKHKMO_MVZ_1712307908.xml"
+        },
+        {
+          "name": "phpVMS ACARS",
+          "link": "HKJKHKMO_VMS_1712307908.xml"
+        },
+        {
+          "name": "PMDG 747-400X (FS2004)",
+          "link": "HKJKHKMO_PMO_1712307908.rt2"
+        },
+        {
+          "name": "PMDG Flightplan",
+          "link": "HKJKHKMO_PMR_1712307908.rte"
+        },
+        {
+          "name": "PMDG Wind Uplink",
+          "link": "HKJKHKMO_PMW_1712307908.wx"
+        },
+        {
+          "name": "PMS50 GTN750",
+          "link": "HKJKHKMO_MFS_1712307908.pln--PGT"
+        },
+        {
+          "name": "Project Magenta",
+          "link": "HKJKHKMO_MGA_1712307908.sbp"
+        },
+        {
+          "name": "ProSim 737",
+          "link": "HKJKHKMO_PSM_1712307908.xml"
+        },
+        {
+          "name": "QualityWings",
+          "link": "HKJKHKMO_QTY_1712307908.RTE"
+        },
+        {
+          "name": "Rotate MD-11",
+          "link": "HKJKHKMO_JAR_1712307908.txt--RMD"
+        },
+        {
+          "name": "Sim-Avionics",
+          "link": "xml/HKJKHKMO_XML_1712307908.xml--sbr"
+        },
+        {
+          "name": "Squawkbox",
+          "link": "HKJKHKMO_SFP_1712307908.sfp"
+        },
+        {
+          "name": "TDS GTNXi",
+          "link": "HKJKHKMO_GTN_1712307908.gfp--TDG"
+        },
+        {
+          "name": "TFDi Design 717",
+          "link": "HKJKHKMO_TFD_1712307908.xml"
+        },
+        {
+          "name": "UFMC - Universal FMC",
+          "link": "HKJKHKMO_UFC_1712307908.ufmc"
+        },
+        {
+          "name": "vasFMC",
+          "link": "HKJKHKMO_VAS_1712307908.fmc"
+        },
+        {
+          "name": "vPilot",
+          "link": "HKJKHKMO_VFP_1712307908.vfp"
+        },
+        {
+          "name": "Wilco Airbus Evo",
+          "link": "HKJKHKMO_WAE_1712307908.rte"
+        },
+        {
+          "name": "X-FMC",
+          "link": "HKJKHKMO_XFM_1712307908.FPL"
+        },
+        {
+          "name": "X-Plane 11/12",
+          "link": "HKJKHKMO_XPE_1712307908.fms"
+        },
+        {
+          "name": "X-Plane 11/12 (No SID/STAR)",
+          "link": "HKJKHKMO_XPN_1712307908.fms"
+        },
+        {
+          "name": "X-Plane 9/10",
+          "link": "HKJKHKMO_XP9_1712307908.fms"
+        },
+        {
+          "name": "Zibo Mod B737",
+          "link": "xml/HKJKHKMO_XML_1712307908.xml--ZBO"
+        }
+      ]
+    },
+    "fms_downloads": {
+      "directory": "https://www.simbrief.com/ofp/flightplans/",
+      "pdf": {
+        "name": "PDF Document",
+        "link": "HKJKHKMO_PDF_1712307908.pdf"
+      },
+      "abx": {
+        "name": "Aerosoft Airbus",
+        "link": "HKJKHKMO_ABX_1712307908.flp"
+      },
+      "a3e": {
+        "name": "Aerosoft Airbus EFB",
+        "link": "HKJKHKMO_PDF_1712307908.pdf--A3E"
+      },
+      "crx": {
+        "name": "Aerosoft CRJ",
+        "link": "HKJKHKMO_CRX_1712307908.flp"
+      },
+      "cra": {
+        "name": "Aerosoft CRJ (Airways)",
+        "link": "HKJKHKMO_CRA_1712307908.flp"
+      },
+      "psx": {
+        "name": "Aerowinx PSX 747",
+        "link": "HKJKHKMO_PSX_1712307908.route"
+      },
+      "efb": {
+        "name": "AivlaSoft EFB",
+        "link": "HKJKHKMO_EFB_1712307908.efbr"
+      },
+      "ef2": {
+        "name": "AivlaSoft EFB v2",
+        "link": "HKJKHKMO_EF2_1712307908.efbr"
+      },
+      "bbs": {
+        "name": "Black Box Airbus",
+        "link": "HKJKHKMO_BBS_1712307908.pln"
+      },
+      "csf": {
+        "name": "Captain Sim (PLN)",
+        "link": "HKJKHKMO_CSF_1712307908.pln"
+      },
+      "ftr": {
+        "name": "FeelThere",
+        "link": "HKJKHKMO_FTR_1712307908.fpl"
+      },
+      "gtn": {
+        "name": "Flight1 GTN",
+        "link": "HKJKHKMO_GTN_1712307908.gfp"
+      },
+      "vm5": {
+        "name": "FlightFactor 757 V2",
+        "link": "HKJKHKMO_VMX_1712307908.flp--VM5"
+      },
+      "vmx": {
+        "name": "FlightFactor 767-777",
+        "link": "HKJKHKMO_VMX_1712307908.flp"
+      },
+      "ffa": {
+        "name": "FlightFactor A320",
+        "link": "HKJKHKMO_FFA_1712307908.in"
+      },
+      "fsc": {
+        "name": "FS Commander",
+        "link": "HKJKHKMO_FSC_1712307908.pln"
+      },
+      "fs9": {
+        "name": "FS2004",
+        "link": "HKJKHKMO_FS9_1712307908.pln"
+      },
+      "mfs": {
+        "name": "FS2020",
+        "link": "HKJKHKMO_MFS_1712307908.pln"
+      },
+      "mfn": {
+        "name": "FS2020 (No SID/STAR)",
+        "link": "HKJKHKMO_MFN_1712307908.pln"
+      },
+      "fsl": {
+        "name": "FSLabs A320",
+        "link": "HKJKHKMO_FSL_1712307908.txt"
+      },
+      "fsx": {
+        "name": "FSX/P3D",
+        "link": "HKJKHKMO_FSX_1712307908.pln"
+      },
+      "fsn": {
+        "name": "FSX/P3D (No SID/STAR)",
+        "link": "HKJKHKMO_FSN_1712307908.pln"
+      },
+      "kml": {
+        "name": "Google Earth KML",
+        "link": "HKJKHKMO_KML_1712307908.kml"
+      },
+      "ify": {
+        "name": "iFly 737NG",
+        "link": "HKJKHKMO_IFY_1712307908.FLTPLAN"
+      },
+      "i74": {
+        "name": "iFly 747 V2",
+        "link": "HKJKHKMO_I74_1712307908.route"
+      },
+      "ifa": {
+        "name": "iFly Jets Advanced Series",
+        "link": "HKJKHKMO_IFA_1712307908.route"
+      },
+      "inb": {
+        "name": "iniBuilds Flightplan",
+        "link": "HKJKHKMO_INB_1712307908.fpl"
+      },
+      "ivo": {
+        "name": "IVAO/IVAP",
+        "link": "HKJKHKMO_IVO_1712307908.fpl"
+      },
+      "xvd": {
+        "name": "IVAO/IVAP (Default.fpl)",
+        "link": "HKJKHKMO_XVD_1712307908.fpl"
+      },
+      "xvp": {
+        "name": "IVAO/XIVAP",
+        "link": "HKJKHKMO_XVP_1712307908.fpl"
+      },
+      "ixg": {
+        "name": "IXEG 737 Classic",
+        "link": "HKJKHKMO_IXG_1712307908.fpl"
+      },
+      "jar": {
+        "name": "JARDesign Airbus",
+        "link": "HKJKHKMO_JAR_1712307908.txt"
+      },
+      "jhe": {
+        "name": "JeeHell A320 FMGS",
+        "link": "HKJKHKMO_JHE_1712307908.xml"
+      },
+      "jfb": {
+        "name": "Just Flight 146",
+        "link": "HKJKHKMO_QTY_1712307908.RTE--JFB"
+      },
+      "mdr": {
+        "name": "Leonardo MD80",
+        "link": "HKJKHKMO_MDR_1712307908.mdr"
+      },
+      "mda": {
+        "name": "Leonardo MD80 (ACARS)",
+        "link": "HKJKHKMO_MDA_1712307908.txt"
+      },
+      "lvd": {
+        "name": "Level-D 767",
+        "link": "HKJKHKMO_LVD_1712307908.rte"
+      },
+      "mjc": {
+        "name": "Majestic Q400 (v1.024)",
+        "link": "HKJKHKMO_MJC_1712307908.fpr"
+      },
+      "mjq": {
+        "name": "Majestic Q400 (v1.025)",
+        "link": "HKJKHKMO_MJQ_1712307908.fpr"
+      },
+      "atm": {
+        "name": "Microsoft ATR 42/72",
+        "link": "HKJKHKMO_ATM_1712307908.flp"
+      },
+      "mvz": {
+        "name": "Milviz",
+        "link": "HKJKHKMO_MVZ_1712307908.xml"
+      },
+      "vms": {
+        "name": "phpVMS ACARS",
+        "link": "HKJKHKMO_VMS_1712307908.xml"
+      },
+      "pmo": {
+        "name": "PMDG 747-400X (FS2004)",
+        "link": "HKJKHKMO_PMO_1712307908.rt2"
+      },
+      "pmr": {
+        "name": "PMDG Flightplan",
+        "link": "HKJKHKMO_PMR_1712307908.rte"
+      },
+      "pmw": {
+        "name": "PMDG Wind Uplink",
+        "link": "HKJKHKMO_PMW_1712307908.wx"
+      },
+      "pgt": {
+        "name": "PMS50 GTN750",
+        "link": "HKJKHKMO_MFS_1712307908.pln--PGT"
+      },
+      "mga": {
+        "name": "Project Magenta",
+        "link": "HKJKHKMO_MGA_1712307908.sbp"
+      },
+      "psm": {
+        "name": "ProSim 737",
+        "link": "HKJKHKMO_PSM_1712307908.xml"
+      },
+      "qty": {
+        "name": "QualityWings",
+        "link": "HKJKHKMO_QTY_1712307908.RTE"
+      },
+      "rmd": {
+        "name": "Rotate MD-11",
+        "link": "HKJKHKMO_JAR_1712307908.txt--RMD"
+      },
+      "sbr": {
+        "name": "Sim-Avionics",
+        "link": "xml/HKJKHKMO_XML_1712307908.xml--sbr"
+      },
+      "sfp": {
+        "name": "Squawkbox",
+        "link": "HKJKHKMO_SFP_1712307908.sfp"
+      },
+      "tdg": {
+        "name": "TDS GTNXi",
+        "link": "HKJKHKMO_GTN_1712307908.gfp--TDG"
+      },
+      "tfd": {
+        "name": "TFDi Design 717",
+        "link": "HKJKHKMO_TFD_1712307908.xml"
+      },
+      "ufc": {
+        "name": "UFMC - Universal FMC",
+        "link": "HKJKHKMO_UFC_1712307908.ufmc"
+      },
+      "vas": {
+        "name": "vasFMC",
+        "link": "HKJKHKMO_VAS_1712307908.fmc"
+      },
+      "vfp": {
+        "name": "vPilot",
+        "link": "HKJKHKMO_VFP_1712307908.vfp"
+      },
+      "wae": {
+        "name": "Wilco Airbus Evo",
+        "link": "HKJKHKMO_WAE_1712307908.rte"
+      },
+      "xfm": {
+        "name": "X-FMC",
+        "link": "HKJKHKMO_XFM_1712307908.FPL"
+      },
+      "xpe": {
+        "name": "X-Plane 11/12",
+        "link": "HKJKHKMO_XPE_1712307908.fms"
+      },
+      "xpn": {
+        "name": "X-Plane 11/12 (No SID/STAR)",
+        "link": "HKJKHKMO_XPN_1712307908.fms"
+      },
+      "xp9": {
+        "name": "X-Plane 9/10",
+        "link": "HKJKHKMO_XP9_1712307908.fms"
+      },
+      "zbo": {
+        "name": "Zibo Mod B737",
+        "link": "xml/HKJKHKMO_XML_1712307908.xml--ZBO"
+      }
+    },
+    "images": {
+      "directory": "https://www.simbrief.com/ofp/uads/",
+      "map": [
+        {
+          "name": "Route",
+          "link": "HKJKHKMO_1712307907_ROUTE.gif"
+        },
+        {
+          "name": "SigWx 1 of 1",
+          "link": "HKJKHKMO_1712307907_SIGWX12.gif"
+        },
+        {
+          "name": "UAD 1 of 3",
+          "link": "HKJKHKMO_1712307907_WINDS24000.gif"
+        },
+        {
+          "name": "UAD 2 of 3",
+          "link": "HKJKHKMO_1712307907_WINDS30000.gif"
+        },
+        {
+          "name": "UAD 3 of 3",
+          "link": "HKJKHKMO_1712307907_WINDS34000.gif"
+        },
+        {
+          "name": "Vertical profile",
+          "link": "HKJKHKMO_1712307907_PROFILE.gif"
+        }
+      ]
+    },
+    "links": {
+      "skyvector": "http://skyvector.com/?fpl= HKJK UVOVA UQ135 NEREV EGVOM ETUSU EPLEB 040047S0393622E HKMO"
+    },
+    "prefile": {
+      "vatsim": {
+        "name": "VATSIM",
+        "site": "my.vatsim.net",
+        "link": "https://my.vatsim.net/pilots/flightplan?raw=%28FPL-KQA631-IS+-B738%2FM-SDE2E3FGHIRWXY%2FLB1+-HKJK0900+-N0462F310+UVOVA+UQ135+NEREV+DCT+EGVOM+DCT+ETUSU+DCT+EPLEB+DCT+040047S0393622E+-HKMO0050+HKJK+-PBN%2FA1B1C1D1S1S2+DOF%2F240405+REG%2FN806SB+OPR%2FKQA+PER%2FC+RMK%2FTCAS+SIMBRIEF%29&fuel_time=0223",
+        "form": "\u003Cform method=\"GET\" action=\"https://my.vatsim.net/pilots/flightplan\" target=\"_blank\"\u003E \u003Cbutton type=\"submit\"\u003EPre-file on VATSIM\u003C/button\u003E \u003Cinput type=\"hidden\" name=\"raw\" value=\"(FPL-KQA631-IS -B738/M-SDE2E3FGHIRWXY/LB1 -HKJK0900 -N0462F310 UVOVA UQ135 NEREV DCT EGVOM DCT ETUSU DCT EPLEB DCT 040047S0393622E -HKMO0050 HKJK -PBN/A1B1C1D1S1S2 DOF/240405 REG/N806SB OPR/KQA PER/C RMK/TCAS SIMBRIEF)\"\u003E \u003Cinput type=\"hidden\" name=\"fuel_time\" value=\"0223\"\u003E \u003C/form\u003E"
+      },
+      "ivao": {
+        "name": "IVAO",
+        "site": "fpl.ivao.aero",
+        "link": "https://fpl.ivao.aero/flight-plans/create?flightPlan=eyJjYWxsc2lnbiI6IktRQTYzMSIsImZsaWdodFJ1bGVzIjoiSSIsImZsaWdodFR5cGUiOiJTIiwiYWlyY3JhZnROdW1iZXIiOjEsImFpcmNyYWZ0SWQiOiJCNzM4IiwiYWlyY3JhZnRXYWtlVHVyYnVsZW5jZSI6Ik0iLCJhaXJjcmFmdEVxdWlwbWVudHMiOlsiUyIsIkQiLCJFMiIsIkUzIiwiRiIsIkciLCJIIiwiSSIsIlIiLCJXIiwiWCIsIlkiXSwiYWlyY3JhZnRUcmFuc3BvbmRlclR5cGVzIjpbIkwiLCJCMSJdLCJkZXBhcnR1cmVJZCI6IkhLSksiLCJkZXBhcnR1cmVUaW1lIjozMjQwMCwiY3J1aXNpbmdTcGVlZFR5cGUiOiJOIiwiY3J1aXNpbmdTcGVlZCI6NDYyLCJhbHRpdHVkZVR5cGUiOiJGIiwiYWx0aXR1ZGUiOjMxMCwicm91dGUiOiJEQ1QgVVZPVkEgVVExMzUgTkVSRVYgRENUIEVHVk9NIERDVCBFVFVTVSBEQ1QgRVBMRUIgRENUIDA0MDA0N1MwMzkzNjIyRSBEQ1QiLCJhcnJpdmFsSWQiOiJIS01PIiwiZWV0IjozMDAwLCJhbHRlcm5hdGl2ZUlkIjoiSEtKSyIsImFsdGVybmF0aXZlMklkIjpudWxsLCJyZW1hcmtzIjoiUEJOL0ExQjFDMUQxUzFTMiBET0YvMjQwNDA1IFJFRy9OODA2U0IgT1BSL0tRQSBQRVIvQyBSTUsvVENBUyBTSU1CUklFRiIsImVuZHVyYW5jZSI6ODU4MCwicG9iIjoxOTF9",
+        "form": "\u003Cform action=\"https://fpl.ivao.aero/flight-plans/create\" method=\"GET\" target=\"_blank\"\u003E\n\u003Cbutton type=\"submit\"\u003EPre-file on IVAO\u003C/button\u003E\n\u003Cinput type=\"hidden\" name=\"flightPlan\" value=\"eyJjYWxsc2lnbiI6IktRQTYzMSIsImZsaWdodFJ1bGVzIjoiSSIsImZsaWdodFR5cGUiOiJTIiwiYWlyY3JhZnROdW1iZXIiOjEsImFpcmNyYWZ0SWQiOiJCNzM4IiwiYWlyY3JhZnRXYWtlVHVyYnVsZW5jZSI6Ik0iLCJhaXJjcmFmdEVxdWlwbWVudHMiOlsiUyIsIkQiLCJFMiIsIkUzIiwiRiIsIkciLCJIIiwiSSIsIlIiLCJXIiwiWCIsIlkiXSwiYWlyY3JhZnRUcmFuc3BvbmRlclR5cGVzIjpbIkwiLCJCMSJdLCJkZXBhcnR1cmVJZCI6IkhLSksiLCJkZXBhcnR1cmVUaW1lIjozMjQwMCwiY3J1aXNpbmdTcGVlZFR5cGUiOiJOIiwiY3J1aXNpbmdTcGVlZCI6NDYyLCJhbHRpdHVkZVR5cGUiOiJGIiwiYWx0aXR1ZGUiOjMxMCwicm91dGUiOiJEQ1QgVVZPVkEgVVExMzUgTkVSRVYgRENUIEVHVk9NIERDVCBFVFVTVSBEQ1QgRVBMRUIgRENUIDA0MDA0N1MwMzkzNjIyRSBEQ1QiLCJhcnJpdmFsSWQiOiJIS01PIiwiZWV0IjozMDAwLCJhbHRlcm5hdGl2ZUlkIjoiSEtKSyIsImFsdGVybmF0aXZlMklkIjpudWxsLCJyZW1hcmtzIjoiUEJOL0ExQjFDMUQxUzFTMiBET0YvMjQwNDA1IFJFRy9OODA2U0IgT1BSL0tRQSBQRVIvQyBSTUsvVENBUyBTSU1CUklFRiIsImVuZHVyYW5jZSI6ODU4MCwicG9iIjoxOTF9\"\u003E\n\u003C/form\u003E"
+      },
+      "pilotedge": {
+        "name": "PilotEdge",
+        "site": "www.pilotedge.net",
+        "link": "https://www.pilotedge.net/pilot_tools/file?flightplan[type]=IFR&flightplan[aircraft_identification]=KQA631&flightplan[aircraft_type]=B738&flightplan[aircraft_equipment]=L&flightplan[heavy]=0&flightplan[airspeed]=462&flightplan[departing_airport]=HKJK&flightplan[arriving_airport]=HKMO&flightplan[altitude]=31000&flightplan[alternate_airport]=HKJK&flightplan[route]=UVOVA UQ135 NEREV EGVOM ETUSU EPLEB 040047S0393622E&flightplan[remarks]=RMK/SIMBRIEF",
+        "form": ""
+      },
+      "poscon": {
+        "name": "POSCON",
+        "site": "hq.poscon.net",
+        "link": "https://hq.poscon.net/flightplan/create?flightRules=I&callsign=KQA631&isRegistration=N&flightType=S&numOfAircraft=1&aircraftType=B738&wakeTurbulence=M&equipmentCode=S%2CD%2CE2%2CE3%2CF%2CG%2CH%2CI%2CR%2CW%2CX%2CY&ssr=L%2CB1&departureApt=HKJK&dateOfFlight=240405&depTime=0900&speed=N0462&cruiseAlt=F310&route=DCT+UVOVA+UQ135+NEREV+DCT+EGVOM+DCT+ETUSU+DCT+EPLEB+DCT+040047S0393622E+DCT&destinationApt=HKMO&ete=0050&firstAlt=HKJK&secondAlt=&status=&pbn=A1%2CB1%2CC1%2CD1%2CS1%2CS2&performanceCat=C&otherInformation=PBN%2FA1B1C1D1S1S2+DOF%2F240405+REG%2FN806SB+OPR%2FKQA+PER%2FC+RMK%2FTCAS+SIMBRIEF&endurance=0223&numOnBoard=191&emergencyRadio=&waterEquipment=&remarks=TCAS+SIMBRIEF",
+        "form": ""
+      }
+    },
+    "vatsim_prefile": "\u003Cform method=\"GET\" action=\"https://my.vatsim.net/pilots/flightplan\" target=\"_blank\"\u003E \u003Cbutton type=\"submit\"\u003EPre-file on VATSIM\u003C/button\u003E \u003Cinput type=\"hidden\" name=\"raw\" value=\"(FPL-KQA631-IS -B738/M-SDE2E3FGHIRWXY/LB1 -HKJK0900 -N0462F310 UVOVA UQ135 NEREV DCT EGVOM DCT ETUSU DCT EPLEB DCT 040047S0393622E -HKMO0050 HKJK -PBN/A1B1C1D1S1S2 DOF/240405 REG/N806SB OPR/KQA PER/C RMK/TCAS SIMBRIEF)\"\u003E \u003Cinput type=\"hidden\" name=\"fuel_time\" value=\"0223\"\u003E \u003C/form\u003E",
+    "ivao_prefile": "\u003Cform action=\"https://fpl.ivao.aero/flight-plans/create\" method=\"GET\" target=\"_blank\"\u003E\n\u003Cbutton type=\"submit\"\u003EPre-file on IVAO\u003C/button\u003E\n\u003Cinput type=\"hidden\" name=\"flightPlan\" value=\"eyJjYWxsc2lnbiI6IktRQTYzMSIsImZsaWdodFJ1bGVzIjoiSSIsImZsaWdodFR5cGUiOiJTIiwiYWlyY3JhZnROdW1iZXIiOjEsImFpcmNyYWZ0SWQiOiJCNzM4IiwiYWlyY3JhZnRXYWtlVHVyYnVsZW5jZSI6Ik0iLCJhaXJjcmFmdEVxdWlwbWVudHMiOlsiUyIsIkQiLCJFMiIsIkUzIiwiRiIsIkciLCJIIiwiSSIsIlIiLCJXIiwiWCIsIlkiXSwiYWlyY3JhZnRUcmFuc3BvbmRlclR5cGVzIjpbIkwiLCJCMSJdLCJkZXBhcnR1cmVJZCI6IkhLSksiLCJkZXBhcnR1cmVUaW1lIjozMjQwMCwiY3J1aXNpbmdTcGVlZFR5cGUiOiJOIiwiY3J1aXNpbmdTcGVlZCI6NDYyLCJhbHRpdHVkZVR5cGUiOiJGIiwiYWx0aXR1ZGUiOjMxMCwicm91dGUiOiJEQ1QgVVZPVkEgVVExMzUgTkVSRVYgRENUIEVHVk9NIERDVCBFVFVTVSBEQ1QgRVBMRUIgRENUIDA0MDA0N1MwMzkzNjIyRSBEQ1QiLCJhcnJpdmFsSWQiOiJIS01PIiwiZWV0IjozMDAwLCJhbHRlcm5hdGl2ZUlkIjoiSEtKSyIsImFsdGVybmF0aXZlMklkIjpudWxsLCJyZW1hcmtzIjoiUEJOL0ExQjFDMUQxUzFTMiBET0YvMjQwNDA1IFJFRy9OODA2U0IgT1BSL0tRQSBQRVIvQyBSTUsvVENBUyBTSU1CUklFRiIsImVuZHVyYW5jZSI6ODU4MCwicG9iIjoxOTF9\"\u003E\n\u003C/form\u003E",
+    "pilotedge_prefile": "https://www.pilotedge.net/pilot_tools/file?flightplan[type]=IFR&flightplan[aircraft_identification]=KQA631&flightplan[aircraft_type]=B738&flightplan[aircraft_equipment]=L&flightplan[heavy]=0&flightplan[airspeed]=462&flightplan[departing_airport]=HKJK&flightplan[arriving_airport]=HKMO&flightplan[altitude]=31000&flightplan[alternate_airport]=HKJK&flightplan[route]=UVOVA UQ135 NEREV EGVOM ETUSU EPLEB 040047S0393622E&flightplan[remarks]=RMK/SIMBRIEF",
+    "poscon_prefile": "https://hq.poscon.net/flightplan/create?flightRules=I&callsign=KQA631&isRegistration=N&flightType=S&numOfAircraft=1&aircraftType=B738&wakeTurbulence=M&equipmentCode=S%2CD%2CE2%2CE3%2CF%2CG%2CH%2CI%2CR%2CW%2CX%2CY&ssr=L%2CB1&departureApt=HKJK&dateOfFlight=240405&depTime=0900&speed=N0462&cruiseAlt=F310&route=DCT+UVOVA+UQ135+NEREV+DCT+EGVOM+DCT+ETUSU+DCT+EPLEB+DCT+040047S0393622E+DCT&destinationApt=HKMO&ete=0050&firstAlt=HKJK&secondAlt=&status=&pbn=A1%2CB1%2CC1%2CD1%2CS1%2CS2&performanceCat=C&otherInformation=PBN%2FA1B1C1D1S1S2+DOF%2F240405+REG%2FN806SB+OPR%2FKQA+PER%2FC+RMK%2FTCAS+SIMBRIEF&endurance=0223&numOnBoard=191&emergencyRadio=&waterEquipment=&remarks=TCAS+SIMBRIEF",
+    "map_data": "https://www.simbrief.com/ofp/flightplans/HKJKHKMO_MJS_1712307908.js",
+    "api_params": {
+      "airline": "KQA",
+      "fltnum": "631",
+      "type": "B738",
+      "orig": "HKJK",
+      "dest": "HKMO",
+      "date": "1712275200",
+      "dephour": "32400",
+      "depmin": "0",
+      "route": " UVOVA UQ135 NEREV  EGVOM ETUSU EPLEB 040047S0393622E",
+      "stehour": "3600",
+      "stemin": "1200",
+      "reg": "N806SB",
+      "fin": "806",
+      "selcal": "",
+      "pax": "auto",
+      "altn": "HKJK",
+      "fl": "",
+      "cpt": "Aiden Omondi",
+      "pid": "519024",
+      "fuelfactor": "1",
+      "manualpayload": "auto",
+      "manualzfw": "auto",
+      "taxifuel": "0",
+      "minfob": "0",
+      "minfob_units": "wgt",
+      "minfod": "0",
+      "minfod_units": "wgt",
+      "melfuel": "0",
+      "melfuel_units": "wgt",
+      "atcfuel": "0",
+      "atcfuel_units": "wgt",
+      "wxxfuel": "0",
+      "wxxfuel_units": "wgt",
+      "addedfuel": "0",
+      "addedfuel_units": "wgt",
+      "addedfuel_label": "extra",
+      "tankering": "0",
+      "tankering_units": "wgt",
+      "flightrules": "i",
+      "flighttype": "s",
+      "contpct": "auto",
+      "resvrule": "auto",
+      "taxiout": "20",
+      "taxiin": "8",
+      "cargo": "0",
+      "origrwy": "06",
+      "destrwy": "21",
+      "climb": "250/280/78",
+      "descent": "78/280/250",
+      "cruisemode": "CI",
+      "cruisesub": "auto",
+      "planformat": "lido",
+      "pounds": "0",
+      "navlog": "1",
+      "etops": "1",
+      "stepclimbs": "1",
+      "tlr": "0",
+      "notams_opt": "1",
+      "firnot": "1",
+      "maps": "1",
+      "turntoflt": "",
+      "turntoapt": "",
+      "turntotime": "",
+      "turnfrflt": "",
+      "turnfrapt": "",
+      "turnfrtime": "",
+      "fuelstats": "",
+      "contlabel": "",
+      "static_id": "",
+      "acdata": "",
+      "acdata_parsed": ""
+    }
+  }

@@ -25,10 +25,9 @@
                     'Content-Type': 'application/json'
                 },
                 mode: 'no-cors'
-            }, 5000)
+            })
             clearInterval()
-        })
-        
+        }, 4000)
 
     })
 })();
