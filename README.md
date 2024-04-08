@@ -17,7 +17,7 @@ situational awareness in the cockpit, working with any aircraft that is both ava
 
 * [x] Does not require any special authentication
 * [x] Works with any AIRAC
-* [x] Works closs-platform
+* [x] Works cross-platform
 * [x] Allows visualization of complex radii and magnetic courses on a flat map with considerable accuracy
 
 ## Getting Started
@@ -30,6 +30,9 @@ These instructions will get you a copy of the project up and running on your loc
 * [Tampermonkey](https://www.tampermonkey.net/),
 * [Greasemonkey(*Firefox Only*)](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/)
 * or [ViolentMonkey](https://violentmonkey.github.io/)
+* [autopilot_pp](https://github.com/Qantas94Heavy/autopilot-pp)
+* [fmc-requirejs](https://github.com/gefs-plugins/fmc-requirejs)
+
 
 ### Installing
 **NOTE: After installing any userscript addon, please ensure that you allow access to file URLs for that extension in your browser settings**
@@ -43,7 +46,7 @@ After activating the virtual environment, run:
 ```
 pip3 install -r requirements.txt
 ```
-This installs all the required python packages to run the server which will be connected to the Geofs usescript
+This installs all the required python packages to run the server which will be connected to the Geofs usescript. In `app.py` replace `USERID` with your Simbrief Pilot ID. In `src/worker.ts` replace `userId` with your Simbrief Pilot. *If you don't do this, you'll just be loading my flightplans*
 
 ```
 cd geofs-interace
@@ -63,9 +66,11 @@ and
 ```
 python3 app.py
 ```
-in the main folder. This will start a:
-* server on http://localhost:5000
+in the main folder. Starting:
+* a server on http://localhost:5000
 * and the app on http://localhost:5173
+
+Start [Geofs](https://www.geo-fs.com/geofs.php) after opening the app, ensure the [fmc-requirejs](https://github.com/gefs-plugins/fmc-requirejs) and [autopilot_pp](https://github.com/Qantas94Heavy/autopilot-pp) are installed.
 
 **NOTE: On macOS, disable the 'AirPlay Receiver' service from System Preferences -> General -> AirDrop & Handoff.**
 

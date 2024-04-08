@@ -31,8 +31,8 @@ for file_ in filenamees:
         approaches = load(f)
         master_approach[file_] = approaches
 
-
-res  = get('https://www.simbrief.com/api/xml.fetcher.php?userid=519024&json=1', timeout=10)
+USERID = '519024' # Replace with your Pilot ID(Simbrief)
+res  = get(f'https://www.simbrief.com/api/xml.fetcher.php?userid={USERID}&json=1', timeout=10)
 data = res.json()
 
 
