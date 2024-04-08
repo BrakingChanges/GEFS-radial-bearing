@@ -46,7 +46,7 @@ After activating the virtual environment, run:
 ```
 pip3 install -r requirements.txt
 ```
-This installs all the required python packages to run the server which will be connected to the Geofs usescript. In `app.py` replace `USERID` with your Simbrief Pilot ID. In `src/worker.ts` replace `userId` with your Simbrief Pilot ID. *If you don't do this, you'll just be loading my flightplans*
+This installs all the required python packages to run the server which will be connected to the Geofs usescript. In `app.py` replace `USERID` with your Simbrief Pilot ID. In `geofs-interface/src/worker.ts` replace `userId` with your Simbrief Pilot ID. *If you don't do this, you'll just be loading my flightplans*
 
 ```
 cd geofs-interace
