@@ -79,7 +79,7 @@ Explain how to run the automated tests for this system
 For the interface, we are using cypress to test for basic inputs and form submissions.
 An issue has been noted where the application dosent fully load with Cypress
 
-If you have followed the installation instructions, run `npx cypress open`, in the suite, run spec.cy.ts to run a basic test on the summary opening and the form sync features
+If you have followed the installation instructions, run `npx cypress open`, in the suite, run `spec.cy.ts` to run a basic test on the summary opening and the form sync features
 
 ### Coding Style Tests
 We use [pylint](https://pylint.readthedocs.io/). It is implemented as a github action. No actions are neeeded from your side. We use pylint to ensure our code is less prone to errors, because it is meant to replicate standards of real flight navigation apps like [Navigraph FliteDeck Pro](https://ww2.jeppesen.com/navigation-solutions/flitedeck-pro/)
