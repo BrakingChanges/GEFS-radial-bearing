@@ -101,6 +101,7 @@ const processorWrapper = () => {
     marker: undefined,
     connectingLine: undefined
   }
+
   reRenderCircle(circle?.circle, map)
 }
 

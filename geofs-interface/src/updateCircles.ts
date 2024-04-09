@@ -8,9 +8,9 @@ export const updateCircles = (circles: CircleListEl[], circlesList: HTMLDivEleme
 
 
     circles.forEach((circle, index) => {
-      circle.circle?.addTo(map)
-      circle.marker?.addTo(map)
-      circle.connectingLine?.addTo(map)
+      circle?.circle?.addTo(map)
+      circle?.marker?.addTo(map)
+      circle?.connectingLine?.addTo(map)
       const radius = circle.circle?.radius;
       const markerPosition = circle.marker?.getLatLng()
       let circleHTML = `
