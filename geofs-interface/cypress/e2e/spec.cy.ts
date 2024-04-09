@@ -37,6 +37,39 @@ describe('Radial check', () => {
           cy.get('#wp-form')
             .submit()
 
+          cy.get('#dep-runway-lat')
+            .type('45.6')
+            .should('have.value', '45.6')
+            .clear()
+            .type('45')
+            .should('have.value', '45')
+
+          cy.get('#dep-runway-lon')
+            .type('45.6')
+            .should('have.value', '45.6')
+            .clear()
+            .type('45')
+            .should('have.value', '45')
+
+          cy.get('#arr-runway-lat')
+            .type('40.6')
+            .should('have.value', '40.6')
+            .clear()
+            .type('40')
+            .should('have.value', '40')
+
+          cy.get('#arr-runway-lon')
+            .type('40.6')
+            .should('have.value', '40.6')
+            .clear()
+            .type('40')
+            .should('have.value', '40')
+
+          cy.get('#wp-dep-arr-form')
+            .submit()
+
+
+
           doc.removeEventListener('loadCompleted', loadCompleted)
           resolve()
         }
