@@ -45,7 +45,7 @@ jobs:
             - name: Cypress run
               uses: cypress-io/github-action@v6
               with:
-                record: true
+                record: false
                 parallel: true
                 working-directory: geofs-interface
                 group: 'UI-Chrome'
