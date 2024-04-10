@@ -46,5 +46,6 @@ jobs:
               with:
                 record: true
                 parallel: true
+                working-directory: './geofs-interface'
                 group: 'UI-Chrome'
-                start: npm run dev
+                start: cd npm run dev
