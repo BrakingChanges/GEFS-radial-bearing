@@ -1,9 +1,9 @@
 
 
-describe('Radial check', () => {
-  it('Checks for radials', () => {
-    cy.visit('http://localhost:5173/')
+describe('Form check', () => {
+  it('Ensures form application is functionally operational', () => {
     cy.intercept({ resourceType: /xhr|fetch/, url: 'http://localhost:5000/*' }, { log: false })
+    cy.visit('http://localhost:5173/')
 
     cy.window()
       .then((doc) => new Cypress.Promise(resolve => { // Cypress will wait for this Promise to resolve
