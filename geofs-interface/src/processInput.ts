@@ -5,24 +5,32 @@ import { computeDestinationPoint } from 'geolib'
 import L from 'leaflet'
 import { updateCircles } from "./updateCircles";
 
-export const processInput = (waypointInput: HTMLInputElement, distInput: HTMLInputElement, wpCrs: HTMLInputElement, wpSlider: HTMLInputElement, data: any, circles: CircleListEl[], circlesList: HTMLDivElement, map: L.Map, wpColor: HTMLInputElement): CircleListEl | undefined => {
-    updateCircles(circles, circlesList, map)
+export const processInput = (waypointInput: HTMLInputElement, distInput: HTMLInputElement, wpCrs: HTMLInputElement, wpSlider: HTMLInputElement, data: any, circles: CircleListEl[], circlesList: HTMLDivElement, map: L.Map, wpColor: HTMLInputElement): CircleListEl => {
 
+    updateCircles(circles, circlesList, map)
     const wpTrimmed = waypointInput.value.trim();
     const distTrimmed = distInput.value.trim();
     const crsTrimmed = wpCrs.value.trim()
 
     wpSlider.value = crsTrimmed
 
+    let defaultCircle: CircleListEl = {
+      name: 'N/A',
+      circle: undefined,
+      marker: undefined,
+      connectingLine: undefined
+    }
 
     // Ensure distTrimmed is a valid number
-    if (isNaN(Number(distTrimmed))) return undefined;
-    if(distTrimmed === '') return undefined;
+    if (isNaN(Number(distTrimmed))) return defaultCircle;
+    if(distTrimmed === '') return defaultCircle;
 
     const noCrs = isNaN(Number(crsTrimmed)) || crsTrimmed === ''
 
+    console.log(wpTrimmed)
+
     // Ensure wpTrimmed is not empty
-    if (wpTrimmed === '') return undefined;
+    if (wpTrimmed === '') return defaultCircle;
     console.log(wpTrimmed)
 
 
@@ -55,6 +63,8 @@ export const processInput = (waypointInput: HTMLInputElement, distInput: HTMLInp
         connectingLine: noCrs ? undefined: L.geodesic([L.latLng([destination.latitude, destination.longitude]), L.latLng([wp.pos_lat, wp.pos_long])]).addTo(map)
       };
     }
+
+    return defaultCircle
 
 
 }

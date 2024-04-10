@@ -76,10 +76,17 @@ Start [Geofs](https://www.geo-fs.com/geofs.php) after opening the app, ensure th
 
 **NOTE: If you want the route clipboard feature to be available, you can only run as localhost or 127.0.0.1, which are considered to be [secure contexts](https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts) although they use the HTTP protocol. Read more [here](https://akshitb.medium.com/how-to-run-https-on-localhost-a-step-by-step-guide-c61fde893771) on how to make localhost or even the adress on your LAN HTTPS compliant**
 
+## Running the tests
 
+### End-to-end tests
+For the interface, we are using cypress to test for basic inputs and form submissions.
+An issue has been noted where the application dosent fully load with Cypress
 
-### And coding style tests
-We use [pylint](https://pylint.readthedocs.io/). It is implemented as a github action. No actions are neeeded from your side. We use pylint to ensure our code is less prone to errors, because it is meant to replicate standards of real flight navigation apps like [Navigraph FliteDeck Pro](https://ww2.jeppesen.com/navigation-solutions/flitedeck-pro/). We will not merge your pull request if the pylint test failed
+If you have followed the installation instructions, run `npx cypress open`, in the suite, run `spec.cy.ts` to run a basic test on the summary opening and the form sync features
+
+### Coding Style Tests
+We use [pylint](https://pylint.readthedocs.io/). It is implemented as a github action. No actions are neeeded from your side. We use pylint to ensure our code is less prone to errors, because it is meant to replicate standards of real flight navigation apps like [Navigraph FliteDeck Pro](https://ww2.jeppesen.com/navigation-solutions/flitedeck-pro/)
+
 
 
 ## Built With

@@ -16,7 +16,7 @@ import { processInput } from './processInput'
 import { checkData } from './checkData'
 import { Navlog, SImbriefData } from './types/SimbriefData'
 
-const newWorker = new Worker("./src/worker.ts", {
+const newWorker = new Worker(new URL("./worker.ts", import.meta.url), {
   type: 'module'
 })
 
@@ -92,15 +92,9 @@ const processorWrapper = () => {
   circle.circle?.remove()
   circle.marker?.remove()
   circle.connectingLine?.remove()
-  console.log('b')
+  console.log(wpCrs.value, distInput.value, waypointInput.value)
   let circ2 = processInput(waypointInput, distInput, wpCrs, wpSlider, data, circles, circlesList, map, wpColor)
-  console.log(circ2)
-  circle = circ2 !== undefined ? circ2 : {
-    name: 'N/A',
-    circle: undefined,
-    marker: undefined,
-    connectingLine: undefined
-  }
+  circle = circ2
   reRenderCircle(circle?.circle, map)
 }
 
