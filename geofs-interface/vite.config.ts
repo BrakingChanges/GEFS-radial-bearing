@@ -2,8 +2,7 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-  esbuild: {
-    jsxFactory: '',
-    jsxFragment: 'Fragment',
-  },
+  build: {
+    target: "esnext"
+  }
 })

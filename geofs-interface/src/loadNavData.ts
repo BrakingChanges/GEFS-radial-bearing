@@ -37,4 +37,6 @@ export const loadNavData = (data: Navlog[], lines: Geodesic[], markers: L.Marker
 
 
     }
+    const event = new Event('loadCompleted')
+    window.dispatchEvent(event)
 }

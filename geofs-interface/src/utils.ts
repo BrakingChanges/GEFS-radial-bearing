@@ -15,3 +15,5 @@ export const reRenderMarker = (marker: Marker |  undefined, map: Map) => {
     marker?.remove()
     marker?.addTo(map)
 }
+
+export const promiseHandler = (fn: Promise<any>) => fn.then((data) => [data, null]).catch((err) => [null, err])
