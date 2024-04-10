@@ -22,7 +22,7 @@ jobs:
             with:
               name: build
               if-no-files-found: error
-              path: dist
+              path: geofs-interface/dist
 
     cypress-run:
         runs-on: ubuntu-22.04
