@@ -16,7 +16,7 @@ import { processInput } from './processInput'
 import { checkData } from './checkData'
 import { Navlog, SImbriefData } from './types/SimbriefData'
 
-const newWorker = new Worker("./src/worker.ts", {
+const newWorker = new Worker(new URL("./worker.ts", import.meta.url), {
   type: 'module'
 })
 
