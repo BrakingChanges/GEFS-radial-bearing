@@ -49,4 +49,4 @@ jobs:
                 parallel: true
                 working-directory: geofs-interface
                 group: 'UI-Chrome'
-                start: cd npm run dev
+                start: npm run dev
