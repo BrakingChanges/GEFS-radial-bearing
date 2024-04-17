@@ -85,13 +85,18 @@ def recieve_approach():
     """Get an approach for a specific ICAO code"""
     airport_name = request.args.get('icao')
     approach_name = request.args.get('app_name')
-    return master_approach[airport_name[approach_name]]
+    
+    if not airport_name or not approach_name: return 'Missing Parametres'
+
+    return master_approach[airport_name][approach_name]
 
 @app.route("/get-all-approaches")
 def recieve_approaches():
     """ Get all the approaches of a specific ICAO code"""
 
     airport_name = request.args.get('icao')
+
+    if not airport_name: return 'Missing Parametres'
 
     return master_approach[airport_name]
 

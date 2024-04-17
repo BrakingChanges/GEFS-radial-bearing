@@ -1,37 +1,55 @@
  import L from "leaflet";
-import { useEffect, useState, JSX } from "react";
+import { useEffect, useState, JSX, useContext } from "react";
 import { Marker, Popup, useMap } from "react-leaflet";
-import { SimbriefData } from "../types/SimbriefData";
+import { SimbriefDataContext } from "../contexts/SimbriefDataContext";
 import { GeodesicLine } from "leaflet.geodesic";
 
-export const DepartureArrivalForm = ({ simbriefData }: {simbriefData: SimbriefData}) => {
-  const [depRwyLat, setDepRwyLat] = useState<number>(0);
-  const [depRwyLon, setDepRwyLon] = useState<number>(0);
+export const DepartureArrivalForm = () => {
+  const [depRwyLat, setDepRwyLat] = useState<number | string>('');
+  const [depRwyLon, setDepRwyLon] = useState<number | string>('');
 
-  const [arrRwyLat, setArrRwyLat] = useState<number>(0);
-  const [arrRwyLon, setArrRwyLon] = useState<number>(0);
+  const [arrRwyLat, setArrRwyLat] = useState<number | string>('');
+  const [arrRwyLon, setArrRwyLon] = useState<number | string>('');
   const [tempDepMarker, setTempDepMarker] = useState<JSX.Element>(<></>)
+  const [tempArrMarker, setTempArrMarker] = useState<JSX.Element>(<></>)
+  const simbriefData = useContext(SimbriefDataContext)
 
   const map: L.Map  = useMap()
   let depConnectingLine: GeodesicLine;
+  let arrConnectingLine: GeodesicLine;
 
   useEffect(() => {
     
     setTempDepMarker(<></>)
+    if(simbriefData == undefined) return
     if(depConnectingLine !== undefined) depConnectingLine.remove()
+    if(arrConnectingLine !== undefined) arrConnectingLine.remove()
+    if(typeof depRwyLat !== 'number' || typeof depRwyLon !== 'number' || typeof arrRwyLat !== 'number' || typeof arrRwyLon !=='number') return
     if(isNaN(depRwyLat) || isNaN(depRwyLon) || isNaN(arrRwyLat) || isNaN(arrRwyLon)) return
     
     const depRwyCoords: [number, number] = [depRwyLat, depRwyLon]
     const depWaypointCoords: [number, number] = [Number(simbriefData.navlog[0].pos_lat),Number(simbriefData.navlog[0].pos_long)]
     depConnectingLine = L.geodesic([depRwyCoords, depWaypointCoords]).addTo(map)
 
-    setTempDepMarker((
+    const arrRwyCoords: [number, number] = [arrRwyLat, arrRwyLon]
+    const arrWaypointCoords: [number, number] = [Number(simbriefData.navlog[simbriefData.navlog.length - 1].pos_lat), Number(simbriefData.navlog[simbriefData.navlog.length - 1].pos_long)]
+    arrConnectingLine = L.geodesic([arrWaypointCoords, arrRwyCoords])
+
+    setTempDepMarker(
       <Marker position={depRwyCoords}>
         <Popup>
           <h3>{simbriefData.origin.icao_code} - {simbriefData.origin.plan_rwy}</h3>
         </Popup>
       </Marker>
-    ))
+    )
+
+    setTempArrMarker(
+      <Marker position={arrRwyCoords}>
+        <Popup>
+          <h3>{simbriefData.destination.icao_code} - {simbriefData.destination.plan_rwy}</h3>
+        </Popup>
+      </Marker>
+    )
 
 
     return () => {
@@ -43,7 +61,7 @@ export const DepartureArrivalForm = ({ simbriefData }: {simbriefData: SimbriefDa
 
   return (
     <>
-      <form className="absolute top-4 right-4 z-[1000] dark:bg-black/75 bg-white/75 shadow-md rounded-md p-4">
+      <form>
         <section className="flex flex-col gap-2">
           <h2>Departure Runway Coordinates</h2>
           <input
@@ -78,14 +96,13 @@ export const DepartureArrivalForm = ({ simbriefData }: {simbriefData: SimbriefDa
             className="dark:bg-zinc-900 bg-white"
           />
         </section>
-
-        <button type="submit" className="bg-zinc-900">Submit</button>
         <p>
           Note: The Coordinates you are entering correspond to your takeoff and
           landing runway thresholds
         </p>
       </form>
       {tempDepMarker}
+      {tempArrMarker}
     </>
   );
 };

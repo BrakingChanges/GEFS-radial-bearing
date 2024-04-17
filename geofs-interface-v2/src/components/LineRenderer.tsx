@@ -22,7 +22,9 @@ export const LineRenderer = ({
             Number(simbriefData.navlog[i + 1].pos_lat),
             Number(simbriefData.navlog[i + 1].pos_long),
           ],
-        ]).addTo(map);
+        ], {
+          color: simbriefData.navlog[i].is_sid_star == '1' ? "green": "magenta"
+        }).addTo(map);
       }
     }
   }, [simbriefData]);

@@ -3,11 +3,11 @@
 
 import './style.css'
 import 'leaflet/dist/leaflet'
-import 'leaflet.geodesic/dist/leaflet.geodesic'
+import 'leaflet.geodesic'
 import 'leaflet-rotatedmarker/leaflet.rotatedMarker'
 import  L, { Marker } from 'leaflet'
 import { CircleListEl } from './types/types'
-import { GeodesicLine } from 'leaflet.geodesic/dist/leaflet.geodesic'
+import { GeodesicLine } from 'leaflet.geodesic'
 import { reRenderCircle } from './utils'
 import { updatePlaneMarker } from './updatePlaneMarker'
 import { loadNavData } from './loadNavData'

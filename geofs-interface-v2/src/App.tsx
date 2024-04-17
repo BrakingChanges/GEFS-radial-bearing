@@ -1,19 +1,17 @@
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import "./App.css";
 import "leaflet/dist/leaflet.css";
-import { DepartureArrivalForm } from "./components/DepartureArrival";
 
-import { useEffect, useState } from "react";
-import { SimbriefData } from "./types/SimbriefData";
 import { LineRenderer } from "./components/LineRenderer";
 import { icon } from "leaflet";
 import MarkerClusterGroup from "react-leaflet-cluster";
+import { FlightStats } from "./components/FlightStats";
+import { useContext, useEffect, useState } from "react";
+import { SimbriefDataContext } from "./contexts/SimbriefDataContext";
 
 function App() {
-  const [simbriefData, setSimbriefData] = useState<SimbriefData | undefined>(
-    undefined
-  );
-  const [userId, setUserId] = useState("519024");
+
+  const simbriefData = useContext(SimbriefDataContext)
   const waypointIcon = icon({
     iconUrl: "/waypoint.png",
     shadowUrl: "/waypoint shadow.png",
@@ -23,18 +21,35 @@ function App() {
     iconAnchor: [16, 16],
   });
 
-  useEffect(() => {
-    fetch(
-      `https://www.simbrief.com/api/xml.fetcher.php?userid=${userId}&json=v2`
+  const [planeMarker, setPlaneMarker] = useState<JSX.Element>()
+  const ws = new WebSocket('wss://localhost:8080')
+
+  ws.onmessage = (ev) => {
+    const data: GefsAircraft = JSON.parse(ev.data)
+    
+    setPlaneMarker(
+      <Marker position={[data.lat, data.lon]}>
+        <Popup>
+          <p>{data.altitude}ft</p>
+          <p>{data.heading}</p>
+        </Popup>
+      </Marker>
     )
-      .then((res) => res.json())
-      .then((res: SimbriefData) => {
-        setSimbriefData(res);
-      });
-  }, [userId]);
+  }
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if(ws.readyState !== WebSocket.OPEN) return
+      ws.send('getPlane')
+    }, 4000)
+
+    return () => clearInterval(interval)
+  }, [ws])
+
+
 
   return (
-    <main className="dark:text-white text-black">
+    <main className="dark:text-white text-black dark:bg-black bg-white flex justify-center items-center w-screen h-screen">
       {!simbriefData ||
       isNaN(Number(simbriefData?.origin.pos_lat)) ||
       isNaN(Number(simbriefData?.origin.pos_long)) ? (
@@ -67,7 +82,15 @@ function App() {
                 icon={waypointIcon}
               >
                 <Popup>
-                  <h3>{wp.name} - {wp.ident}</h3>
+                  <h3 className="text-purple-600">
+                    <strong>{wp.via_airway}</strong>
+                  </h3>
+                  <h3>
+                    {wp.name} - {wp.ident}
+                  </h3>
+                  <h3>
+                    {wp.altitude_feet}ft - {wp.ind_airspeed}KIAS - M{wp.mach.replace('.','')}
+                  </h3>
                 </Popup>
               </Marker>
             ))}
@@ -80,7 +103,15 @@ function App() {
             ]}
             icon={waypointIcon}
           ></Marker>
-          <DepartureArrivalForm simbriefData={simbriefData} />
+          <FlightStats
+            simbriefData={simbriefData}
+          />
+          {planeMarker}
+          <footer>
+            <menu>
+              <li></li>
+            </menu>
+          </footer>
         </MapContainer>
       )}
     </main>

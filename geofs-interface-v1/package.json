@@ -23,5 +23,10 @@
     "leaflet": "^1.9.4",
     "leaflet-rotatedmarker": "^0.2.0",
     "leaflet.geodesic": "^2.7.1"
-  }
+  },
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
