@@ -1,0 +1,31 @@
+{
+  "name": "geofs-userscript",
+  "version": "1.0.0",
+  "description": "",
+  "type": "commonjs",
+  "main": "robohydra/testing/start.cjs",
+  "scripts": {
+    "build": "node build.js",
+    "start": "robohydra -n -P testing"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@eslint/js": "^9.0.0",
+    "@types/ws": "^8.5.10",
+    "esbuild": "0.20.2",
+    "esbuild-plugin-tsc": "^0.4.0",
+    "eslint": "^8.57.0",
+    "typescript": "^5.4.5",
+    "typescript-eslint": "^7.7.0"
+  },
+  "dependencies": {
+    "@geps/geofs-types": "^1.0.1",
+    "robohydra": "^0.6.9",
+    "ws": "^8.16.0"
+  },
+  "optionalDependencies": {
+    "bufferutil": "^4.0.8"
+  }
+}
