@@ -14,7 +14,7 @@ jobs:
             with:
               # Disable running of tests within install job
               runTests: false
-              working-directory: geofs-interface
+              working-directory: geofs-interface-v1
               build: npm run build
 
           - name: Save build folder
@@ -22,7 +22,7 @@ jobs:
             with:
               name: build
               if-no-files-found: error
-              path: geofs-interface/dist
+              path: geofs-interface-v1/dist
 
     cypress-run:
         runs-on: ubuntu-22.04
@@ -45,5 +45,5 @@ jobs:
             - name: Cypress run
               uses: cypress-io/github-action@v6
               with:
-                working-directory: geofs-interface
+                working-directory: geofs-interface-v1
                 start: npm run dev
