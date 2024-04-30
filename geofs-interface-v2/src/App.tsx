@@ -3,10 +3,10 @@ import "./App.css";
 import "leaflet/dist/leaflet.css";
 
 import { LineRenderer } from "./components/LineRenderer";
-import { icon } from "leaflet";
+import { LatLngExpression, icon } from "leaflet";
 import MarkerClusterGroup from "react-leaflet-cluster";
 import { FlightStats } from "./components/FlightStats";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useMemo, useState } from "react";
 import { SimbriefDataContext } from "./contexts/SimbriefDataContext";
 
 function App() {
@@ -23,6 +23,11 @@ function App() {
 
   const [planeMarker, setPlaneMarker] = useState<JSX.Element>()
   const ws = new WebSocket('wss://localhost:8080')
+
+  const depAptPosition: LatLngExpression = {
+    lat: simbriefData ? Number(simbriefData.origin.pos_lat) : 0,
+    lng: simbriefData ? Number(simbriefData.origin.pos_long): 0,
+  }
 
   ws.onmessage = (ev) => {
     const data: GefsAircraft = JSON.parse(ev.data)
@@ -56,10 +61,7 @@ function App() {
         <h1>Loading...</h1>
       ) : (
         <MapContainer
-          center={[
-            Number(simbriefData?.origin.pos_lat),
-            Number(simbriefData?.origin.pos_long),
-          ]}
+          center={depAptPosition}
           zoom={13}
         >
           <LineRenderer simbriefData={simbriefData}></LineRenderer>
@@ -68,12 +70,12 @@ function App() {
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
           <Marker
-            position={[
-              Number(simbriefData.origin.pos_lat),
-              Number(simbriefData.origin.pos_long),
-            ]}
+            position={depAptPosition}
             icon={waypointIcon}
           ></Marker>
+          <Marker position={depAptPosition} draggable>
+
+          </Marker>
           <MarkerClusterGroup chunkedLoading>
             {simbriefData?.navlog.map((wp) => (
               <Marker
