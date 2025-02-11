@@ -13,7 +13,7 @@
     "@types/leaflet-rotatedmarker": "^0.2.5",
     "cypress": "^13.7.2",
     "typescript": "^5.2.2",
-    "vite": "^5.2.14"
+    "vite": "^5.4.12"
   },
   "dependencies": {
     "@geps/geofs-types": "^1.0.1",
