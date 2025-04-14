@@ -13,6 +13,7 @@ await writeFile('userscript.js', `
 // @match        https://www.geo-fs.com/geofs.php*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=opera.com
 // @grant        none
+// @runs-at      document-start
 // ==/UserScript==
 
 ${res.output[0].code}

@@ -8,8 +8,18 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
+const TARGET_SELECTOR = 'body > div.geofs-ui-center > div.geofs-auth.geofs-htmlView > div.geofs-authForm';
+
+function injectReactApp() {
+  const root = document.createElement('div');
+  const target = document.querySelector(TARGET_SELECTOR)!;
+  target.appendChild(root);
+
+  ReactDOM.createRoot(root).render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>,
+  );
+}
+
+injectReactApp()

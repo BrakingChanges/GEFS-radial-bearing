@@ -9,6 +9,9 @@ declare global {
     }
 }
 
+declare const geofs: typeof Geofs
+
+
 export const geoFsIsLoaded = async (delay: number, tries: number) => {
     let nTries = 0;
     
