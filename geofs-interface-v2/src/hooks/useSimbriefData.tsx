@@ -5,13 +5,12 @@ export const useSimbriefData = (userId: string) => {
     const [simbriefData, setSimbriefData] = useState<SimbriefData | undefined>(undefined);
     
     useEffect(() => {
-        if (isNaN(Number(userId)) || userId.length !== 6) return;
         fetch(
-          `https://www.simbrief.com/api/xml.fetcher.php?userid=${userId}&json=v2`
+          `https://www.simbrief.com/api/xml.fetcher.php?username=${userId}&json=v2`
         )
-          .then((res) => res.json())
-          .then((res: SimbriefData) => {
-            setSimbriefData(res);
+          .then((res) => res.status == 200 ? res.json(): {})
+          .then((res: SimbriefData | object) => {
+            setSimbriefData(Object.keys(res).length === 0 ? undefined : res as SimbriefData);
           });
         }, [userId]);
     

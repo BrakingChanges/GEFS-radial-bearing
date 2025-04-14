@@ -6,7 +6,7 @@ import { LineRenderer } from "./components/LineRenderer";
 import { LatLngExpression, icon } from "leaflet";
 import MarkerClusterGroup from "react-leaflet-cluster";
 import { FlightStats } from "./components/FlightStats";
-import { useContext, useEffect, useMemo, useState } from "react";
+import { useContext, useState } from "react";
 import { SimbriefDataContext } from "./contexts/SimbriefDataContext";
 
 function App() {
@@ -22,34 +22,33 @@ function App() {
   });
 
   const [planeMarker, setPlaneMarker] = useState<JSX.Element>()
-  const ws = new WebSocket('wss://localhost:8080')
 
   const depAptPosition: LatLngExpression = {
     lat: simbriefData ? Number(simbriefData.origin.pos_lat) : 0,
     lng: simbriefData ? Number(simbriefData.origin.pos_long): 0,
   }
 
-  ws.onmessage = (ev) => {
-    const data: GefsAircraft = JSON.parse(ev.data)
+  // ws.onmessage = (ev) => {
+  //   const data: GefsAircraft = JSON.parse(ev.data)
     
-    setPlaneMarker(
-      <Marker position={[data.lat, data.lon]}>
-        <Popup>
-          <p>{data.altitude}ft</p>
-          <p>{data.heading}</p>
-        </Popup>
-      </Marker>
-    )
-  }
+  //   setPlaneMarker(
+  //     <Marker position={[data.lat, data.lon]}>
+  //       <Popup>
+  //         <p>{data.altitude}ft</p>
+  //         <p>{data.heading}</p>
+  //       </Popup>
+  //     </Marker>
+  //   )
+  // }
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if(ws.readyState !== WebSocket.OPEN) return
-      ws.send('getPlane')
-    }, 4000)
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     if(ws.readyState !== WebSocket.OPEN) return
+  //     ws.send('getPlane')
+  //   }, 4000)
 
-    return () => clearInterval(interval)
-  }, [ws])
+  //   return () => clearInterval(interval)
+  // }, [ws])
 
 
 
@@ -72,9 +71,13 @@ function App() {
           <Marker
             position={depAptPosition}
             icon={waypointIcon}
-          ></Marker>
-          <Marker position={depAptPosition} draggable>
-
+          >
+            <Popup>
+              {simbriefData.origin.name} - {simbriefData.origin.icao_code}
+              <br />
+              <button>Show Charts</button>
+            
+            </Popup>
           </Marker>
           <MarkerClusterGroup chunkedLoading>
             {simbriefData?.navlog.map((wp) => (
@@ -107,6 +110,7 @@ function App() {
           ></Marker>
           <FlightStats
             simbriefData={simbriefData}
+            setPlaneMarker={setPlaneMarker}
           />
           {planeMarker}
           <footer>

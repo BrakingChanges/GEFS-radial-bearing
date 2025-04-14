@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { SimbriefDataContext } from "./contexts/SimbriefDataContext";
-import { useSimbriefData } from "./hooks/useSimbriefData";
+import { SimbriefDataProvider } from "./contexts/SimbriefDataContext";
 import { Outlet } from "react-router-dom";
 
 export const Root = () => {
@@ -17,9 +16,9 @@ export const Root = () => {
           className="dark:bg-zinc-900 bg-white"
         />
       </form>
-      <SimbriefDataContext.Provider value={useSimbriefData(userId)}>
+      <SimbriefDataProvider userId={userId}>
         <Outlet></Outlet>
-      </SimbriefDataContext.Provider>
+      </SimbriefDataProvider>
     </>
   );
 };

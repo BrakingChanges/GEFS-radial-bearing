@@ -27,7 +27,7 @@ export const LineRenderer = ({
         }).addTo(map);
       }
     }
-  }, [simbriefData]);
+  }, [map, simbriefData]);
 
   return null; // or render some component if needed
 };
