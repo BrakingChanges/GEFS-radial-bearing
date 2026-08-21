@@ -61,7 +61,7 @@ export const FlightStats = ({
             <Popup>
               Latitude: {data.lat.toFixed(5)} <br />
               Longitude: {data.lon.toFixed(5)} <br />
-              Heading: {data.heading[0] < 0 ? (360 - data.heading[0]).toFixed(0) : data.heading[0].toFixed(0)}°
+              Heading: {data.heading[0] < 0 ? (360 + data.heading[0]).toFixed(0) : data.heading[0].toFixed(0)}°
             </Popup>
           </Marker>
         );
@@ -75,7 +75,7 @@ export const FlightStats = ({
   }, [setPlaneMarker]);
 
   return (
-    <section className="absolute top-4 right-4 z-[1000] dark:bg-black/75 bg-white/75 shadow-md rounded-md p-4">
+    <section className="absolute top-4 right-4 z-1000 dark:bg-black/75 bg-white/75 shadow-md rounded-md p-4">
       <h1 className="font-mono text-2xl">
         {simbriefData.general.icao_airline} {simbriefData.general.flight_number} -{" "}
         {simbriefData.aircraft.icao_code}
@@ -96,7 +96,7 @@ export const FlightStats = ({
         <p>
           <strong>Live Tracking:</strong>{" "}
           {position
-            ? `${position.lat.toFixed(5)}, ${position.lon.toFixed(5)} (hdg ${position.heading[0] < 0 ? (360 -position.heading[0]).toFixed(0) : position.heading[0].toFixed(0)}}°)`
+            ? `${position.lat.toFixed(5)}, ${position.lon.toFixed(5)} (hdg ${position.heading[0] < 0 ? (360 +position.heading[0]).toFixed(0) : position.heading[0].toFixed(0)}°)`
             : "Waiting for data..."}
         </p>
       </details>

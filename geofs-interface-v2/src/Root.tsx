@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { SimbriefDataProvider } from "./contexts/SimbriefDataContext";
 import { Outlet } from "react-router-dom";
+import './input.css'
 
 export const Root = () => {
   const [userId, setUserId] = useState("");
